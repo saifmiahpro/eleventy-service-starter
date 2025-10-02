@@ -1,0 +1,51 @@
+{
+  "business_name": "Serrurerie Express 31",
+  "business_type": "serrurier",
+  "city": "Toulouse",
+  "phone": "0612345678",
+  "email": "contact@serrurerie-express31.fr",
+  "address": "12 rue de la République, 31000 Toulouse",
+  "service_areas": "Toulouse, Blagnac, Colomiers, Cugnaux",
+  "availability": "24/7",
+  "response_time": "20-30 minutes",
+  "accent_color": "#fd7e14",
+  "hero_title": "Serrurier 24/7 à Toulouse — Ouverture Sans Casse",
+  "hero_subtitle": "Intervention rapide en 20-30 minutes",
+  "description": "Service professionnel de serrurerie à Toulouse. Intervention rapide et tarifs transparents.",
+  "cta_primary": "Appeler maintenant",
+  "cta_secondary": "Devis gratuit",
+  "urgency_banner": "🚨 Intervention rapide 24/7",
+  "trust_badges": "Professionnel agréé, Devis gratuit, Paiement CB, Disponible 24/7",
+  "enable_gallery": "true",
+  "enable_reviews": "true",
+  "enable_pricing": "true",
+  "enable_emergency_banner": "true",
+  "enable_section_descriptions": "true",
+  "enable_about_extended": "false",
+  "enable_trust_section": "false",
+  "enable_certifications": "false",
+  "reviews": [
+    {
+      "name": "Marie D.",
+      "text": "Intervention rapide et efficace. Porte ouverte sans dégâts !",
+      "rating": "5"
+    },
+    {
+      "name": "Pierre L.",
+      "text": "Service professionnel, je recommande vivement.",
+      "rating": "5"
+    }
+  ],
+  "pricing": [
+    {
+      "service": "Ouverture de porte",
+      "price": "80",
+      "note": "Sans casse dans 90% des cas"
+    },
+    {
+      "service": "Changement serrure",
+      "price": "120",
+      "note": "Serrure haute sécurité incluse"
+    }
+  ]
+}

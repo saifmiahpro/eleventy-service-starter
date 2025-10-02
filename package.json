@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "generate": "node tools/generate.js"
+    "generate": "node tools/generate-from-config.js",
+    "generate:cli": "node tools/generate.js",
+    "reset": "node tools/reset.js"
   },
   "keywords": ["eleventy", "landing-page", "local-business", "emergency-services"],
   "author": "",

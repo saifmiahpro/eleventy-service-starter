@@ -46,3 +46,13 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+
+# Input files (may contain sensitive client data)
+input/site-config.json
+input/site-config.md
+input/config.json
+input/config.md
+
+# Keep sample files
+!input/site-config.sample.json
+!input/README.md

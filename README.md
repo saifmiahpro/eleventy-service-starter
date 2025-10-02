@@ -10,33 +10,61 @@
 
 ## 🚀 Quick Start
 
+### Method 1: Tally Form Integration (Recommended)
+
 ```bash
-# Install dependencies
+# 1. Install dependencies
 npm install
 
-# Start development server
-npm run dev
+# 2. Export your Tally form results to input/site-config.json
+# (See input/site-config.sample.json for format)
 
-# Build for production
-npm run build
+# 3. Generate site from config
+npm run generate
+
+# 4. Start development server
+npm run dev
+```
+
+### Method 2: Interactive CLI
+
+```bash
+# Use the legacy interactive generator
+npm run generate:cli
+```
+
+### Method 3: Reset to Default
+
+```bash
+# Reset to clean default state
+npm run reset
 ```
 
 Your site will be available at `http://localhost:8080/`
 
-## 🛠️ Generate Custom Configuration
+## 🛠️ Tally Form Integration
 
-Use the interactive CLI to generate a customized `src/_data/site.json`:
+This system is designed to work seamlessly with Tally form exports:
 
-```bash
-npm run generate
-```
+1. **Create a Tally form** with fields matching the configuration schema
+2. **Export responses** as JSON or Markdown to `input/site-config.json`
+3. **Run generator** with `npm run generate`
+4. **Preview site** with `npm run dev`
 
-The generator will prompt you for:
-- Business type (depanneur/serrurier)
-- Business name and contact info
-- Service areas
-- Color scheme
-- Feature toggles (gallery, reviews, pricing)
+### Configuration Schema
+
+The generator expects these fields from your Tally form:
+
+**Required:**
+- `business_name`, `business_type`, `city`, `phone`, `email`
+
+**Optional:**
+- `address`, `service_areas`, `availability`, `response_time`
+- `accent_color`, `hero_title`, `hero_subtitle`, `description`
+- `enable_gallery`, `enable_reviews`, `enable_pricing`
+- `reviews[]`, `pricing[]` (arrays for structured data)
+
+See `input/README.md` for complete field documentation.
 
 ## 📁 Project Structure
 

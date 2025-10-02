@@ -1,0 +1,15 @@
+<section class="section gallery">
+  <div class="container">
+    <h2>Galerie</h2>
+    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.gallery }}</p>
+    {% endif %}
+    <div class="gallery-grid">
+      {% for image in site.GALLERY %}
+      <div class="gallery-item">
+        <img src="{{ image }}" alt="Photo de nos interventions" loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

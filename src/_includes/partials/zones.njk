@@ -1,0 +1,16 @@
+<section class="section zones">
+  <div class="container">
+    <h2>Zones d'Intervention</h2>
+    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.zones }}</p>
+    {% endif %}
+    <div class="zones-grid">
+      {% for area in site.AREAS %}
+      <div class="zone-item">
+        <span class="zone-icon">📍</span>
+        <span>{{ area }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

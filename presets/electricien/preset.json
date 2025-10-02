@@ -1,0 +1,67 @@
+{
+  "NICHE": "electricien",
+  "ACCENT": "#ffc107",
+  "HERO_TEXT": "Électricien 24/7 à {{CITY}} — Dépannage Électrique Rapide",
+  "SERVICES": [
+    {
+      "title": "Panne électrique",
+      "desc": "Diagnostic et réparation rapide. Intervention d'urgence 24h/24."
+    },
+    {
+      "title": "Installation électrique",
+      "desc": "Prises, éclairage, tableau électrique. Aux normes NF C 15-100."
+    },
+    {
+      "title": "Mise aux normes",
+      "desc": "Diagnostic électrique, mise en conformité, certificat Consuel."
+    },
+    {
+      "title": "Domotique",
+      "desc": "Installation systèmes connectés, éclairage intelligent."
+    }
+  ],
+  "FAQ": [
+    {
+      "q": "Intervention d'urgence ?",
+      "a": "Oui, disponible 24h/24 pour les pannes électriques urgentes."
+    },
+    {
+      "q": "Devis gratuit ?",
+      "a": "Devis gratuit et détaillé pour tous travaux d'installation."
+    },
+    {
+      "q": "Garantie des travaux ?",
+      "a": "Garantie décennale sur les installations, 2 ans sur les réparations."
+    },
+    {
+      "q": "Normes respectées ?",
+      "a": "Toutes nos installations respectent la norme NF C 15-100."
+    }
+  ],
+  "IS_24_7": true,
+  "ENABLE_REVIEWS": true,
+  "ENABLE_GALLERY": true,
+  "ENABLE_PRICING": true,
+  "PRICING": [
+    {
+      "label": "Dépannage urgent",
+      "price": "95",
+      "note": "Déplacement + 1h de main d'œuvre"
+    },
+    {
+      "label": "Installation prise",
+      "price": "45",
+      "note": "Fourniture non comprise"
+    },
+    {
+      "label": "Diagnostic électrique",
+      "price": "150",
+      "note": "Obligatoire vente immobilière"
+    }
+  ],
+  "GALLERY": [
+    "/assets/images/tableau-electrique.jpg",
+    "/assets/images/installation-prises.jpg",
+    "/assets/images/eclairage-led.jpg"
+  ]
+}

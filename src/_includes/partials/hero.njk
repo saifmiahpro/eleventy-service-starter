@@ -1,0 +1,52 @@
+{% if site.ENABLE_EMERGENCY_BANNER %}
+<div class="emergency-banner">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__inner">
+      <span class="emergency-text">{{ site.URGENCY_TEXT }}</span>
+      <span class="response-time">Intervention en {{ site.RESPONSE_TIME }}</span>
+      <!-- Duplicated content for mobile scrolling -->
+      <span class="emergency-text mobile-only">{{ site.URGENCY_TEXT }}</span>
+      <span class="response-time mobile-only">Intervention en {{ site.RESPONSE_TIME }}</span>
+      <span class="emergency-text mobile-only">{{ site.URGENCY_TEXT }}</span>
+      <span class="response-time mobile-only">Intervention en {{ site.RESPONSE_TIME }}</span>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<header class="hero{% if site.HERO_BACKGROUND_IMAGE %} has-bg-image{% endif %}"{% if site.HERO_BACKGROUND_IMAGE %} style="--hero-bg-image: url('{{ site.HERO_BACKGROUND_IMAGE }}')"{% endif %}>
+  <div class="container">
+    <div class="hero-logo">
+      {% if site.LOGO_URL %}
+      <img src="{{ site.LOGO_URL }}" alt="{{ site.BUSINESS_NAME }}" class="logo">
+      {% else %}
+      <h2 class="business-name">{{ site.BUSINESS_NAME }}</h2>
+      {% endif %}
+    </div>
+    
+    <h1>{{ site.HERO_TEXT }}</h1>
+    <p class="hero-subtitle">{{ site.HERO_SUBTITLE }}</p>
+    <p class="hero-description">{{ site.ABOUT_SNIPPET }}</p>
+    
+    <div class="cta-row">
+      <a class="cta-primary pulse" href="tel:{{ site.PHONE_TEL }}">
+        📞 {{ site.CTA_PRIMARY_TEXT }} <span class="cta-phone">{{ site.PHONE_PRETTY }}</span>
+      </a>
+      <a class="cta-secondary" href="mailto:{{ site.EMAIL }}">
+        ✉️ {{ site.CTA_SECONDARY_TEXT }}
+      </a>
+    </div>
+    
+    {% if site.TRUST_BADGES %}
+    <div class="trust-badges">
+      {% for badge in site.TRUST_BADGES %}
+      <span class="trust-badge">✓ {{ badge }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if site.IS_24_7 %}
+    <p class="availability">🕐 Disponible 24/7 - {{ site.RESPONSE_TIME }}</p>
+    {% endif %}
+  </div>
+</header>

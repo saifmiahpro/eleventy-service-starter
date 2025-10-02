@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: "{{ site.BUSINESS_NAME }} – {{ site.CITY }}"
+---
+
+{# Core sections - always included #}
+{% include "partials/hero.njk" %}
+{% include "partials/services.njk" %}
+
+{# Premium modules - conditionally included #}
+{% if site.ENABLE_ABOUT_EXTENDED %}{% include "modules/module-about-extended.njk" %}{% endif %}
+{% if site.ENABLE_TRUST_SECTION %}{% include "modules/module-trust.njk" %}{% endif %}
+{% if site.ENABLE_CERTIFICATIONS %}{% include "modules/module-certifications.njk" %}{% endif %}
+
+{% include "partials/zones.njk" %}
+
+{# Standard optional modules #}
+{% if site.ENABLE_GALLERY %}{% include "modules/module-gallery.njk" %}{% endif %}
+{% if site.ENABLE_REVIEWS %}{% include "modules/module-reviews.njk" %}{% endif %}
+{% if site.ENABLE_PRICING %}{% include "modules/module-pricing.njk" %}{% endif %}
+
+{# Core sections continued #}
+{% include "partials/faq.njk" %}
+{% include "partials/contact.njk" %}

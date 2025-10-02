@@ -1,0 +1,16 @@
+<section class="section services">
+  <div class="container">
+    <h2>Nos Services</h2>
+    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.services }}</p>
+    {% endif %}
+    <div class="services-grid">
+      {% for service in site.SERVICES %}
+      <div class="service-card">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

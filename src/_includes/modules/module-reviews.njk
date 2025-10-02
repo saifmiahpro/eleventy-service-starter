@@ -1,0 +1,21 @@
+<section class="section reviews">
+  <div class="container">
+    <h2>Avis Clients</h2>
+    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.reviews }}</p>
+    {% endif %}
+    <div class="reviews-grid">
+      {% for review in site.REVIEWS %}
+      <div class="review-card">
+        <div class="review-stars">
+          {% for i in range(1, 6) %}
+            {% if i <= review.rating %}⭐{% else %}☆{% endif %}
+          {% endfor %}
+        </div>
+        <p class="review-text">"{{ review.text }}"</p>
+        <p class="review-author">— {{ review.name }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+{
+  "NICHE": "depanneur",
+  "ACCENT": "#e74c3c",
+  "HERO_TEXT": "Dépannage Auto 24/7 à {{CITY}} — Intervention Rapide",
+  "SERVICES": [
+    {
+      "title": "Batterie à plat",
+      "desc": "Booster ou remplacement sur place selon modèle. Intervention rapide."
+    },
+    {
+      "title": "Remorquage",
+      "desc": "Vers garage ou domicile, véhicule sécurisé. Plateau disponible."
+    },
+    {
+      "title": "Crevaison",
+      "desc": "Roue de secours posée, réparation si possible sur place."
+    },
+    {
+      "title": "Panne moteur",
+      "desc": "Diagnostic rapide et remorquage vers garage agréé."
+    }
+  ],
+  "FAQ": [
+    {
+      "q": "Délais d'intervention ?",
+      "a": "En général 30–45 minutes selon votre secteur, 24h/24 et 7j/7."
+    },
+    {
+      "q": "Moyens de paiement",
+      "a": "Carte bancaire, espèces, chèque acceptés. Facture fournie."
+    },
+    {
+      "q": "Types de véhicules",
+      "a": "Voitures, motos, utilitaires légers. Plateau pour gros véhicules."
+    },
+    {
+      "q": "Zone d'intervention",
+      "a": "{{CITY}} et agglomération, voir liste des communes."
+    }
+  ],
+  "IS_24_7": true,
+  "ENABLE_REVIEWS": true,
+  "ENABLE_GALLERY": false,
+  "ENABLE_PRICING": true,
+  "PRICING": [
+    {
+      "label": "Intervention de base",
+      "price": "45",
+      "note": "Déplacement + diagnostic"
+    },
+    {
+      "label": "Remorquage (10km)",
+      "price": "80",
+      "note": "Tarif dégressif au-delà"
+    },
+    {
+      "label": "Batterie neuve",
+      "price": "120",
+      "note": "Pose comprise, garantie 2 ans"
+    }
+  ]
+}

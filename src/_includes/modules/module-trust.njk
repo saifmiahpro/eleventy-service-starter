@@ -1,0 +1,17 @@
+<section class="section trust-section">
+  <div class="container">
+    <h2>{{ site.TRUST_SECTION.title }}</h2>
+    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.trust }}</p>
+    {% endif %}
+    <div class="trust-grid">
+      {% for item in site.TRUST_SECTION.items %}
+      <div class="trust-item">
+        <div class="trust-icon">{{ item.icon }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

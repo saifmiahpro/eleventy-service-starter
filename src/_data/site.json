@@ -1,48 +1,61 @@
 {
-  "NICHE": "serrurier",
+  "PACK": "premium",
+  "MODULES": [],
+  "NICHE": "depanneur",
   "ACCENT": "#f39c12",
-  "HERO_TEXT": "Service serrurier 24/7 à Toulouse",
+  "HERO_TEXT": "Dépannage Auto 24/7 à Toulouse — Intervention Rapide",
   "SERVICES": [
     {
-      "title": "Ouverture de porte",
-      "desc": "Ouverture sans casse dans 90% des cas. Intervention rapide."
+      "title": "Batterie à plat",
+      "desc": "Booster ou remplacement sur place selon modèle. Intervention rapide."
     },
     {
-      "title": "Changement de serrure",
-      "desc": "Serrures haute sécurité, certifiées A2P. Pose professionnelle."
+      "title": "Remorquage",
+      "desc": "Vers garage ou domicile, véhicule sécurisé. Plateau disponible."
     },
     {
-      "title": "Blindage de porte",
-      "desc": "Renforcement sécurité, pivot anti-arrachement, cornières."
+      "title": "Crevaison",
+      "desc": "Roue de secours posée, réparation si possible sur place."
     },
     {
-      "title": "Dépannage urgent",
-      "desc": "Clés cassées, serrures bloquées. Disponible 24h/24."
+      "title": "Panne moteur",
+      "desc": "Diagnostic rapide et remorquage vers garage agréé."
     }
   ],
   "FAQ": [
     {
-      "q": "Ouverture sans casse ?",
-      "a": "Oui, dans 90% des cas grâce à nos outils professionnels."
+      "q": "Délais d'intervention ?",
+      "a": "En général 30–45 minutes selon votre secteur, 24h/24 et 7j/7."
     },
     {
-      "q": "Tarifs de nuit/week-end ?",
-      "a": "Majoration de 30% entre 20h et 8h, et les dimanches/fériés."
+      "q": "Moyens de paiement",
+      "a": "Carte bancaire, espèces, chèque acceptés. Facture fournie."
     },
     {
-      "q": "Devis gratuit ?",
-      "a": "Oui, devis gratuit et sans engagement pour tous travaux."
+      "q": "Types de véhicules",
+      "a": "Voitures, motos, utilitaires légers. Plateau pour gros véhicules."
     },
     {
-      "q": "Garantie des travaux ?",
-      "a": "Garantie 2 ans sur les serrures, 1 an sur les interventions."
+      "q": "Zone d'intervention",
+      "a": "{{CITY}} et agglomération, voir liste des communes."
     }
   ],
   "IS_24_7": true,
   "ENABLE_REVIEWS": true,
   "ENABLE_GALLERY": true,
   "ENABLE_PRICING": true,
-  "PRICING": [],
+  "PRICING": [
+    {
+      "label": "Dépannage sur place",
+      "price": "dès 99€",
+      "note": "Selon type de panne"
+    },
+    {
+      "label": "Remorquage urbain",
+      "price": "dès 139€",
+      "note": "Selon distance"
+    }
+  ],
   "BUSINESS_NAME": "Mon Entreprise",
   "CITY": "Toulouse",
   "PHONE_TEL": "+33612345678",
@@ -57,14 +70,18 @@
   "ABOUT_SNIPPET": "Service professionnel à Toulouse. Intervention rapide et tarifs transparents.",
   "CTA_PRIMARY_TEXT": "Appeler maintenant",
   "CTA_SECONDARY_TEXT": "Devis gratuit",
-  "URGENCY_TEXT": "🚨 Intervention rapide 24/7",
+  "URGENCY_TEXT": "🚨 Service rapide et professionnel",
   "TRUST_BADGES": [
     "Professionnel agréé",
     "Devis gratuit",
     "Paiement CB"
   ],
   "REVIEWS": [],
-  "GALLERY": [],
+  "GALLERY": [
+    "/assets/images/gallery/Remorquage Automobile copy 2.jpg",
+    "/assets/images/gallery/Remorquage Automobile copy.jpg",
+    "/assets/images/gallery/Remorquage Automobile.jpg"
+  ],
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
   "ENABLE_EMERGENCY_BANNER": true,
@@ -73,5 +90,83 @@
   "ENABLE_TRUST_SECTION": true,
   "ENABLE_CERTIFICATIONS": true,
   "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse%2C%20France"
+  "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse",
+  "SECTION_DESCRIPTIONS": {
+    "services": "Découvrez nos services de dépannage disponibles rapidement dans toute la région toulouse.",
+    "zones": "Nous intervenons rapidement dans toutes ces zones avec un délai moyen de 30-45 minutes.",
+    "reviews": "Découvrez les témoignages de nos clients satisfaits de nos interventions rapides et professionnelles.",
+    "faq": "Retrouvez les réponses aux questions les plus fréquemment posées par nos clients.",
+    "contact": "Contactez-nous dès maintenant pour une intervention rapide ou pour obtenir un devis gratuit.",
+    "pricing": "Nos tarifs transparents et compétitifs pour tous vos besoins.",
+    "gallery": "Découvrez quelques photos de nos interventions et de notre matériel professionnel.",
+    "about_extended": "En savoir plus sur notre entreprise, notre expérience et nos valeurs.",
+    "certifications": "Nos agréments et certifications qui garantissent la qualité de nos services.",
+    "trust": "Les garanties que nous vous offrons pour votre tranquillité d'esprit."
+  },
+  "ABOUT_EXTENDED": {
+    "title": "Pourquoi nous choisir ?",
+    "content": "Avec plus de 10 ans d'expérience dans le domaine du dépannage, notre équipe intervient rapidement sur toute la région toulouse. Nous disposons d'un matériel professionnel de dernière génération et nos techniciens sont formés aux dernières technologies.",
+    "highlights": [
+      "Plus de 10 ans d'expérience",
+      "Matériel professionnel certifié",
+      "Techniciens formés et qualifiés",
+      "Intervention en 30-45 minutes"
+    ]
+  },
+  "TRUST_SECTION": {
+    "title": "Nos Garanties",
+    "items": [
+      {
+        "icon": "⚡",
+        "title": "Intervention Rapide",
+        "desc": "Arrivée sur site en 30-45 minutes"
+      },
+      {
+        "icon": "💰",
+        "title": "Prix Transparent",
+        "desc": "Devis gratuit et détaillé avant intervention"
+      },
+      {
+        "icon": "🔧",
+        "title": "Matériel Pro",
+        "desc": "Équipement professionnel de dernière génération"
+      },
+      {
+        "icon": "📞",
+        "title": "Service 24/7",
+        "desc": "Disponible 24h/24 et 7j/7"
+      }
+    ]
+  },
+  "CERTIFICATIONS": [
+    {
+      "name": "Professionnel Agréé",
+      "icon": "🔧",
+      "desc": "Dépanneur professionnel agréé"
+    },
+    {
+      "name": "Assurance Responsabilité",
+      "icon": "🛡️",
+      "desc": "Couverture complète des interventions"
+    },
+    {
+      "name": "Formation Continue",
+      "icon": "🎓",
+      "desc": "Techniciens formés régulièrement"
+    }
+  ],
+  "TEXT_MODE": "detail",
+  "BANNER_ENABLED": true,
+  "SHOW_GUARANTEES": true,
+  "ENABLE_CERTS": true,
+  "_CAPS": {
+    "photos": 16,
+    "reviews": 6,
+    "prices": 10
+  },
+  "GUARANTEES": [
+    "Tarifs communiqués avant intervention",
+    "Matériel adapté",
+    "Assistance sécurisée"
+  ]
 }

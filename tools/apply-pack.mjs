@@ -38,3 +38,35 @@ export function applyPack(site) {
   site._CAPS = caps;
   return site;
 }
+
+// Fonction pour backfill avec placeholders intelligents
+export function backfillWithPlaceholders(site, placeholders) {
+  // Avis clients avec placeholders par métier
+  if (site.ENABLE_REVIEWS) {
+    if (!Array.isArray(site.REVIEWS) || site.REVIEWS.length === 0) {
+      site.REVIEWS = (placeholders.REVIEWS || []).slice(0, site._CAPS?.reviews || 3);
+    } else {
+      site.REVIEWS = site.REVIEWS.slice(0, site._CAPS?.reviews || 3);
+    }
+  }
+
+  // Galerie avec placeholders par métier
+  if (site.ENABLE_GALLERY) {
+    if (!Array.isArray(site.GALLERY) || site.GALLERY.length === 0) {
+      site.GALLERY = (placeholders.GALLERY || []).slice(0, site._CAPS?.photos || 8);
+    } else {
+      site.GALLERY = site.GALLERY.slice(0, site._CAPS?.photos || 8);
+    }
+  }
+
+  // Pricing avec placeholders par métier
+  if (site.ENABLE_PRICING) {
+    if (!Array.isArray(site.PRICING) || site.PRICING.length === 0) {
+      site.PRICING = (placeholders.PRICING || []).slice(0, site._CAPS?.prices || 6);
+    } else {
+      site.PRICING = site.PRICING.slice(0, site._CAPS?.prices || 6);
+    }
+  }
+
+  return site;
+}

@@ -24,5 +24,30 @@
     "Interventions conformes",
     "Conseils sécurité"
   ],
-  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"],
+  "REVIEWS": [
+    {
+      "name": "Marc D.",
+      "rating": 5,
+      "text": "Panne électrique résolue rapidement. Électricien compétent et à l'écoute.",
+      "date": "Il y a 5 jours"
+    },
+    {
+      "name": "Anne P.",
+      "rating": 5,
+      "text": "Mise aux normes de mon tableau. Travail propre et explications claires.",
+      "date": "Il y a 2 semaines"
+    },
+    {
+      "name": "David L.",
+      "rating": 5,
+      "text": "Intervention d'urgence un samedi. Professionnel et tarifs corrects.",
+      "date": "Il y a 1 mois"
+    }
+  ],
+  "GALLERY": [
+    "/assets/placeholders/electricien-1.jpg",
+    "/assets/placeholders/electricien-2.jpg",
+    "/assets/placeholders/electricien-3.jpg"
+  ]
 }

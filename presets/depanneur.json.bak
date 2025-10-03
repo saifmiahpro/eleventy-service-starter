@@ -24,30 +24,5 @@
     "Matériel adapté",
     "Assistance sécurisée"
   ],
-  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"],
-  "REVIEWS": [
-    {
-      "name": "Jean D.",
-      "rating": 5,
-      "text": "Intervention rapide en pleine nuit pour ma batterie. Service pro et efficace.",
-      "date": "Il y a 2 semaines"
-    },
-    {
-      "name": "Marie L.",
-      "rating": 5,
-      "text": "Remorquage impeccable suite à une panne sur l'autoroute. Délai annoncé respecté.",
-      "date": "Il y a 1 mois"
-    },
-    {
-      "name": "Thomas B.",
-      "rating": 5,
-      "text": "Dépanneur très professionnel. Prix annoncé = prix payé. Je recommande !",
-      "date": "Il y a 2 mois"
-    }
-  ],
-  "GALLERY": [
-    "/assets/placeholders/depanneur-1.jpg",
-    "/assets/placeholders/depanneur-2.jpg",
-    "/assets/placeholders/depanneur-3.jpg"
-  ]
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
 }

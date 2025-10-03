@@ -24,5 +24,30 @@
     "Matériel certifié",
     "Déplacement rapide"
   ],
-  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"],
+  "REVIEWS": [
+    {
+      "name": "Sophie M.",
+      "rating": 5,
+      "text": "Porte claquée un dimanche soir, intervention en 30 min. Ouverture sans dégât !",
+      "date": "Il y a 1 semaine"
+    },
+    {
+      "name": "Pierre R.",
+      "rating": 5,
+      "text": "Remplacement de cylindre après cambriolage. Travail soigné et conseils sécurité.",
+      "date": "Il y a 3 semaines"
+    },
+    {
+      "name": "Lucie T.",
+      "rating": 5,
+      "text": "Serrurier honnête, prix annoncé respecté. Très professionnel.",
+      "date": "Il y a 1 mois"
+    }
+  ],
+  "GALLERY": [
+    "/assets/placeholders/serrurier-1.jpg",
+    "/assets/placeholders/serrurier-2.jpg",
+    "/assets/placeholders/serrurier-3.jpg"
+  ]
 }

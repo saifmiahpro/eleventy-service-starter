@@ -2,9 +2,6 @@ export default function (eleventyConfig) {
   // Copy assets folder to output
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   
-  // Copy offers previews to output
-  eleventyConfig.addPassthroughCopy({ "offers/previews": "previews" });
-  
   // Watch for changes in assets
   eleventyConfig.addWatchTarget("./assets/");
   

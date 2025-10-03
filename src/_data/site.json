@@ -1,65 +1,62 @@
 {
-  "PACK": "standard",
-  "MODULES": [
-    "galerie",
-    "avis"
-  ],
-  "NICHE": "depanneur",
-  "ACCENT": "#e74c3c",
-  "HERO_TEXT": "Dépannage Auto 24/7 à Toulouse — Intervention Rapide",
+  "PACK": "premium",
+  "MODULES": [],
+  "NICHE": "serrurier",
+  "ACCENT": "#f39c12",
+  "HERO_TEXT": "Votre serrurier 24/7 à Toulouse",
   "SERVICES": [
     {
-      "title": "Batterie à plat",
-      "desc": "Booster ou remplacement sur place selon modèle. Intervention rapide."
+      "title": "Ouverture de porte",
+      "desc": "Ouverture sans casse dans 90% des cas. Intervention rapide."
     },
     {
-      "title": "Remorquage",
-      "desc": "Vers garage ou domicile, véhicule sécurisé. Plateau disponible."
+      "title": "Changement de serrure",
+      "desc": "Serrures haute sécurité, certifiées A2P. Pose professionnelle."
     },
     {
-      "title": "Crevaison",
-      "desc": "Roue de secours posée, réparation si possible sur place."
+      "title": "Blindage de porte",
+      "desc": "Renforcement sécurité, pivot anti-arrachement, cornières."
     },
     {
-      "title": "Panne moteur",
-      "desc": "Diagnostic rapide et remorquage vers garage agréé."
+      "title": "Dépannage urgent",
+      "desc": "Clés cassées, serrures bloquées. Disponible 24h/24."
     }
   ],
   "FAQ": [
     {
-      "q": "Délais d'intervention ?",
-      "a": "En général 30–45 minutes selon votre secteur, 24h/24 et 7j/7."
+      "q": "Ouverture sans casse ?",
+      "a": "Oui, dans 90% des cas grâce à nos outils professionnels."
     },
     {
-      "q": "Moyens de paiement",
-      "a": "Carte bancaire, espèces, chèque acceptés. Facture fournie."
+      "q": "Tarifs de nuit/week-end ?",
+      "a": "Majoration de 30% entre 20h et 8h, et les dimanches/fériés."
     },
     {
-      "q": "Types de véhicules",
-      "a": "Voitures, motos, utilitaires légers. Plateau pour gros véhicules."
+      "q": "Devis gratuit ?",
+      "a": "Oui, devis gratuit et sans engagement pour tous travaux."
     },
     {
-      "q": "Zone d'intervention",
-      "a": "{{CITY}} et agglomération, voir liste des communes."
+      "q": "Garantie des travaux ?",
+      "a": "Garantie 2 ans sur les serrures, 1 an sur les interventions."
     }
   ],
   "IS_24_7": true,
-  "ENABLE_REVIEWS": true,
-  "ENABLE_GALLERY": true,
+  "ENABLE_REVIEWS": false,
+  "ENABLE_GALLERY": false,
   "ENABLE_PRICING": false,
   "PRICING": [],
-  "BUSINESS_NAME": "Dépannage Express",
+  "BUSINESS_NAME": "Serrurerie Rapide Toulouse",
   "CITY": "Toulouse",
-  "PHONE_TEL": "+33612345678",
-  "PHONE_PRETTY": "06 12 34 56 78",
-  "EMAIL": "contact@depannage-express.fr",
+  "PHONE_TEL": "+33675432109",
+  "PHONE_PRETTY": "06 75 43 21 09",
+  "EMAIL": "contact@serrurerie-toulouse.fr",
   "ADDRESS": "Toulouse, France",
   "AREAS": [
     "Toulouse"
   ],
-  "RESPONSE_TIME": "30-45 minutes",
-  "HERO_SUBTITLE": "Intervention en 30-45 minutes",
-  "ABOUT_SNIPPET": "Service professionnel à Toulouse. Intervention rapide et tarifs transparents.",
+  "RESPONSE_TIME": "20-30 minutes",
+  "HERO_SUBTITLE": "Intervention en 20-30 minutes",
+  "ABOUT_SNIPPET": "Ouverture de porte, remplacement de serrure et sécurisation rapide. Service professionnel et transparent.",
   "CTA_PRIMARY_TEXT": "Appeler maintenant",
   "CTA_SECONDARY_TEXT": "Devis gratuit",
   "URGENCY_TEXT": "🚨 Service rapide et professionnel",
@@ -68,26 +65,7 @@
     "Devis gratuit",
     "Paiement CB"
   ],
-  "REVIEWS": [
-    {
-      "name": "Jean D.",
-      "rating": 5,
-      "text": "Intervention rapide en pleine nuit pour ma batterie. Service pro et efficace.",
-      "date": "Il y a 2 semaines"
-    },
-    {
-      "name": "Marie L.",
-      "rating": 5,
-      "text": "Remorquage impeccable suite à une panne sur l'autoroute. Délai annoncé respecté.",
-      "date": "Il y a 1 mois"
-    },
-    {
-      "name": "Thomas B.",
-      "rating": 5,
-      "text": "Dépanneur très professionnel. Prix annoncé = prix payé. Je recommande !",
-      "date": "Il y a 2 mois"
-    }
-  ],
+  "REVIEWS": [],
   "GALLERY": [],
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
@@ -97,14 +75,31 @@
   "ENABLE_TRUST_SECTION": false,
   "ENABLE_CERTIFICATIONS": false,
   "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=D%C3%A9pannage%20Express Toulouse",
-  "TEXT_MODE": "simple",
-  "BANNER_ENABLED": false,
-  "SHOW_GUARANTEES": false,
-  "ENABLE_CERTS": false,
+  "MAPS_URL": "https://maps.google.com/?q=Serrurerie%20Rapide%20Toulouse Toulouse",
+  "TEXT_MODE": "detail",
+  "BANNER_ENABLED": true,
+  "SHOW_GUARANTEES": true,
+  "ENABLE_CERTS": true,
   "_CAPS": {
-    "photos": 8,
-    "reviews": 3,
-    "prices": 6
-  }
+    "photos": 16,
+    "reviews": 6,
+    "prices": 10
+  },
+  "ABOUT_EXTENDED": {
+    "title": "À propos",
+    "content": "Nous intervenons sur portes claquées, clés perdues, cylindres bloqués et sécurisation après effraction. Matériel certifié, transparence des tarifs et conseils pour renforcer votre sécurité.",
+    "highlights": []
+  },
+  "GUARANTEES": [
+    "Devis annoncé avant intervention",
+    "Matériel certifié",
+    "Déplacement rapide"
+  ],
+  "CERTIFICATIONS": [
+    {
+      "icon": "✓",
+      "name": "Certifié",
+      "desc": "Professionnel"
+    }
+  ]
 }

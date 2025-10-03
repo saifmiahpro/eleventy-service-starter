@@ -12,7 +12,10 @@
     "generate:offers": "node tools/generate-offers.mjs",
     "tally:pull": "node tools/tally-pull.mjs",
     "reset": "node tools/reset.js",
-    "choices": "node tools/get-choices.mjs"
+    "choices": "node tools/get-choices.mjs",
+    "auto": "node tools/tally-auto.mjs",
+    "help": "node tools/help.mjs",
+    "tally:list": "node tools/list-submissions.mjs"
   },
   "keywords": [
     "eleventy",

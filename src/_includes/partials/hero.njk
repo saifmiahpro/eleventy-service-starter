@@ -29,9 +29,16 @@
     <p class="hero-description">{{ site.ABOUT_SNIPPET }}</p>
     
     <div class="cta-row">
-      <a class="cta-primary pulse" href="tel:{{ site.PHONE_TEL }}">
-        📞 {{ site.CTA_PRIMARY_TEXT }} <span class="cta-phone">{{ site.PHONE_PRETTY }}</span>
+      {% set tel = site.PHONE_TEL or site.CTA_PRIMARY_TEL %}
+      {% if tel %}
+      <a class="cta-primary pulse" href="tel:{{ tel }}">
+        <span class="cta-icon">📞</span>
+        <span class="cta-text">
+          <span class="cta-label">{{ site.CTA_PRIMARY_TEXT }}</span>
+          <span class="cta-phone">{{ site.PHONE_PRETTY or tel }}</span>
+        </span>
       </a>
+      {% endif %}
       <a class="cta-secondary" href="mailto:{{ site.EMAIL }}">
         ✉️ {{ site.CTA_SECONDARY_TEXT }}
       </a>

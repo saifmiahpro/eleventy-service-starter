@@ -32,36 +32,23 @@ permalink: /offres/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-  }
-  
-  .navbar-logo {
-    display: flex;
-    align-items: center;
     gap: 1rem;
   }
   
-  .navbar-logo img {
-    height: 40px;
-    width: auto;
-    background: white;
-    padding: 0.5rem;
-    border-radius: 4px;
+  .navbar-brand {
+    color: #E8B4B8;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
   }
   
   .navbar-tagline {
-    display: none;
-    color: #E8B4B8;
-    font-size: 0.875rem;
+    color: #999;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-  }
-  
-  @media (min-width: 640px) {
-    .navbar-tagline {
-      display: block;
-    }
+    text-align: right;
   }
   
   .hero-offers {
@@ -294,14 +281,15 @@ permalink: /offres/
   
   @media (min-width: 768px) {
     .offers-page { padding: 3rem 2rem; }
-    .navbar-logo img { height: 45px; }
+    .navbar-brand { font-size: 1.75rem; }
+    .navbar-tagline { font-size: 0.8rem; }
     .hero-offers h1 { font-size: 2.75rem; }
   }
   
   @media (min-width: 1024px) {
     .offers-page { padding: 4rem 2rem; }
-    .navbar-logo img { height: 50px; }
-    .navbar-tagline { font-size: 1rem; }
+    .navbar-brand { font-size: 2rem; }
+    .navbar-tagline { font-size: 0.9rem; }
     .hero-offers h1 { font-size: 3.5rem; }
     .offers-container { grid-template-columns: repeat(3, 1fr); }
   }
@@ -309,9 +297,7 @@ permalink: /offres/
 
 <nav class="navbar">
   <div class="navbar-content">
-    <div class="navbar-logo">
-      <img src="/assets/images/tekna-studio-logo.png" alt="tekNa Studio">
-    </div>
+    <div class="navbar-brand">.tekNa</div>
     <div class="navbar-tagline">Sites vitrines qui convertissent</div>
   </div>
 </nav>

@@ -216,6 +216,21 @@ async function generatePreviewBuilds(results) {
         });
       }
       
+      // Inject back button in preview
+      const indexPath = join(previewOfferDir, 'index.html');
+      if (existsSync(indexPath)) {
+        let html = readFileSync(indexPath, 'utf8');
+        const backButton = `
+<style>
+.preview-back-btn{position:fixed;top:1rem;right:1rem;background:rgba(0,0,0,0.9);color:white;padding:0.75rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.875rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all 0.2s ease;backdrop-filter:blur(10px)}
+.preview-back-btn:hover{background:#E8B4B8;color:#000;transform:translateY(-2px);box-shadow:0 6px 25px rgba(232,180,184,0.4)}
+</style>
+<a href="/offres/" class="preview-back-btn">← Retour aux offres</a>
+</body>`;
+        html = html.replace('</body>', backButton);
+        writeFileSync(indexPath, html);
+      }
+      
       console.log(`   ✅ Preview disponible: offers/previews/${result.key}/index.html`);
       
     } catch (error) {

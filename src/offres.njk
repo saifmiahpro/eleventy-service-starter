@@ -317,13 +317,15 @@ permalink: /offres/
         {% endfor %}
       </ul>
       
-      <a href="/choix/?pack={{ offer.id }}<a href="/previews/{{ offer.id }}/" class="offer-cta" target="_blank">client={{ site.BUSINESS_NAME or "Client" }}" class="offer-cta">
-        Voir le site
-      </a>
-      <a href="/choix/?pack={{ offer.id }}</a>client={{ site.BUSINESS_NAME or "Client" }}" class="offer-cta offer-cta-choice" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); margin-top: 0.5rem; border: 1px solid #F99395;">
-        Choisir cette offre
-      </a>
-    </div>
+      
+      <div class="cta-buttons">
+        <a href="/offers/previews/{{ offer.id }}/" class="offer-cta offer-cta-preview" target="_blank">
+          👁️ Voir le site
+        </a>
+        <a href="/choix/?pack={{ offer.id }}&client={{ site.BUSINESS_NAME or "Client" }}" class="offer-cta offer-cta-choice" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); margin-top: 0.5rem; border: 1px solid #F99395;">
+          ✓ Choisir cette offre
+        </a>
+      </div>    </div>
     {% endfor %}
   </div>
 </div>

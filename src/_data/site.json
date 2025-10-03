@@ -1,6 +1,9 @@
 {
-  "PACK": "premium",
-  "MODULES": [],
+  "PACK": "standard",
+  "MODULES": [
+    "galerie",
+    "avis"
+  ],
   "NICHE": "depanneur",
   "ACCENT": "#e74c3c",
   "HERO_TEXT": "Dépannage Auto 24/7 à Toulouse — Intervention Rapide",
@@ -43,19 +46,8 @@
   "IS_24_7": true,
   "ENABLE_REVIEWS": true,
   "ENABLE_GALLERY": true,
-  "ENABLE_PRICING": true,
-  "PRICING": [
-    {
-      "label": "Dépannage sur place",
-      "price": "dès 99€",
-      "note": "Selon type de panne"
-    },
-    {
-      "label": "Remorquage urbain",
-      "price": "dès 139€",
-      "note": "Selon distance"
-    }
-  ],
+  "ENABLE_PRICING": false,
+  "PRICING": [],
   "BUSINESS_NAME": "Dépannage Express",
   "CITY": "Toulouse",
   "PHONE_TEL": "+33612345678",
@@ -76,7 +68,26 @@
     "Devis gratuit",
     "Paiement CB"
   ],
-  "REVIEWS": [],
+  "REVIEWS": [
+    {
+      "name": "Jean D.",
+      "rating": 5,
+      "text": "Intervention rapide en pleine nuit pour ma batterie. Service pro et efficace.",
+      "date": "Il y a 2 semaines"
+    },
+    {
+      "name": "Marie L.",
+      "rating": 5,
+      "text": "Remorquage impeccable suite à une panne sur l'autoroute. Délai annoncé respecté.",
+      "date": "Il y a 1 mois"
+    },
+    {
+      "name": "Thomas B.",
+      "rating": 5,
+      "text": "Dépanneur très professionnel. Prix annoncé = prix payé. Je recommande !",
+      "date": "Il y a 2 mois"
+    }
+  ],
   "GALLERY": [],
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
@@ -87,30 +98,13 @@
   "ENABLE_CERTIFICATIONS": false,
   "CURRENCY": "€",
   "MAPS_URL": "https://maps.google.com/?q=D%C3%A9pannage%20Express Toulouse",
-  "TEXT_MODE": "detail",
-  "BANNER_ENABLED": true,
-  "SHOW_GUARANTEES": true,
-  "ENABLE_CERTS": true,
+  "TEXT_MODE": "simple",
+  "BANNER_ENABLED": false,
+  "SHOW_GUARANTEES": false,
+  "ENABLE_CERTS": false,
   "_CAPS": {
-    "photos": 16,
-    "reviews": 6,
-    "prices": 10
-  },
-  "ABOUT_EXTENDED": {
-    "title": "À propos",
-    "content": "Pannes de batterie, crevaisons, erreurs de carburant et remorquage vers le garage de votre choix. Interventions sécurisées, prix annoncés avant départ et suivi jusqu'à la prise en charge.",
-    "highlights": []
-  },
-  "GUARANTEES": [
-    "Tarifs communiqués avant intervention",
-    "Matériel adapté",
-    "Assistance sécurisée"
-  ],
-  "CERTIFICATIONS": [
-    {
-      "icon": "✓",
-      "name": "Certifié",
-      "desc": "Professionnel"
-    }
-  ]
+    "photos": 8,
+    "reviews": 3,
+    "prices": 6
+  }
 }

@@ -345,7 +345,11 @@ function backfill(site) {
 
   // Avis si activés
   if (site.ENABLE_REVIEWS) {
-    site.REVIEWS = (site.REVIEWS || []).slice(0, site._CAPS?.reviews || 99);
+    if (!Array.isArray(site.REVIEWS) || site.REVIEWS.length === 0) {
+      site.REVIEWS = (ph.REVIEWS || []).slice(0, site._CAPS?.reviews || 99);
+    } else {
+      site.REVIEWS = site.REVIEWS.slice(0, site._CAPS?.reviews || 99);
+    }
   } else {
     site.REVIEWS = site.REVIEWS || [];
   }

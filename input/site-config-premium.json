@@ -1,0 +1,12 @@
+{
+  "PACK": "premium",
+  "NICHE": "depanneur",
+  "business_name": "Dépannage Express",
+  "business_type": "depanneur",
+  "city": "Toulouse", 
+  "phone": "0612345678",
+  "email": "contact@depannage-express.fr",
+  "availability": "24/7",
+  "response_time": "30-45 minutes",
+  "accent_color": "#e74c3c"
+}

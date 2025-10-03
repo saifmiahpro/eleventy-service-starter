@@ -2,7 +2,7 @@
   "PACK": "premium",
   "MODULES": [],
   "NICHE": "depanneur",
-  "ACCENT": "#f39c12",
+  "ACCENT": "#e74c3c",
   "HERO_TEXT": "Dépannage Auto 24/7 à Toulouse — Intervention Rapide",
   "SERVICES": [
     {
@@ -56,11 +56,11 @@
       "note": "Selon distance"
     }
   ],
-  "BUSINESS_NAME": "Mon Entreprise",
+  "BUSINESS_NAME": "Dépannage Express",
   "CITY": "Toulouse",
   "PHONE_TEL": "+33612345678",
   "PHONE_PRETTY": "06 12 34 56 78",
-  "EMAIL": "contact@exemple.fr",
+  "EMAIL": "contact@depannage-express.fr",
   "ADDRESS": "Toulouse, France",
   "AREAS": [
     "Toulouse"
@@ -77,84 +77,16 @@
     "Paiement CB"
   ],
   "REVIEWS": [],
-  "GALLERY": [
-    "/assets/images/gallery/Remorquage Automobile copy 2.jpg",
-    "/assets/images/gallery/Remorquage Automobile copy.jpg",
-    "/assets/images/gallery/Remorquage Automobile.jpg"
-  ],
+  "GALLERY": [],
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
-  "ENABLE_EMERGENCY_BANNER": true,
-  "ENABLE_SECTION_DESCRIPTIONS": true,
-  "ENABLE_ABOUT_EXTENDED": true,
-  "ENABLE_TRUST_SECTION": true,
-  "ENABLE_CERTIFICATIONS": true,
+  "ENABLE_EMERGENCY_BANNER": false,
+  "ENABLE_SECTION_DESCRIPTIONS": false,
+  "ENABLE_ABOUT_EXTENDED": false,
+  "ENABLE_TRUST_SECTION": false,
+  "ENABLE_CERTIFICATIONS": false,
   "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse",
-  "SECTION_DESCRIPTIONS": {
-    "services": "Découvrez nos services de dépannage disponibles rapidement dans toute la région toulouse.",
-    "zones": "Nous intervenons rapidement dans toutes ces zones avec un délai moyen de 30-45 minutes.",
-    "reviews": "Découvrez les témoignages de nos clients satisfaits de nos interventions rapides et professionnelles.",
-    "faq": "Retrouvez les réponses aux questions les plus fréquemment posées par nos clients.",
-    "contact": "Contactez-nous dès maintenant pour une intervention rapide ou pour obtenir un devis gratuit.",
-    "pricing": "Nos tarifs transparents et compétitifs pour tous vos besoins.",
-    "gallery": "Découvrez quelques photos de nos interventions et de notre matériel professionnel.",
-    "about_extended": "En savoir plus sur notre entreprise, notre expérience et nos valeurs.",
-    "certifications": "Nos agréments et certifications qui garantissent la qualité de nos services.",
-    "trust": "Les garanties que nous vous offrons pour votre tranquillité d'esprit."
-  },
-  "ABOUT_EXTENDED": {
-    "title": "Pourquoi nous choisir ?",
-    "content": "Avec plus de 10 ans d'expérience dans le domaine du dépannage, notre équipe intervient rapidement sur toute la région toulouse. Nous disposons d'un matériel professionnel de dernière génération et nos techniciens sont formés aux dernières technologies.",
-    "highlights": [
-      "Plus de 10 ans d'expérience",
-      "Matériel professionnel certifié",
-      "Techniciens formés et qualifiés",
-      "Intervention en 30-45 minutes"
-    ]
-  },
-  "TRUST_SECTION": {
-    "title": "Nos Garanties",
-    "items": [
-      {
-        "icon": "⚡",
-        "title": "Intervention Rapide",
-        "desc": "Arrivée sur site en 30-45 minutes"
-      },
-      {
-        "icon": "💰",
-        "title": "Prix Transparent",
-        "desc": "Devis gratuit et détaillé avant intervention"
-      },
-      {
-        "icon": "🔧",
-        "title": "Matériel Pro",
-        "desc": "Équipement professionnel de dernière génération"
-      },
-      {
-        "icon": "📞",
-        "title": "Service 24/7",
-        "desc": "Disponible 24h/24 et 7j/7"
-      }
-    ]
-  },
-  "CERTIFICATIONS": [
-    {
-      "name": "Professionnel Agréé",
-      "icon": "🔧",
-      "desc": "Dépanneur professionnel agréé"
-    },
-    {
-      "name": "Assurance Responsabilité",
-      "icon": "🛡️",
-      "desc": "Couverture complète des interventions"
-    },
-    {
-      "name": "Formation Continue",
-      "icon": "🎓",
-      "desc": "Techniciens formés régulièrement"
-    }
-  ],
+  "MAPS_URL": "https://maps.google.com/?q=D%C3%A9pannage%20Express Toulouse",
   "TEXT_MODE": "detail",
   "BANNER_ENABLED": true,
   "SHOW_GUARANTEES": true,
@@ -164,9 +96,21 @@
     "reviews": 6,
     "prices": 10
   },
+  "ABOUT_EXTENDED": {
+    "title": "À propos",
+    "content": "Pannes de batterie, crevaisons, erreurs de carburant et remorquage vers le garage de votre choix. Interventions sécurisées, prix annoncés avant départ et suivi jusqu'à la prise en charge.",
+    "highlights": []
+  },
   "GUARANTEES": [
     "Tarifs communiqués avant intervention",
     "Matériel adapté",
     "Assistance sécurisée"
+  ],
+  "CERTIFICATIONS": [
+    {
+      "icon": "✓",
+      "name": "Certifié",
+      "desc": "Professionnel"
+    }
   ]
 }

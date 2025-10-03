@@ -23,6 +23,10 @@ permalink: /offres/
   .logo-section img {
     max-width: 100px;
     height: auto;
+    background: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
   
   .hero-offers {
@@ -256,13 +260,19 @@ permalink: /offres/
   @media (min-width: 768px) {
     .offers-page { padding: 3rem 2rem; }
     .logo-section { margin-bottom: 1rem; }
-    .logo-section img { max-width: 120px; }
+    .logo-section img { 
+      max-width: 120px;
+      padding: 1rem;
+    }
     .hero-offers h1 { font-size: 2.75rem; }
   }
   
   @media (min-width: 1024px) {
     .offers-page { padding: 4rem 2rem; }
-    .logo-section img { max-width: 140px; }
+    .logo-section img { 
+      max-width: 140px;
+      padding: 1.25rem;
+    }
     .hero-offers h1 { font-size: 3.5rem; }
     .offers-container { grid-template-columns: repeat(3, 1fr); }
   }

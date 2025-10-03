@@ -6,7 +6,7 @@ permalink: /offres/
 
 <style>
   body {
-    background: #FFFFFF;
+    background: #0a0a0a;
   }
   
   .offers-page {
@@ -32,16 +32,18 @@ permalink: /offres/
   
   .hero-offers h1 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 0.75rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: #000;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
   }
   
   .hero-offers .subtitle {
     font-size: 1rem;
-    color: #666;
+    color: #999;
+    font-weight: 500;
   }
   
   .offers-container {
@@ -51,67 +53,73 @@ permalink: /offres/
   }
   
   .offer-box {
-    background: white;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
+    background: #1a1a1a;
+    border: 2px solid #2a2a2a;
+    border-radius: 4px;
     padding: 2.5rem 2rem;
     transition: all 0.2s ease;
   }
   
   .offer-box:hover {
     border-color: #E8B4B8;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 24px rgba(232,180,184,0.15);
     transform: translateY(-2px);
   }
   
   .offer-box.featured {
     border: 2px solid #E8B4B8;
-    background: linear-gradient(135deg, #FFFBFC 0%, #FFF5F7 100%);
+    background: #1a1a1a;
     box-shadow: 
-      0 20px 60px rgba(232,180,184,0.2),
-      0 0 0 1px rgba(232,180,184,0.1);
+      0 20px 60px rgba(232,180,184,0.25),
+      0 0 0 1px #E8B4B8,
+      inset 0 0 30px rgba(232,180,184,0.05);
     transform: scale(1.02);
   }
   
   .offer-box.featured:hover {
     transform: scale(1.02) translateY(-2px);
     box-shadow: 
-      0 30px 80px rgba(232,180,184,0.3),
-      0 0 0 1px rgba(232,180,184,0.15);
+      0 30px 80px rgba(232,180,184,0.35),
+      0 0 0 1px #E8B4B8,
+      inset 0 0 40px rgba(232,180,184,0.08);
   }
   
   .offer-badge {
-    background: #E8B4B8;
-    color: #000;
+    background: #2a2a2a;
+    color: #E8B4B8;
     padding: 0.35rem 0.85rem;
-    border-radius: 16px;
-    font-size: 0.7rem;
-    font-weight: 600;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     display: inline-block;
     margin-bottom: 1.5rem;
+    border: 1px solid #E8B4B8;
   }
   
   .offer-box.featured .offer-badge {
     background: #E8B4B8;
-    color: white;
-    font-weight: 700;
+    color: #000;
+    font-weight: 800;
+    border: none;
   }
   
   .offer-title {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1rem;
-    color: #000;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
   
   .offer-price {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1;
-    color: #000;
+    color: #FFFFFF;
   }
   
   .offer-box.featured .offer-title {
@@ -137,18 +145,18 @@ permalink: /offres/
   
   .offer-price-period {
     font-size: 1.25rem;
-    color: #666;
-    font-weight: 400;
+    color: #999;
+    font-weight: 600;
   }
   
   .offer-desc {
-    color: #666;
+    color: #999;
     margin-bottom: 2rem;
     line-height: 1.6;
   }
   
   .offer-box.featured .offer-desc {
-    color: #333;
+    color: #bbb;
     font-weight: 500;
   }
   
@@ -163,9 +171,9 @@ permalink: /offres/
     align-items: flex-start;
     gap: 0.75rem;
     font-size: 0.9rem;
-    color: #1a1a1a;
+    color: #CCCCCC;
     line-height: 1.5;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   
   .offer-features li:last-child {

@@ -39,9 +39,9 @@
     }
   ],
   "IS_24_7": true,
-  "ENABLE_REVIEWS": false,
-  "ENABLE_GALLERY": false,
-  "ENABLE_PRICING": false,
+  "ENABLE_REVIEWS": true,
+  "ENABLE_GALLERY": true,
+  "ENABLE_PRICING": true,
   "PRICING": [],
   "BUSINESS_NAME": "Mon Entreprise",
   "CITY": "Toulouse",
@@ -68,10 +68,10 @@
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
   "ENABLE_EMERGENCY_BANNER": true,
-  "ENABLE_SECTION_DESCRIPTIONS": false,
-  "ENABLE_ABOUT_EXTENDED": false,
-  "ENABLE_TRUST_SECTION": false,
-  "ENABLE_CERTIFICATIONS": false,
+  "ENABLE_SECTION_DESCRIPTIONS": true,
+  "ENABLE_ABOUT_EXTENDED": true,
+  "ENABLE_TRUST_SECTION": true,
+  "ENABLE_CERTIFICATIONS": true,
   "CURRENCY": "€",
   "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse%2C%20France"
 }

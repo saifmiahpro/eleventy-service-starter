@@ -1,0 +1,68 @@
+{
+  "lite": {
+    "id": "lite",
+    "name": "Lite",
+    "price": 299,
+    "description": "L'essentiel pour démarrer votre présence en ligne.",
+    "features": [
+      { "name": "Hero Section", "included": true },
+      { "name": "Services", "included": true },
+      { "name": "Zones d'intervention", "included": true },
+      { "name": "FAQ", "included": true },
+      { "name": "Contact", "included": true },
+      { "name": "Bandeau urgence animé", "included": false },
+      { "name": "Galerie photos", "included": false },
+      { "name": "Avis clients", "included": false },
+      { "name": "Descriptions sections", "included": false },
+      { "name": "Grille tarifaire", "included": false },
+      { "name": "Section garanties", "included": false },
+      { "name": "À propos étendu", "included": false },
+      { "name": "Certifications", "included": false }
+    ],
+    "featured": false
+  },
+  "standard": {
+    "id": "standard",
+    "name": "Standard",
+    "price": 499,
+    "description": "La solution complète pour un site professionnel et attractif.",
+    "features": [
+      { "name": "Hero Section", "included": true },
+      { "name": "Services", "included": true },
+      { "name": "Zones d'intervention", "included": true },
+      { "name": "FAQ", "included": true },
+      { "name": "Contact", "included": true },
+      { "name": "Bandeau urgence animé", "included": true },
+      { "name": "Galerie photos", "included": true },
+      { "name": "Avis clients", "included": true },
+      { "name": "Descriptions sections", "included": true },
+      { "name": "Grille tarifaire", "included": false },
+      { "name": "Section garanties", "included": false },
+      { "name": "À propos étendu", "included": false },
+      { "name": "Certifications", "included": false }
+    ],
+    "featured": true
+  },
+  "premium": {
+    "id": "premium",
+    "name": "Premium",
+    "price": 799,
+    "description": "Tout ce dont vous avez besoin pour dominer votre marché.",
+    "features": [
+      { "name": "Hero Section", "included": true },
+      { "name": "Services", "included": true },
+      { "name": "Zones d'intervention", "included": true },
+      { "name": "FAQ", "included": true },
+      { "name": "Contact", "included": true },
+      { "name": "Bandeau urgence animé", "included": true },
+      { "name": "Galerie photos", "included": true },
+      { "name": "Avis clients", "included": true },
+      { "name": "Descriptions sections", "included": true },
+      { "name": "Grille tarifaire", "included": true },
+      { "name": "Section garanties", "included": true },
+      { "name": "À propos étendu", "included": true },
+      { "name": "Certifications", "included": true }
+    ],
+    "featured": false
+  }
+}

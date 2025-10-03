@@ -164,9 +164,73 @@ async function main() {
     // Create comparison HTML for client
     createComparisonHTML(results, baseConfig.BUSINESS_NAME || 'Client');
     
+    // Generate preview builds for each offer
+    console.log('\n🔨 Génération des previews...');
+    await generatePreviewBuilds(results);
+    
   } catch (error) {
     console.error('\n❌ Erreur:', error.message);
     process.exit(1);
+  }
+}
+
+async function generatePreviewBuilds(results) {
+  const previewDir = join(projectRoot, 'offers', 'previews');
+  
+  for (const result of results) {
+    console.log(`\n📦 Build preview ${result.name}...`);
+    
+    // Copy offer config to site.json
+    const offerConfigPath = join(projectRoot, 'offers', `${result.key}-site.json`);
+    const siteJsonPath = join(projectRoot, 'src', '_data', 'site.json');
+    const offerConfig = readFileSync(offerConfigPath, 'utf8');
+    writeFileSync(siteJsonPath, offerConfig);
+    
+    // Build the site
+    try {
+      execSync('npm run build', { 
+        cwd: projectRoot, 
+        stdio: 'pipe'
+      });
+      
+      // Copy built site to preview folder
+      const previewOfferDir = join(previewDir, result.key);
+      if (!existsSync(previewOfferDir)) {
+        mkdirSync(previewOfferDir, { recursive: true });
+      }
+      
+      // Copy _site to preview (including hidden files)
+      execSync(`cp -r _site/. "${previewOfferDir}/"`, {
+        cwd: projectRoot,
+        stdio: 'pipe'
+      });
+      
+      // Ensure assets are copied
+      const sitePath = join(projectRoot, '_site');
+      const assetsSource = join(sitePath, 'assets');
+      const assetsDest = join(previewOfferDir, 'assets');
+      
+      if (existsSync(assetsSource)) {
+        execSync(`cp -r "${assetsSource}" "${assetsDest}"`, {
+          stdio: 'pipe'
+        });
+      }
+      
+      console.log(`   ✅ Preview disponible: offers/previews/${result.key}/index.html`);
+      
+    } catch (error) {
+      console.log(`   ⚠️  Erreur build: ${error.message}`);
+    }
+  }
+  
+  console.log('\n✅ Tous les previews générés !');
+  console.log('\n🌐 Ouverture de la navigation interactive...');
+  
+  // Open navigation page in browser
+  try {
+    execSync('open offers/navigation.html', { cwd: projectRoot });
+  } catch (error) {
+    console.log('💡 Ouvrez manuellement: offers/navigation.html');
   }
 }
 
@@ -285,6 +349,11 @@ function createComparisonHTML(results, businessName) {
 <body>
   <div class="container">
     <h1>🎯 Choisissez votre offre - ${businessName}</h1>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <a href="navigation.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        🚀 Voir les 3 sites en preview interactif
+      </a>
+    </div>
     <div class="offers">
       ${results.map((offer, index) => `
         <div class="offer ${index === 1 ? 'recommended' : ''}">
@@ -307,7 +376,7 @@ function createComparisonHTML(results, businessName) {
             <li ${OFFERS[offer.key].features.ENABLE_ABOUT_EXTENDED ? '' : 'class="disabled"'}>À propos étendu</li>
             <li ${OFFERS[offer.key].features.ENABLE_CERTIFICATIONS ? '' : 'class="disabled"'}>Certifications</li>
           </ul>
-          <a href="#" class="cta">Choisir ${offer.name}</a>
+          <a href="previews/${offer.key}/index.html" class="cta" target="_blank">Voir le site ${offer.name}</a>
         </div>
       `).join('')}
     </div>

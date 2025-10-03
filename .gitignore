@@ -67,4 +67,6 @@ assets/clients/
 
 # Generated offers (client-specific)
 offers/*.json
+offers/previews/
 !offers/comparatif.html
+!offers/navigation.html

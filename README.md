@@ -41,11 +41,100 @@ npm run generate:offers
 ```
 
 This creates:
-- **LITE** (299€) - Essential site with basic modules
-- **STANDARD** (499€) - Professional site with gallery, reviews, emergency banner
-- **PREMIUM** (799€) - Complete site with all features enabled
+- **LITE** (250€, 48h) - Essential site with basic modules
+- **STANDARD** (399€, ~3 jours) - Professional site + 2 modules choix
+- **PREMIUM** (499€, 3-5 jours) - Complete site with all features + rédaction
 
 Opens `offers/comparatif.html` to show client all 3 options!
+
+## 📦 Pack System
+
+### Pack Tiers
+
+#### LITE - 250€ (48h)
+- 1 page template: Hero, 3 Services max, Zones, Contact
+- `TEXT_MODE: "simple"` (textes courts génériques)
+- Modules OFF (bandeau, galerie, avis, tarifs, garanties, certifs)
+- 1 révision légère
+
+#### STANDARD - 399€ (~3 jours)
+- Tout le Lite + 2 modules au choix parmi:
+  - `bandeau_urgence`
+  - `galerie` (≤8 photos)
+  - `avis` (≤3 avis)
+  - `tarifs` (≤6 prix)
+  - `descriptions` (≈250 mots/section)
+- `TEXT_MODE: "simple"` (par défaut)
+- 2 révisions
+
+#### PREMIUM - 499€ (3-5 jours)
+- Tout le Standard + tous les modules activés
+- `TEXT_MODE: "detail"` (≈400-600 mots: à-propos étendu + micro-descriptions)
+- Caps augmentées: galerie(≤16), avis(≤6), tarifs(≤10)
+- Sections garanties & certifications
+- 3 révisions
+
+### Pack Configuration
+
+Set `PACK` in `input/site-config.json`:
+
+```json
+{
+  "PACK": "standard",
+  "MODULES": ["bandeau", "galerie"],
+  "NICHE": "serrurier",
+  "CITY": "Toulouse"
+}
+```
+
+## 🎯 Niche Presets
+
+### Available Niches
+
+Three professional presets with vendeur French copy:
+
+#### Serrurier
+- Accent: `#f39c12` (orange)
+- Services: Ouverture, Remplacement cylindre, Sécurisation
+- Copy optimized for locksmith services
+
+#### Depanneur
+- Accent: `#e74c3c` (rouge)
+- Services: Dépannage sur place, Remorquage, Ouverture véhicule
+- Copy optimized for auto services
+
+#### Electricien
+- Accent: `#1e90ff` (bleu)
+- Services: Dépannage électrique, Mise aux normes, Urgences 24/7
+- Copy optimized for electrician services
+
+### Automatic Placeholders
+
+If Tally data is missing, presets auto-fill:
+- Hero title with city injection (`{{CITY}}`)
+- Services, FAQ, Pricing per niche
+- Default images per niche
+- Logo placeholder
+- Trust guarantees
+
+### Usage
+
+```bash
+# With minimal config
+echo '{"PACK":"lite","NICHE":"serrurier","CITY":"Toulouse"}' > input/site-config.json
+npm run generate
+npm run dev
+```
+
+✅ **Result:** Fully functional MVP even with minimal client input!
+
+## 🎨 Design & Branding
+
+Page `/offres/` with tekNa Studio dark theme:
+- Font Inter (from tekna.studio)
+- Dark background (#0F0F0F) with rose gold accents (#F99395)
+- Mobile-first responsive design
+- 3 pricing cards with hover effects
 
 ### Method 4: Reset to Default
 

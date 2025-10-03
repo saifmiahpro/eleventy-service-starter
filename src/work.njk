@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Page de travail - Construction progressive
+---
+
+{# 
+  PAGE DE TRAVAIL - CONSTRUCTION PROGRESSIVE
+  ========================================
+  
+  On commence par le héros qui fonctionnait bien,
+  puis on ajoutera section par section ensemble.
+#}
+
+<div class="container">
+  <h1>🚧 Page de travail - Construction progressive</h1>
+  
+  <div style="background: #e3f2fd; padding: 1rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #2196f3;">
+    <strong>📋 Plan de construction :</strong><br>
+    • ✅ Héros (logo + image + texte)<br>
+    • ⏳ Services (à définir ensemble)<br>
+    • ⏳ Avis clients (à définir ensemble)<br>
+    • ⏳ Galerie (à définir ensemble)<br>
+    • ⏳ Autres sections (une par une)
+  </div>
+
+  {# 
+    INFORMATIONS DE DEBUG ACTUELLES
+    Affichage des données disponibles pour comprendre ce qu'on a
+  #}
+  <div style="background: #f5f5f5; padding: 1rem; margin: 2rem 0; border-radius: 8px;">
+    <strong>🔍 Données actuelles :</strong><br>
+    • Métier configuré: <code>{{ site.trade }}</code><br>
+    • Offre configurée: <code>{{ site.offer }}</code><br>
+    • Logo disponible: <code>{{ identity.LOGO_URL or "Non défini" }}</code><br>
+    • Image héros: <code>{{ identity.HERO_BACKGROUND_IMAGE or "Non définie" }}</code><br>
+    • Nom entreprise: <code>{{ identity.BUSINESS_NAME or "Non défini" }}</code>
+  </div>
+</div>
+
+{# 
+  HÉROS - LA SEULE SECTION AFFICHÉE POUR L'INSTANT
+  On utilise le partial existant qui fonctionnait bien
+#}
+{% include "partials/hero.njk" %}
+
+{# 
+  TOUTES LES AUTRES SECTIONS SONT MASQUÉES
+  On les ajoutera une par une ensemble
+  
+  {% include "partials/services.njk" %}     ← MASQUÉ
+  {% include "modules/module-reviews.njk" %} ← MASQUÉ  
+  {% include "modules/module-gallery.njk" %} ← MASQUÉ
+  etc.
+#}
+
+<div class="container" style="padding: 4rem 0; text-align: center;">
+  <h2>🎯 Prochaine étape</h2>
+  <p>Le héros s'affiche-t-il correctement avec le logo et l'image ?</p>
+  <p>Si oui, on peut commencer à travailler sur la première section ensemble !</p>
+  
+  <div style="margin-top: 2rem;">
+    <strong>Métier actuel :</strong> {{ site.trade }}<br>
+    <strong>Placeholders disponibles :</strong> {{ trades[site.trade].services.length }} services, 
+    {{ trades[site.trade].reviews.length }} avis, 
+    {{ trades[site.trade].gallery.length }} photos
+  </div>
+</div>

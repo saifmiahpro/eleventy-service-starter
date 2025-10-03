@@ -1,15 +1,115 @@
-<section class="section gallery">
+<section class="section gallery" id="galerie">
   <div class="container">
-    <h2>Galerie</h2>
-    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
-    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.gallery }}</p>
-    {% endif %}
+    <div class="section-header">
+      <h2>📸 Nos Interventions</h2>
+      <p class="section-subtitle">Découvrez notre travail en images</p>
+      {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+      <p class="section-description">{{ site.SECTION_DESCRIPTIONS.gallery }}</p>
+      {% endif %}
+    </div>
+    
     <div class="gallery-grid">
       {% for image in site.GALLERY %}
-      <div class="gallery-item">
-        <img src="{{ image }}" alt="Photo de nos interventions" loading="lazy">
+      <div class="gallery-item" data-image="{{ loop.index }}">
+        <div class="image-container">
+          <img src="{{ image.url or image }}" 
+               alt="{{ image.caption or 'Photo de nos interventions' }}" 
+               loading="lazy">
+          <div class="image-overlay">
+            <div class="overlay-content">
+              {% if image.title %}
+              <h4 class="image-title">{{ image.title }}</h4>
+              {% endif %}
+              {% if image.caption %}
+              <p class="image-caption">{{ image.caption }}</p>
+              {% endif %}
+              <button class="view-btn" onclick="openLightbox({{ loop.index0 }})">
+                👁️ Voir en grand
+              </button>
+            </div>
+          </div>
+        </div>
+        {% if image.category %}
+        <div class="image-category">{{ image.category }}</div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
+    
+    <div class="gallery-stats">
+      <div class="stat-item">
+        <span class="stat-number">{{ site.GALLERY.length }}+</span>
+        <span class="stat-label">Photos d'interventions</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Clients satisfaits</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Disponibilité</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-caption"></p>
+      </div>
+      <div class="lightbox-nav">
+        <button class="nav-btn prev" onclick="prevImage()">❮</button>
+        <button class="nav-btn next" onclick="nextImage()">❯</button>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+let currentImageIndex = 0;
+const galleryImages = {{ site.GALLERY | dump | safe }};
+
+function openLightbox(index) {
+  currentImageIndex = index;
+  const image = galleryImages[index];
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const title = document.getElementById('lightbox-title');
+  const caption = document.getElementById('lightbox-caption');
+  
+  img.src = image.url || image;
+  title.textContent = image.title || '';
+  caption.textContent = image.caption || '';
+  
+  lightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  openLightbox(currentImageIndex);
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  openLightbox(currentImageIndex);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('lightbox').style.display === 'flex') {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  }
+});
+</script>

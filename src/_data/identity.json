@@ -1,0 +1,27 @@
+{
+  "BUSINESS_NAME": "Le roi du dépannage ",
+  "CITY": "Amiens",
+  "PHONE": "03 43 16 46 48",
+  "PHONE_TEL": "+33343164648",
+  "PHONE_PRETTY": "03 43 16 46 48",
+  "EMAIL": "jejejejfjjf@jdisks.fr",
+  "ADDRESS": "Amiens, France",
+  "LOGO_URL": "/assets/images/logo.png",
+  "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
+  "HERO_TEXT": null,
+  "HERO_SUBTITLE": null,
+  "ABOUT_SNIPPET": null,
+  "ACCENT_COLOR": "#f1c40f",
+  "CTA_PRIMARY_TEXT": "Appelez maintenant",
+  "CTA_SECONDARY_TEXT": "Demander un devis",
+  "TRUST_BADGES": [
+    "Intervention 24/7",
+    "Devis gratuit",
+    "Matériel professionnel"
+  ],
+  "IS_24_7": true,
+  "RESPONSE_TIME": "20-45 min",
+  "ENABLE_EMERGENCY_BANNER": true,
+  "URGENCY_TEXT": null,
+  "TRADE": "depanneur"
+}

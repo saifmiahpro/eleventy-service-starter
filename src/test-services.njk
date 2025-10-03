@@ -1,0 +1,94 @@
+---
+layout: base.njk
+title: Test Section Services
+---
+
+{# 
+  PAGE DE TEST POUR LA SECTION SERVICES
+  ====================================
+  
+  Cette page teste le nouveau système modulaire avec:
+  1. Fallback automatique sur trades.json si identity vide
+  2. Différentes variantes d'affichage
+  3. Système de commentaires détaillés
+#}
+
+{# Import de la nouvelle section services #}
+{% from "sections/services.njk" import Services %}
+
+{# 
+  SIMULATION DE DONNÉES IDENTITY VIDES
+  Pour tester le fallback sur trades.json
+#}
+{% set identity = {
+  "BUSINESS_NAME": "TestAuto",
+  "CITY": "Paris", 
+  "PHONE": "06 12 34 56 78"
+} %}
+
+{# 
+  RÉCUPÉRATION DES PLACEHOLDERS PAR MÉTIER
+  Utilise trades.json selon le métier configuré dans site.json
+#}
+{% set defaults = trades[site.trade] %}
+
+<div class="container">
+  <h1>🧪 Test Section Services Modulaire</h1>
+  
+  <div style="background: #f0f0f0; padding: 1rem; margin: 2rem 0; border-radius: 8px;">
+    <strong>Configuration actuelle:</strong><br>
+    • Métier: {{ site.trade }}<br>
+    • Variante services: {{ site.variants.services }}<br>
+    • Offre: {{ site.offer }}<br>
+    • Placeholders chargés: {{ defaults.services.length }} services
+  </div>
+
+  {# 
+    TEST DE LA SECTION AVEC FALLBACK
+    Comme identity.services n'existe pas, 
+    la section utilisera automatiquement defaults.services
+  #}
+  {{ Services(identity, defaults, site.variants.services) }}
+
+  {# BOUTONS POUR TESTER LES VARIANTES #}
+  <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+    <h3>🎛️ Tester les variantes</h3>
+    <p>Changez la variante et rechargez la page:</p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <button onclick="changeVariant('grid')" class="btn btn--primary">
+        📊 Grid (Grille)
+      </button>
+      <button onclick="changeVariant('carousel')" class="btn btn--primary">
+        🎠 Carousel (Défilement)
+      </button>
+      <button onclick="changeVariant('list')" class="btn btn--primary">
+        📝 List (Liste)
+      </button>
+    </div>
+    
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+      Variante actuelle: <strong>{{ site.variants.services }}</strong>
+    </p>
+  </div>
+
+  {# INFORMATIONS DE DEBUG #}
+  <details style="margin: 2rem 0; padding: 1rem; background: #fff; border-radius: 8px; border: 1px solid #ddd;">
+    <summary><strong>🔍 Informations de debug</strong></summary>
+    <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.8rem;">
+Site config: {{ site | dump }}
+
+Identity: {{ identity | dump }}
+
+Defaults ({{ site.trade }}): {{ defaults | dump }}
+    </pre>
+  </details>
+</div>
+
+<script>
+// Fonction pour changer la variante via l'API
+function changeVariant(variant) {
+  // Simulation du changement (en réalité, il faudrait appeler le script CLI)
+  alert(`Pour changer vers "${variant}", exécutez:\nnode scripts/set-variant.mjs services ${variant}`);
+}
+</script>

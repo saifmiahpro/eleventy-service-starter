@@ -443,34 +443,6 @@ function main() {
     const siteJsonPath = join(projectRoot, 'src', '_data', 'site.json');
     writeFileSync(siteJsonPath, JSON.stringify(siteConfig, null, 2));
     
-    // NOUVEAU: Mettre à jour identity.json avec les données Tally
-    const identityJsonPath = join(projectRoot, 'src', '_data', 'identity.json');
-    let identityConfig = {};
-    if (existsSync(identityJsonPath)) {
-      identityConfig = JSON.parse(readFileSync(identityJsonPath, 'utf8'));
-    }
-    
-    // Mettre à jour les données essentielles depuis Tally
-    identityConfig.BUSINESS_NAME = siteConfig.BUSINESS_NAME;
-    identityConfig.CITY = siteConfig.CITY;
-    identityConfig.PHONE = siteConfig.PHONE_PRETTY;
-    identityConfig.PHONE_TEL = siteConfig.PHONE_TEL;
-    identityConfig.PHONE_PRETTY = siteConfig.PHONE_PRETTY;
-    identityConfig.EMAIL = siteConfig.EMAIL;
-    identityConfig.ADDRESS = siteConfig.ADDRESS;
-    identityConfig.LOGO_URL = siteConfig.LOGO_URL;
-    identityConfig.HERO_BACKGROUND_IMAGE = siteConfig.HERO_BACKGROUND_IMAGE;
-    identityConfig.TRADE = siteConfig.NICHE;
-    
-    // Réinitialiser les données personnalisées pour utiliser les placeholders
-    identityConfig.HERO_TEXT = null;
-    identityConfig.HERO_SUBTITLE = null;
-    identityConfig.ABOUT_SNIPPET = null;
-    identityConfig.ACCENT_COLOR = null;
-    identityConfig.URGENCY_TEXT = null;
-    
-    writeFileSync(identityJsonPath, JSON.stringify(identityConfig, null, 2));
-    
     console.log('\n✅ Site généré avec succès !');
     console.log(`📊 Entreprise: ${siteConfig.BUSINESS_NAME}`);
     console.log(`🏙️ Ville: ${siteConfig.CITY}`);

@@ -1,62 +1,62 @@
 {
   "PACK": "lite",
   "MODULES": [],
-  "NICHE": "serrurier",
-  "ACCENT": "#f39c12",
-  "HERO_TEXT": "Service serrurier 24/7 à Toulouse",
+  "NICHE": "depanneur",
+  "ACCENT": "Jaune",
+  "HERO_TEXT": "Service depanneur 24/7 à Amiens",
   "SERVICES": [
     {
-      "title": "Ouverture de porte",
-      "desc": "Ouverture sans casse dans 90% des cas. Intervention rapide."
+      "title": "Batterie à plat",
+      "desc": "Booster ou remplacement sur place selon modèle. Intervention rapide."
     },
     {
-      "title": "Changement de serrure",
-      "desc": "Serrures haute sécurité, certifiées A2P. Pose professionnelle."
+      "title": "Remorquage",
+      "desc": "Vers garage ou domicile, véhicule sécurisé. Plateau disponible."
     },
     {
-      "title": "Blindage de porte",
-      "desc": "Renforcement sécurité, pivot anti-arrachement, cornières."
+      "title": "Crevaison",
+      "desc": "Roue de secours posée, réparation si possible sur place."
     },
     {
-      "title": "Dépannage urgent",
-      "desc": "Clés cassées, serrures bloquées. Disponible 24h/24."
+      "title": "Panne moteur",
+      "desc": "Diagnostic rapide et remorquage vers garage agréé."
     }
   ],
   "FAQ": [
     {
-      "q": "Ouverture sans casse ?",
-      "a": "Oui, dans 90% des cas grâce à nos outils professionnels."
+      "q": "Délais d'intervention ?",
+      "a": "En général 30–45 minutes selon votre secteur, 24h/24 et 7j/7."
     },
     {
-      "q": "Tarifs de nuit/week-end ?",
-      "a": "Majoration de 30% entre 20h et 8h, et les dimanches/fériés."
+      "q": "Moyens de paiement",
+      "a": "Carte bancaire, espèces, chèque acceptés. Facture fournie."
     },
     {
-      "q": "Devis gratuit ?",
-      "a": "Oui, devis gratuit et sans engagement pour tous travaux."
+      "q": "Types de véhicules",
+      "a": "Voitures, motos, utilitaires légers. Plateau pour gros véhicules."
     },
     {
-      "q": "Garantie des travaux ?",
-      "a": "Garantie 2 ans sur les serrures, 1 an sur les interventions."
+      "q": "Zone d'intervention",
+      "a": "{{CITY}} et agglomération, voir liste des communes."
     }
   ],
   "IS_24_7": true,
-  "ENABLE_REVIEWS": true,
-  "ENABLE_GALLERY": true,
-  "ENABLE_PRICING": true,
+  "ENABLE_REVIEWS": false,
+  "ENABLE_GALLERY": false,
+  "ENABLE_PRICING": false,
   "PRICING": [],
-  "BUSINESS_NAME": "Mon Entreprise",
-  "CITY": "Toulouse",
-  "PHONE_TEL": "+33612345678",
-  "PHONE_PRETTY": "06 12 34 56 78",
-  "EMAIL": "contact@exemple.fr",
-  "ADDRESS": "Toulouse, France",
+  "BUSINESS_NAME": "Le roi du dépannage ",
+  "CITY": "Amiens",
+  "PHONE_TEL": "+33343164648",
+  "PHONE_PRETTY": "03 43 16 46 48",
+  "EMAIL": "jejejejfjjf@jdisks.fr",
+  "ADDRESS": "Amiens, France",
   "AREAS": [
-    "Toulouse"
+    "Amiens"
   ],
   "RESPONSE_TIME": "30-45 minutes",
   "HERO_SUBTITLE": "Intervention en 30-45 minutes",
-  "ABOUT_SNIPPET": "Service professionnel à Toulouse. Intervention rapide et tarifs transparents.",
+  "ABOUT_SNIPPET": "Service professionnel à Amiens. Intervention rapide et tarifs transparents.",
   "CTA_PRIMARY_TEXT": "Appeler maintenant",
   "CTA_SECONDARY_TEXT": "Devis gratuit",
   "URGENCY_TEXT": "🚨 Intervention rapide 24/7",
@@ -70,12 +70,12 @@
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
   "ENABLE_EMERGENCY_BANNER": true,
-  "ENABLE_SECTION_DESCRIPTIONS": true,
-  "ENABLE_ABOUT_EXTENDED": true,
-  "ENABLE_TRUST_SECTION": true,
-  "ENABLE_CERTIFICATIONS": true,
+  "ENABLE_SECTION_DESCRIPTIONS": false,
+  "ENABLE_ABOUT_EXTENDED": false,
+  "ENABLE_TRUST_SECTION": false,
+  "ENABLE_CERTIFICATIONS": false,
   "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse%2C%20France",
+  "MAPS_URL": "https://maps.google.com/?q=Le%20roi%20du%20d%C3%A9pannage%20 Amiens%2C%20France",
   "TEXT_MODE": "simple",
   "BANNER_ENABLED": false,
   "SHOW_GUARANTEES": false,
@@ -84,5 +84,6 @@
     "photos": 0,
     "reviews": 0,
     "prices": 0
-  }
+  },
+  "CERTIFICATIONS": []
 }

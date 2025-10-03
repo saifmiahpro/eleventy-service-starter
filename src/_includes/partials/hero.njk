@@ -1,59 +1,93 @@
-{% if site.ENABLE_EMERGENCY_BANNER %}
-<div class="emergency-banner">
+{# 
+  HÉROS - SECTION PRINCIPALE
+  =========================
+  
+  SYSTÈME INTELLIGENT :
+  • Données Tally (identity.json) + Placeholders métier (trades.json)
+  • Fallback automatique si données manquantes
+  • Couleurs et textes adaptés au métier
+  • Logo intelligent : image si fournie, sinon nom d'entreprise
+#}
+
+{# Déterminer le métier : identity.TRADE ou site.trade #}
+{% set currentTrade = identity.TRADE or site.trade or "depanneur" %}
+{% set tradeData = trades[currentTrade] %}
+
+{# Système de fallback pour chaque donnée #}
+{% set heroText = identity.HERO_TEXT or tradeData.HERO_TITLE.replace("{{CITY}}", identity.CITY or "Votre ville") %}
+{% set heroSubtitle = identity.HERO_SUBTITLE or "Intervention rapide, devis clair" %}
+{% set aboutSnippet = identity.ABOUT_SNIPPET or tradeData.ABOUT_SNIPPET %}
+{% set urgencyText = identity.URGENCY_TEXT or tradeData.URGENCY_TEXT %}
+{% set accentColor = identity.ACCENT_COLOR or tradeData.ACCENT %}
+
+{# Appliquer la couleur d'accent du métier #}
+<style>
+:root {
+  --accent-color: {{ accentColor }};
+  --hero-accent: {{ accentColor }};
+}
+</style>
+
+{% if identity.ENABLE_EMERGENCY_BANNER %}
+<div class="emergency-banner" style="background: {{ accentColor }}; border-bottom: 3px solid {{ accentColor }}cc;">
   <div class="marquee" aria-hidden="true">
     <div class="marquee__inner">
-      <span class="emergency-text">{{ site.URGENCY_TEXT }}</span>
-      <span class="response-time">Intervention en {{ site.RESPONSE_TIME }}</span>
+      <span class="emergency-text">{{ urgencyText }}</span>
+      <span class="response-time">Intervention en {{ identity.RESPONSE_TIME }}</span>
       <!-- Duplicated content for mobile scrolling -->
-      <span class="emergency-text mobile-only">{{ site.URGENCY_TEXT }}</span>
-      <span class="response-time mobile-only">Intervention en {{ site.RESPONSE_TIME }}</span>
-      <span class="emergency-text mobile-only">{{ site.URGENCY_TEXT }}</span>
-      <span class="response-time mobile-only">Intervention en {{ site.RESPONSE_TIME }}</span>
+      <span class="emergency-text mobile-only">{{ urgencyText }}</span>
+      <span class="response-time mobile-only">Intervention en {{ identity.RESPONSE_TIME }}</span>
+      <span class="emergency-text mobile-only">{{ urgencyText }}</span>
+      <span class="response-time mobile-only">Intervention en {{ identity.RESPONSE_TIME }}</span>
     </div>
   </div>
 </div>
 {% endif %}
 
-<header class="hero{% if site.HERO_BACKGROUND_IMAGE %} has-bg-image{% endif %}"{% if site.HERO_BACKGROUND_IMAGE %} style="--hero-bg-image: url('{{ site.HERO_BACKGROUND_IMAGE }}')"{% endif %}>
+<header class="hero{% if identity.HERO_BACKGROUND_IMAGE %} has-bg-image{% endif %}" 
+        style="{% if identity.HERO_BACKGROUND_IMAGE %}--hero-bg-image: url('{{ identity.HERO_BACKGROUND_IMAGE }}');{% endif %} --accent-color: {{ accentColor }};">
   <div class="container">
     <div class="hero-logo">
-      {% if site.LOGO_URL %}
-      <img src="{{ site.LOGO_URL }}" alt="{{ site.BUSINESS_NAME }}" class="logo">
+      {% set hasRealLogo = identity.LOGO_URL and not identity.LOGO_URL.includes('/assets/images/logo.png') %}
+      {% if hasRealLogo %}
+      <img src="{{ identity.LOGO_URL }}" alt="{{ identity.BUSINESS_NAME }}" class="logo">
       {% else %}
-      <h2 class="business-name">{{ site.BUSINESS_NAME }}</h2>
+      <h2 class="business-name">{{ identity.BUSINESS_NAME }}</h2>
       {% endif %}
     </div>
     
-    <h1>{{ site.HERO_TEXT }}</h1>
-    <p class="hero-subtitle">{{ site.HERO_SUBTITLE }}</p>
-    <p class="hero-description">{{ site.ABOUT_SNIPPET }}</p>
+    <h1>{{ heroText }}</h1>
+    <p class="hero-subtitle">{{ heroSubtitle }}</p>
+    <p class="hero-description">{{ aboutSnippet }}</p>
     
     <div class="cta-row">
-      {% set tel = site.PHONE_TEL or site.CTA_PRIMARY_TEL %}
+      {% set tel = identity.PHONE_TEL or identity.CTA_PRIMARY_TEL %}
       {% if tel %}
-      <a class="cta-primary pulse" href="tel:{{ tel }}">
+      <a class="cta-primary pulse" href="tel:{{ tel }}" style="background: {{ accentColor }}; box-shadow: 0 4px 15px {{ accentColor }}40;">
         <span class="cta-icon">📞</span>
         <span class="cta-text">
-          <span class="cta-label">{{ site.CTA_PRIMARY_TEXT }}</span>
-          <span class="cta-phone">{{ site.PHONE_PRETTY or tel }}</span>
+          <span class="cta-label">{{ identity.CTA_PRIMARY_TEXT }}</span>
+          <span class="cta-phone">{{ identity.PHONE_PRETTY or tel }}</span>
         </span>
       </a>
       {% endif %}
-      <a class="cta-secondary" href="mailto:{{ site.EMAIL }}">
-        ✉️ {{ site.CTA_SECONDARY_TEXT }}
+      <a class="cta-secondary" href="mailto:{{ identity.EMAIL }}" style="border-color: {{ accentColor }}; color: {{ accentColor }};">
+        ✉️ {{ identity.CTA_SECONDARY_TEXT }}
       </a>
     </div>
     
-    {% if site.TRUST_BADGES %}
+    {% if identity.TRUST_BADGES %}
     <div class="trust-badges">
-      {% for badge in site.TRUST_BADGES %}
-      <span class="trust-badge">✓ {{ badge }}</span>
+      {% for badge in identity.TRUST_BADGES %}
+      <span class="trust-badge" style="border-left-color: {{ accentColor }};">✓ {{ badge }}</span>
       {% endfor %}
     </div>
     {% endif %}
     
-    {% if site.IS_24_7 %}
-    <p class="availability">🕐 Disponible 24/7 - {{ site.RESPONSE_TIME }}</p>
+    {% if identity.IS_24_7 %}
+    <p class="availability" style="color: {{ accentColor }};">🕐 Disponible 24/7 - {{ identity.RESPONSE_TIME }}</p>
     {% endif %}
+    
   </div>
 </header>
+

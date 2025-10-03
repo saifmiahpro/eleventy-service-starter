@@ -1,0 +1,323 @@
+{
+  "depanneur": {
+    "HERO_TITLE": "🚛 Dépannage auto 24/7 à {{CITY}}",
+    "ABOUT_SNIPPET": "Dépannage et remorquage toutes marques. Sécurité et rapidité en priorité.",
+    "URGENCY_TEXT": "🚨 DÉPANNAGE AUTO D'URGENCE",
+    "ACCENT": "#e74c3c",
+    "services": [
+      { "title": "Dépannage sur place", "desc": "Batterie, crevaison, petite mécanique — pour repartir vite." },
+      { "title": "Remorquage", "desc": "Remorquage urbain ou longue distance vers l'adresse souhaitée." },
+      { "title": "Ouverture de véhicule", "desc": "Ouverture sans dégâts lorsque c'est possible." },
+      { "title": "Assistance 24/7", "desc": "Intervention d'urgence jour et nuit selon disponibilité." }
+    ],
+    "reviews": [
+      {
+        "name": "Jean D.",
+        "rating": 5,
+        "text": "Intervention rapide en pleine nuit pour ma batterie. Service pro et efficace, technicien très sympa. Arrivé en 25 min comme annoncé !",
+        "date": "Il y a 2 semaines",
+        "service": "Dépannage batterie",
+        "location": "Paris 15ème"
+      },
+      {
+        "name": "Marie L.",
+        "rating": 5,
+        "text": "Remorquage impeccable suite à une panne sur l'autoroute A6. Délai respecté, prix correct, véhicule livré intact au garage. Parfait !",
+        "date": "Il y a 1 mois",
+        "service": "Remorquage",
+        "location": "Autoroute A6"
+      },
+      {
+        "name": "Thomas B.",
+        "rating": 5,
+        "text": "Dépanneur très professionnel pour ma crevaison. Prix annoncé = prix payé, pas de surprise. Pneu changé en 15 min. Je recommande !",
+        "date": "Il y a 2 mois",
+        "service": "Changement pneu",
+        "location": "Boulogne"
+      },
+      {
+        "name": "Sophie M.",
+        "rating": 4,
+        "text": "Ouverture de ma voiture après avoir oublié mes clés dedans. Rapide et sans dégât, merci beaucoup !",
+        "date": "Il y a 3 semaines",
+        "service": "Ouverture véhicule",
+        "location": "Neuilly"
+      },
+      {
+        "name": "Pierre R.",
+        "rating": 5,
+        "text": "Dépannage d'urgence un dimanche matin. Très réactif, intervention soignée. Excellent service client !",
+        "date": "Il y a 1 semaine",
+        "service": "Dépannage urgence",
+        "location": "Vincennes"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "/assets/placeholders/depanneur-1.jpg",
+        "title": "Dépannage batterie",
+        "caption": "Remplacement de batterie sur véhicule en panne - Intervention rapide",
+        "category": "Dépannage"
+      },
+      {
+        "url": "/assets/placeholders/depanneur-2.jpg", 
+        "title": "Remorquage sécurisé",
+        "caption": "Remorquage d'un véhicule accidenté vers le garage - Matériel professionnel",
+        "category": "Remorquage"
+      },
+      {
+        "url": "/assets/placeholders/depanneur-3.jpg",
+        "title": "Changement de pneu",
+        "caption": "Réparation de crevaison sur autoroute - Service 24h/24",
+        "category": "Réparation"
+      },
+      {
+        "url": "/assets/placeholders/depanneur-4.jpg",
+        "title": "Ouverture de véhicule", 
+        "caption": "Ouverture sans dégât après oubli des clés - Technique professionnelle",
+        "category": "Ouverture"
+      },
+      {
+        "url": "/assets/placeholders/depanneur-5.jpg",
+        "title": "Dépannage d'urgence",
+        "caption": "Intervention d'urgence un dimanche - Disponibilité 7j/7",
+        "category": "Urgence"
+      },
+      {
+        "url": "/assets/placeholders/depanneur-6.jpg",
+        "title": "Matériel professionnel",
+        "caption": "Notre équipement de pointe pour tous types d'interventions",
+        "category": "Équipement"
+      }
+    ],
+    "pricing": [
+      { "label": "Dépannage sur place", "price": "dès 99€", "note": "Selon type de panne" },
+      { "label": "Remorquage urbain", "price": "dès 139€", "note": "Selon distance" },
+      { "label": "Ouverture véhicule", "price": "dès 89€", "note": "Sans dégât garanti" }
+    ],
+    "certifications": [
+      { "icon": "✓", "name": "Professionnel Agréé", "desc": "Certification officielle" },
+      { "icon": "🛡️", "name": "Assurance Pro", "desc": "Couverture complète" },
+      { "icon": "⭐", "name": "Qualité Garantie", "desc": "Service de qualité" }
+    ],
+    "faq": [
+      { "q": "Intervenez-vous sur tous types de véhicules ?", "a": "Oui, tourisme, utilitaires et 2 roues selon disponibilité du matériel." },
+      { "q": "Quel est votre délai d'intervention ?", "a": "En moyenne 20 à 45 minutes selon la zone et la circulation." },
+      { "q": "Proposez-vous un devis à l'avance ?", "a": "Oui, nous donnons une estimation par téléphone avant départ." }
+    ]
+  },
+  "serrurier": {
+    "HERO_TITLE": "🔐 Serrurier 24/7 à {{CITY}}",
+    "ABOUT_SNIPPET": "Artisan serrurier disponible jour et nuit. Déplacement rapide, pièces garanties.",
+    "URGENCY_TEXT": "🚨 SERRURIER D'URGENCE",
+    "ACCENT": "#2c3e50",
+    "services": [
+      { "title": "Ouverture de porte", "desc": "Sans casse lorsque c'est possible, intervention rapide 24/7." },
+      { "title": "Remplacement de cylindre", "desc": "Cylindres et verrous certifiés, installation propre et durable." },
+      { "title": "Sécurisation après effraction", "desc": "Pose provisoire, remplacement et devis clair immédiatement." },
+      { "title": "Blindage de porte", "desc": "Installation et conseil pour sécurité renforcée." }
+    ],
+    "reviews": [
+      {
+        "name": "Sophie M.",
+        "rating": 5,
+        "text": "Porte claquée un dimanche soir, intervention en 30 min. Ouverture sans dégât, prix correct. Merci beaucoup !",
+        "date": "Il y a 1 semaine",
+        "service": "Ouverture de porte",
+        "location": "Paris 11ème"
+      },
+      {
+        "name": "Pierre R.",
+        "rating": 5,
+        "text": "Remplacement de cylindre après cambriolage. Travail soigné, conseils sécurité et garantie. Très professionnel !",
+        "date": "Il y a 3 semaines",
+        "service": "Remplacement cylindre",
+        "location": "Boulogne"
+      },
+      {
+        "name": "Lucie T.",
+        "rating": 5,
+        "text": "Serrurier honnête, prix annoncé respecté. Installation propre et rapide. Je recommande vivement !",
+        "date": "Il y a 1 mois",
+        "service": "Installation serrure",
+        "location": "Neuilly"
+      },
+      {
+        "name": "Marc D.",
+        "rating": 4,
+        "text": "Clés perdues, ouverture en urgence. Arrivé rapidement, travail impeccable. Tarif nuit un peu élevé mais normal.",
+        "date": "Il y a 2 semaines",
+        "service": "Ouverture urgence",
+        "location": "Vincennes"
+      },
+      {
+        "name": "Emma L.",
+        "rating": 5,
+        "text": "Sécurisation après tentative d'effraction. Conseil personnalisé et installation de qualité. Parfait !",
+        "date": "Il y a 4 jours",
+        "service": "Sécurisation",
+        "location": "Paris 15ème"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "/assets/placeholders/serrurier-1.jpg",
+        "title": "Ouverture de porte",
+        "caption": "Ouverture sans dégât d'une porte claquée - Technique professionnelle",
+        "category": "Ouverture"
+      },
+      {
+        "url": "/assets/placeholders/serrurier-2.jpg", 
+        "title": "Installation serrure",
+        "caption": "Pose d'une serrure 3 points certifiée - Sécurité renforcée",
+        "category": "Installation"
+      },
+      {
+        "url": "/assets/placeholders/serrurier-3.jpg",
+        "title": "Remplacement cylindre",
+        "caption": "Changement de cylindre européen - Matériel certifié",
+        "category": "Remplacement"
+      },
+      {
+        "url": "/assets/placeholders/serrurier-4.jpg",
+        "title": "Sécurisation urgente", 
+        "caption": "Sécurisation provisoire après effraction - Intervention rapide",
+        "category": "Sécurisation"
+      },
+      {
+        "url": "/assets/placeholders/serrurier-5.jpg",
+        "title": "Outils professionnels",
+        "caption": "Notre équipement spécialisé pour tous types de serrures",
+        "category": "Équipement"
+      },
+      {
+        "url": "/assets/placeholders/serrurier-6.jpg",
+        "title": "Blindage de porte",
+        "caption": "Installation de blindage pour sécurité maximale",
+        "category": "Blindage"
+      }
+    ],
+    "pricing": [
+      { "label": "Ouverture simple", "price": "dès 79€", "note": "Hors majoration nuit/jours fériés" },
+      { "label": "Remplacement cylindre", "price": "dès 129€", "note": "Selon modèle/longueur" },
+      { "label": "Serrure 3 points", "price": "dès 299€", "note": "Installation comprise" }
+    ],
+    "certifications": [
+      { "icon": "🔐", "name": "Serrurier Agréé", "desc": "Certification professionnelle" },
+      { "icon": "🛡️", "name": "Assurance RC Pro", "desc": "Couverture complète" },
+      { "icon": "⚡", "name": "Intervention 24/7", "desc": "Disponibilité permanente" }
+    ],
+    "faq": [
+      { "q": "Dans combien de temps pouvez-vous intervenir ?", "a": "Généralement en 20 à 40 minutes selon la circulation et votre quartier." },
+      { "q": "Quels moyens de paiement acceptez-vous ?", "a": "Carte, espèces, virement. Facture envoyée par email sur demande." },
+      { "q": "Proposez-vous des tarifs de nuit ?", "a": "Oui, un forfait d'urgence s'applique la nuit, week-ends et jours fériés." }
+    ]
+  },
+  "electricien": {
+    "HERO_TITLE": "⚡ Électricien d'urgence à {{CITY}}",
+    "ABOUT_SNIPPET": "Artisan électricien, interventions rapides et conformes aux normes.",
+    "URGENCY_TEXT": "🚨 ÉLECTRICIEN D'URGENCE",
+    "ACCENT": "#3498db",
+    "services": [
+      { "title": "Dépannage électrique", "desc": "Pannes, courts-circuits, disjoncteurs qui sautent." },
+      { "title": "Mise aux normes", "desc": "Mises à jour partielles et tableaux électriques." },
+      { "title": "Installation prises", "desc": "Pose de prises et éclairage aux normes." },
+      { "title": "Urgences 24/7", "desc": "Intervention rapide selon disponibilité." }
+    ],
+    "reviews": [
+      {
+        "name": "Marc D.",
+        "rating": 5,
+        "text": "Panne électrique résolue rapidement. Électricien compétent, diagnostic précis et réparation efficace. Parfait !",
+        "date": "Il y a 5 jours",
+        "service": "Dépannage électrique",
+        "location": "Paris 12ème"
+      },
+      {
+        "name": "Anne P.",
+        "rating": 5,
+        "text": "Mise aux normes de mon tableau électrique. Travail propre, explications claires et prix raisonnable. Je recommande !",
+        "date": "Il y a 2 semaines",
+        "service": "Mise aux normes",
+        "location": "Levallois"
+      },
+      {
+        "name": "David L.",
+        "rating": 5,
+        "text": "Intervention d'urgence un samedi soir. Arrivé rapidement, problème résolu. Professionnel et tarifs corrects.",
+        "date": "Il y a 1 mois",
+        "service": "Urgence weekend",
+        "location": "Boulogne"
+      },
+      {
+        "name": "Claire M.",
+        "rating": 4,
+        "text": "Recherche de panne dans l'appartement. Méthodique et patient, a trouvé le problème caché. Très pro !",
+        "date": "Il y a 1 semaine",
+        "service": "Recherche panne",
+        "location": "Neuilly"
+      },
+      {
+        "name": "Thomas R.",
+        "rating": 5,
+        "text": "Installation prises et éclairage. Travail soigné, conseils utiles et respect des délais. Excellent !",
+        "date": "Il y a 3 jours",
+        "service": "Installation",
+        "location": "Paris 16ème"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "/assets/placeholders/electricien-1.jpg",
+        "title": "Tableau électrique",
+        "caption": "Mise aux normes d'un tableau électrique - Installation conforme",
+        "category": "Mise aux normes"
+      },
+      {
+        "url": "/assets/placeholders/electricien-2.jpg", 
+        "title": "Dépannage urgence",
+        "caption": "Réparation d'une panne électrique en urgence - Intervention rapide",
+        "category": "Dépannage"
+      },
+      {
+        "url": "/assets/placeholders/electricien-3.jpg",
+        "title": "Installation prises",
+        "caption": "Pose de prises électriques aux normes - Travail soigné",
+        "category": "Installation"
+      },
+      {
+        "url": "/assets/placeholders/electricien-4.jpg",
+        "title": "Recherche de panne", 
+        "caption": "Diagnostic électrique avec matériel professionnel",
+        "category": "Diagnostic"
+      },
+      {
+        "url": "/assets/placeholders/electricien-5.jpg",
+        "title": "Éclairage LED",
+        "caption": "Installation d'éclairage LED économique et moderne",
+        "category": "Éclairage"
+      },
+      {
+        "url": "/assets/placeholders/electricien-6.jpg",
+        "title": "Matériel professionnel",
+        "caption": "Équipement de mesure et outils spécialisés",
+        "category": "Équipement"
+      }
+    ],
+    "pricing": [
+      { "label": "Recherche de panne", "price": "dès 89€", "note": "Selon complexité" },
+      { "label": "Remplacement disjoncteur", "price": "dès 119€", "note": "Selon modèle" },
+      { "label": "Installation prise", "price": "dès 49€", "note": "Matériel fourni" }
+    ],
+    "certifications": [
+      { "icon": "⚡", "name": "Électricien Agréé", "desc": "Habilitation électrique" },
+      { "icon": "🛡️", "name": "Assurance RC Pro", "desc": "Couverture complète" },
+      { "icon": "📋", "name": "Conformité NF", "desc": "Installations aux normes" }
+    ],
+    "faq": [
+      { "q": "Pouvez-vous intervenir le soir et le week-end ?", "a": "Oui, un forfait d'urgence s'applique en dehors des heures ouvrées." },
+      { "q": "Fournissez-vous une facture ?", "a": "Oui, facture envoyée par email après intervention." },
+      { "q": "Quels quartiers couvrez-vous ?", "a": "La ville et les alentours. Précisez votre adresse dans le formulaire." }
+    ]
+  }
+}

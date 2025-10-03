@@ -158,10 +158,6 @@ function generateSiteConfig(inputConfig) {
   const preset = loadPreset(businessType);
   const { logoUrl, galleryImages, heroImage } = detectImages();
   
-  // Use client images if provided, otherwise fallback to detected images
-  const clientLogoUrl = inputConfig.logo_url || logoUrl;
-  const clientHeroImage = inputConfig.hero_image || heroImage;
-  
   // Parse areas
   const areas = inputConfig.service_areas 
     ? inputConfig.service_areas.split(',').map(area => area.trim())
@@ -217,8 +213,8 @@ function generateSiteConfig(inputConfig) {
     TRUST_BADGES: trustBadges,
     REVIEWS: reviews,
     GALLERY: parseBoolean(inputConfig.enable_gallery) ? galleryImages : [],
-    LOGO_URL: clientLogoUrl,
-    HERO_BACKGROUND_IMAGE: clientHeroImage,
+    LOGO_URL: logoUrl,
+    HERO_BACKGROUND_IMAGE: heroImage,
     ENABLE_EMERGENCY_BANNER: parseBoolean(inputConfig.enable_emergency_banner),
     ENABLE_SECTION_DESCRIPTIONS: parseBoolean(inputConfig.enable_section_descriptions),
     ENABLE_ABOUT_EXTENDED: parseBoolean(inputConfig.enable_about_extended),
@@ -331,57 +327,36 @@ function backfill(site) {
     site.FAQ = ph.FAQ;
   }
 
-  // Tarifs selon l'offre (PREMIUM uniquement)
-  const pack = site.PACK || 'lite';
-  if (pack === 'premium') {
-    site.ENABLE_PRICING = true;
-    if (!Array.isArray(site.PRICING) || site.PRICING.length === 0) {
-      site.PRICING = (ph.PRICING || []).slice(0, 5);
-    }
+  // Pricing si activé
+  if (site.ENABLE_PRICING) {
+    const base = ph.PRICING || [];
+    site.PRICING = (site.PRICING || []).slice(0, site._CAPS?.prices || 99);
+    if (site.PRICING.length === 0) site.PRICING = base.slice(0, site._CAPS?.prices || 99);
   } else {
-    site.PRICING = [];
-    site.ENABLE_PRICING = false;
+    site.PRICING = site.PRICING || [];
   }
 
-  // Galerie selon l'offre (STANDARD et PREMIUM uniquement)
-  if (pack !== 'lite') {
-    site.ENABLE_GALLERY = true;
-    if (!Array.isArray(site.GALLERY) || site.GALLERY.length === 0) {
-      site.GALLERY = (ph.GALLERY || []).slice(0, 6);
-    }
+  // Galerie si activée
+  if (site.ENABLE_GALLERY) {
+    site.GALLERY = (site.GALLERY || []).slice(0, site._CAPS?.photos || 99);
   } else {
-    site.GALLERY = [];
-    site.ENABLE_GALLERY = false;
+    site.GALLERY = site.GALLERY || [];
   }
 
-  // Avis selon l'offre (STANDARD et PREMIUM uniquement)
-  if (pack !== 'lite') {
-    site.ENABLE_REVIEWS = true;
-    if (!Array.isArray(site.REVIEWS) || site.REVIEWS.length === 0) {
-      site.REVIEWS = (ph.REVIEWS || []).slice(0, 3);
-    }
+  // Avis si activés
+  if (site.ENABLE_REVIEWS) {
+    site.REVIEWS = (site.REVIEWS || []).slice(0, site._CAPS?.reviews || 99);
   } else {
-    site.REVIEWS = [];
-    site.ENABLE_REVIEWS = false;
+    site.REVIEWS = site.REVIEWS || [];
   }
 
   // Garanties / Certifs
   if (site.SHOW_GUARANTEES && (!site.GUARANTEES || site.GUARANTEES.length === 0)) {
     site.GUARANTEES = ph.GUARANTEES;
   }
-  // Certifications selon l'offre (PREMIUM uniquement)
-  if (pack === 'premium') {
-    site.ENABLE_CERTIFICATIONS = true;
-    if (!Array.isArray(site.CERTIFICATIONS) || site.CERTIFICATIONS.length === 0) {
-      site.CERTIFICATIONS = ph.CERTIFICATIONS || [
-        { icon: '✓', name: 'Professionnel Agréé', desc: 'Certification officielle' },
-        { icon: '🛡️', name: 'Assurance Pro', desc: 'Couverture complète' },
-        { icon: '⭐', name: 'Qualité Garantie', desc: 'Service de qualité' }
-      ];
-    }
-  } else {
-    site.CERTIFICATIONS = [];
-    site.ENABLE_CERTIFICATIONS = false;
+  if (site.ENABLE_CERTS && (!site.CERTIFICATIONS || site.CERTIFICATIONS.length === 0)) {
+    const certs = ph.CERTS_LOGOS.map(logo => ({ icon: '✓', name: 'Certifié', desc: 'Professionnel' }));
+    site.CERTIFICATIONS = certs;
   }
 
   // Images
@@ -442,34 +417,6 @@ function main() {
     // Write site.json
     const siteJsonPath = join(projectRoot, 'src', '_data', 'site.json');
     writeFileSync(siteJsonPath, JSON.stringify(siteConfig, null, 2));
-    
-    // NOUVEAU: Mettre à jour identity.json avec les données Tally
-    const identityJsonPath = join(projectRoot, 'src', '_data', 'identity.json');
-    let identityConfig = {};
-    if (existsSync(identityJsonPath)) {
-      identityConfig = JSON.parse(readFileSync(identityJsonPath, 'utf8'));
-    }
-    
-    // Mettre à jour les données essentielles depuis Tally
-    identityConfig.BUSINESS_NAME = siteConfig.BUSINESS_NAME;
-    identityConfig.CITY = siteConfig.CITY;
-    identityConfig.PHONE = siteConfig.PHONE_PRETTY;
-    identityConfig.PHONE_TEL = siteConfig.PHONE_TEL;
-    identityConfig.PHONE_PRETTY = siteConfig.PHONE_PRETTY;
-    identityConfig.EMAIL = siteConfig.EMAIL;
-    identityConfig.ADDRESS = siteConfig.ADDRESS;
-    identityConfig.LOGO_URL = siteConfig.LOGO_URL;
-    identityConfig.HERO_BACKGROUND_IMAGE = siteConfig.HERO_BACKGROUND_IMAGE;
-    identityConfig.TRADE = siteConfig.NICHE;
-    
-    // Réinitialiser les données personnalisées pour utiliser les placeholders
-    identityConfig.HERO_TEXT = null;
-    identityConfig.HERO_SUBTITLE = null;
-    identityConfig.ABOUT_SNIPPET = null;
-    identityConfig.ACCENT_COLOR = null;
-    identityConfig.URGENCY_TEXT = null;
-    
-    writeFileSync(identityJsonPath, JSON.stringify(identityConfig, null, 2));
     
     console.log('\n✅ Site généré avec succès !');
     console.log(`📊 Entreprise: ${siteConfig.BUSINESS_NAME}`);

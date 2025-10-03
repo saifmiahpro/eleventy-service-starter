@@ -1,0 +1,62 @@
+{
+  "NICHE": "serrurier",
+  "ACCENT": "#f39c12",
+  "HERO_TEXT": "Serrurier 24/7 à {{CITY}} — Ouverture de Porte Sans Casse",
+  "SERVICES": [
+    {
+      "title": "Ouverture de porte",
+      "desc": "Ouverture sans casse dans 90% des cas. Intervention rapide."
+    },
+    {
+      "title": "Changement de serrure",
+      "desc": "Serrures haute sécurité, certifiées A2P. Pose professionnelle."
+    },
+    {
+      "title": "Blindage de porte",
+      "desc": "Renforcement sécurité, pivot anti-arrachement, cornières."
+    },
+    {
+      "title": "Dépannage urgent",
+      "desc": "Clés cassées, serrures bloquées. Disponible 24h/24."
+    }
+  ],
+  "FAQ": [
+    {
+      "q": "Ouverture sans casse ?",
+      "a": "Oui, dans 90% des cas grâce à nos outils professionnels."
+    },
+    {
+      "q": "Tarifs de nuit/week-end ?",
+      "a": "Majoration de 30% entre 20h et 8h, et les dimanches/fériés."
+    },
+    {
+      "q": "Devis gratuit ?",
+      "a": "Oui, devis gratuit et sans engagement pour tous travaux."
+    },
+    {
+      "q": "Garantie des travaux ?",
+      "a": "Garantie 2 ans sur les serrures, 1 an sur les interventions."
+    }
+  ],
+  "IS_24_7": true,
+  "ENABLE_REVIEWS": true,
+  "ENABLE_GALLERY": false,
+  "ENABLE_PRICING": true,
+  "PRICING": [
+    {
+      "label": "Ouverture simple",
+      "price": "89",
+      "note": "Sans casse, jour ouvrable"
+    },
+    {
+      "label": "Changement serrure",
+      "price": "150",
+      "note": "Pose comprise, hors fourniture"
+    },
+    {
+      "label": "Urgence nuit",
+      "price": "120",
+      "note": "Majoration 30% appliquée"
+    }
+  ]
+}

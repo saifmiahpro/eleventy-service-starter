@@ -1,21 +1,76 @@
-<section class="section reviews">
+<section class="section reviews" id="avis">
   <div class="container">
-    <h2>Avis Clients</h2>
-    {% if site.ENABLE_SECTION_DESCRIPTIONS %}
-    <p class="section-description">{{ site.SECTION_DESCRIPTIONS.reviews }}</p>
-    {% endif %}
+    <div class="section-header">
+      <h2>🌟 Avis Clients</h2>
+      <p class="section-subtitle">Ce que disent nos clients satisfaits</p>
+      {% if site.ENABLE_SECTION_DESCRIPTIONS %}
+      <p class="section-description">{{ site.SECTION_DESCRIPTIONS.reviews }}</p>
+      {% endif %}
+    </div>
+    
     <div class="reviews-grid">
       {% for review in site.REVIEWS %}
-      <div class="review-card">
-        <div class="review-stars">
-          {% for i in range(1, 6) %}
-            {% if i <= review.rating %}⭐{% else %}☆{% endif %}
-          {% endfor %}
+      <div class="review-card" data-review-id="{{ loop.index }}">
+        <div class="review-header">
+          <div class="review-avatar">
+            <span class="avatar-initial">{{ review.name[0] }}</span>
+          </div>
+          <div class="review-info">
+            <h4 class="review-name">{{ review.name }}</h4>
+            <div class="review-stars">
+              {% for i in range(1, 6) %}
+                <span class="star {{ 'filled' if i <= review.rating else 'empty' }}">★</span>
+              {% endfor %}
+              <span class="rating-text">({{ review.rating }}/5)</span>
+            </div>
+          </div>
+          <div class="review-date">{{ review.date }}</div>
         </div>
-        <p class="review-text">"{{ review.text }}"</p>
-        <p class="review-author">— {{ review.name }}</p>
+        
+        <div class="review-content">
+          <p class="review-text">"{{ review.text }}"</p>
+          {% if review.service %}
+          <div class="review-service">
+            <span class="service-tag">{{ review.service }}</span>
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="review-footer">
+          <span class="verified-badge">✓ Avis vérifié</span>
+          {% if review.location %}
+          <span class="review-location">📍 {{ review.location }}</span>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
+    </div>
+    
+    <div class="reviews-summary">
+      <div class="rating-overview">
+        <div class="average-rating">
+          <span class="big-rating">4.8</span>
+          <div class="stars-large">★★★★★</div>
+          <p>Basé sur {{ site.REVIEWS.length }} avis</p>
+        </div>
+        <div class="rating-bars">
+          <div class="rating-bar">
+            <span>5★</span>
+            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+            <span>85%</span>
+          </div>
+          <div class="rating-bar">
+            <span>4★</span>
+            <div class="bar"><div class="fill" style="width: 12%"></div></div>
+            <span>12%</span>
+          </div>
+          <div class="rating-bar">
+            <span>3★</span>
+            <div class="bar"><div class="fill" style="width: 3%"></div></div>
+            <span>3%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,149 @@
+{# 
+  SECTION SERVICES MODULAIRE
+  ========================
+  
+  Cette macro génère la section "Nos Services" avec différentes variantes d'affichage.
+  
+  PARAMÈTRES:
+  - identity: Données personnalisées du client (depuis Tally)
+  - defaults: Placeholders par métier (depuis trades.json)
+  - variant: Type d'affichage ("grid", "carousel", "list")
+  - data: Services à afficher (calculé automatiquement avec fallback)
+  
+  SYSTÈME DE FALLBACK:
+  Si identity.services est vide → utilise defaults.services
+  Garantit qu'aucune section ne sera jamais vide !
+  
+  VARIANTES DISPONIBLES:
+  - grid: Grille de cartes (défaut)
+  - carousel: Défilement horizontal avec scroll-snap
+  - list: Liste simple verticale
+#}
+
+{% macro Services(identity, defaults, variant, data) %}
+  {# 
+    CALCUL DES DONNÉES AVEC FALLBACK
+    Si le client n'a pas personnalisé ses services via Tally,
+    on utilise les placeholders du métier (serrurier/dépanneur/électricien)
+  #}
+  {% set servicesList = data or identity.services or defaults.services %}
+  
+  {# 
+    VALIDATION: S'assurer qu'on a des données à afficher
+    Cette vérification évite les sections vides
+  #}
+  {% if servicesList and servicesList.length > 0 %}
+    <section id="services" class="section section--services">
+      {# EN-TÊTE DE SECTION #}
+      <header class="section__header">
+        <h2 class="section__title">
+          🔧 Nos Services
+        </h2>
+        <p class="section__subtitle">
+          {# Personnalisation avec nom d'entreprise et ville si disponibles #}
+          {{ identity.BUSINESS_NAME or identity.brandName or "Votre expert" }} — 
+          {{ identity.CITY or identity.city or "Votre ville" }}
+        </p>
+      </header>
+
+      {# 
+        VARIANTE GRID (Grille de cartes)
+        Affichage par défaut, responsive, adapté pour 2-4 services
+      #}
+      {% if variant == "grid" %}
+        <div class="services-grid">
+          {% for service in servicesList %}
+            <article class="service-card" data-service="{{ loop.index }}">
+              {# Icône automatique basée sur le titre du service #}
+              <div class="service-icon">
+                {% if "ouverture" in service.title | lower %}🔓
+                {% elif "dépannage" in service.title | lower or "batterie" in service.title | lower %}🔋
+                {% elif "remorquage" in service.title | lower %}🚛
+                {% elif "électrique" in service.title | lower or "électricien" in service.title | lower %}⚡
+                {% elif "serrure" in service.title | lower or "cylindre" in service.title | lower %}🔐
+                {% else %}🛠️{% endif %}
+              </div>
+              <h3 class="service-title">{{ service.title }}</h3>
+              <p class="service-description">{{ service.desc }}</p>
+              {# Prix si disponible dans les données #}
+              {% if service.price %}
+                <div class="service-price">{{ service.price }}</div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+
+      {# 
+        VARIANTE CAROUSEL (Défilement horizontal)
+        Idéal pour mobile, permet de voir plus de services
+        Utilise scroll-snap CSS (pas de JS nécessaire)
+      #}
+      {% elif variant == "carousel" %}
+        <div class="services-carousel" tabindex="0">
+          <div class="carousel-track">
+            {% for service in servicesList %}
+              <article class="service-card service-card--carousel" data-service="{{ loop.index }}">
+                <div class="service-icon">
+                  {% if "ouverture" in service.title | lower %}🔓
+                  {% elif "dépannage" in service.title | lower or "batterie" in service.title | lower %}🔋
+                  {% elif "remorquage" in service.title | lower %}🚛
+                  {% elif "électrique" in service.title | lower %}⚡
+                  {% elif "serrure" in service.title | lower %}🔐
+                  {% else %}🛠️{% endif %}
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.desc }}</p>
+                {% if service.price %}
+                  <div class="service-price">{{ service.price }}</div>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+          {# Indication visuelle pour le scroll #}
+          <div class="carousel-hint">← Glissez pour voir plus →</div>
+        </div>
+
+      {# 
+        VARIANTE LIST (Liste simple)
+        Affichage compact, idéal pour beaucoup de services
+        Prend moins d'espace vertical
+      #}
+      {% elif variant == "list" %}
+        <ul class="services-list">
+          {% for service in servicesList %}
+            <li class="service-item" data-service="{{ loop.index }}">
+              <div class="service-content">
+                <strong class="service-title">{{ service.title }}</strong>
+                <span class="service-separator">—</span>
+                <span class="service-description">{{ service.desc }}</span>
+                {% if service.price %}
+                  <span class="service-price">({{ service.price }})</span>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+
+      {# 
+        FALLBACK: Si variante inconnue, utiliser grid par défaut
+        Évite les erreurs si on passe une variante non supportée
+      #}
+      {% else %}
+        {# Récursion avec variante par défaut #}
+        {{ Services(identity, defaults, "grid", servicesList) }}
+      {% endif %}
+
+      {# 
+        CALL-TO-ACTION (optionnel)
+        Bouton d'action si numéro de téléphone disponible
+      #}
+      {% if identity.PHONE or identity.phone %}
+        <div class="services-cta">
+          <a href="tel:{{ identity.PHONE or identity.phone }}" class="btn btn--primary">
+            📞 Appelez maintenant : {{ identity.PHONE or identity.phone }}
+          </a>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+{% endmacro %}

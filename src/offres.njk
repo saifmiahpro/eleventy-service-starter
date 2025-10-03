@@ -194,36 +194,55 @@ permalink: /offres/
   .offer-cta {
     display: block;
     width: 100%;
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #E8B4B8 0%, #D4A590 100%);
     color: white;
     text-align: center;
     padding: 1.125rem 2rem;
     border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 6px 20px rgba(232,180,184,0.35);
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .offer-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+  }
+  
+  .offer-cta:hover::before {
+    width: 300px;
+    height: 300px;
   }
   
   .offer-cta:hover {
-    background: linear-gradient(135deg, #E8B4B8 0%, #D4A590 100%);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(232,180,184,0.3);
+    background: linear-gradient(135deg, #D4A590 0%, #C89F8D 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(232,180,184,0.5);
   }
   
   .offer-box.featured .offer-cta {
-    background: linear-gradient(135deg, #E8B4B8 0%, #D4A590 100%);
-    color: white;
-    box-shadow: 0 6px 16px rgba(232,180,184,0.3);
+    background: linear-gradient(135deg, #D4A590 0%, #C89F8D 100%);
+    box-shadow: 0 8px 25px rgba(212,165,144,0.45);
+    font-weight: 800;
   }
   
   .offer-box.featured .offer-cta:hover {
-    background: linear-gradient(135deg, #D4A590 0%, #C89F8D 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(232,180,184,0.4);
+    background: linear-gradient(135deg, #C89F8D 0%, #B8956A 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(212,165,144,0.6);
   }
   
   @media (min-width: 768px) {

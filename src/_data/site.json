@@ -1,9 +1,9 @@
 {
-  "PACK": "premium",
+  "PACK": "lite",
   "MODULES": [],
   "NICHE": "serrurier",
   "ACCENT": "#f39c12",
-  "HERO_TEXT": "Votre serrurier 24/7 à Toulouse",
+  "HERO_TEXT": "Service serrurier 24/7 à Toulouse",
   "SERVICES": [
     {
       "title": "Ouverture de porte",
@@ -41,25 +41,25 @@
     }
   ],
   "IS_24_7": true,
-  "ENABLE_REVIEWS": false,
-  "ENABLE_GALLERY": false,
-  "ENABLE_PRICING": false,
+  "ENABLE_REVIEWS": true,
+  "ENABLE_GALLERY": true,
+  "ENABLE_PRICING": true,
   "PRICING": [],
-  "BUSINESS_NAME": "Serrurerie Rapide Toulouse",
+  "BUSINESS_NAME": "Mon Entreprise",
   "CITY": "Toulouse",
-  "PHONE_TEL": "+33675432109",
-  "PHONE_PRETTY": "06 75 43 21 09",
-  "EMAIL": "contact@serrurerie-toulouse.fr",
+  "PHONE_TEL": "+33612345678",
+  "PHONE_PRETTY": "06 12 34 56 78",
+  "EMAIL": "contact@exemple.fr",
   "ADDRESS": "Toulouse, France",
   "AREAS": [
     "Toulouse"
   ],
-  "RESPONSE_TIME": "20-30 minutes",
-  "HERO_SUBTITLE": "Intervention en 20-30 minutes",
-  "ABOUT_SNIPPET": "Ouverture de porte, remplacement de serrure et sécurisation rapide. Service professionnel et transparent.",
+  "RESPONSE_TIME": "30-45 minutes",
+  "HERO_SUBTITLE": "Intervention en 30-45 minutes",
+  "ABOUT_SNIPPET": "Service professionnel à Toulouse. Intervention rapide et tarifs transparents.",
   "CTA_PRIMARY_TEXT": "Appeler maintenant",
   "CTA_SECONDARY_TEXT": "Devis gratuit",
-  "URGENCY_TEXT": "🚨 Service rapide et professionnel",
+  "URGENCY_TEXT": "🚨 Intervention rapide 24/7",
   "TRUST_BADGES": [
     "Professionnel agréé",
     "Devis gratuit",
@@ -69,37 +69,20 @@
   "GALLERY": [],
   "LOGO_URL": "/assets/images/logo.png",
   "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
-  "ENABLE_EMERGENCY_BANNER": false,
-  "ENABLE_SECTION_DESCRIPTIONS": false,
-  "ENABLE_ABOUT_EXTENDED": false,
-  "ENABLE_TRUST_SECTION": false,
-  "ENABLE_CERTIFICATIONS": false,
+  "ENABLE_EMERGENCY_BANNER": true,
+  "ENABLE_SECTION_DESCRIPTIONS": true,
+  "ENABLE_ABOUT_EXTENDED": true,
+  "ENABLE_TRUST_SECTION": true,
+  "ENABLE_CERTIFICATIONS": true,
   "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=Serrurerie%20Rapide%20Toulouse Toulouse",
-  "TEXT_MODE": "detail",
-  "BANNER_ENABLED": true,
-  "SHOW_GUARANTEES": true,
-  "ENABLE_CERTS": true,
+  "MAPS_URL": "https://maps.google.com/?q=Mon%20Entreprise Toulouse%2C%20France",
+  "TEXT_MODE": "simple",
+  "BANNER_ENABLED": false,
+  "SHOW_GUARANTEES": false,
+  "ENABLE_CERTS": false,
   "_CAPS": {
-    "photos": 16,
-    "reviews": 6,
-    "prices": 10
-  },
-  "ABOUT_EXTENDED": {
-    "title": "À propos",
-    "content": "Nous intervenons sur portes claquées, clés perdues, cylindres bloqués et sécurisation après effraction. Matériel certifié, transparence des tarifs et conseils pour renforcer votre sécurité.",
-    "highlights": []
-  },
-  "GUARANTEES": [
-    "Devis annoncé avant intervention",
-    "Matériel certifié",
-    "Déplacement rapide"
-  ],
-  "CERTIFICATIONS": [
-    {
-      "icon": "✓",
-      "name": "Certifié",
-      "desc": "Professionnel"
-    }
-  ]
+    "photos": 0,
+    "reviews": 0,
+    "prices": 0
+  }
 }

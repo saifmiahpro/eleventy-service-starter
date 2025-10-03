@@ -238,6 +238,23 @@ async function generatePreviewBuilds(results) {
     }
   }
   
+  // Copy previews to _site for Eleventy dev server
+  console.log('\n📋 Copie des previews dans _site...');
+  const siteOffersDir = join(projectRoot, '_site', 'offers');
+  if (!existsSync(siteOffersDir)) {
+    mkdirSync(siteOffersDir, { recursive: true });
+  }
+  
+  try {
+    execSync(`cp -r "${previewDir}" "${siteOffersDir}/"`, {
+      cwd: projectRoot,
+      stdio: 'pipe'
+    });
+    console.log('✅ Previews copiés dans _site/offers/previews/');
+  } catch (error) {
+    console.log('⚠️  Erreur copie previews:', error.message);
+  }
+  
   console.log('\n✅ Tous les previews générés !');
   console.log('\n🌐 Ouverture de la navigation interactive...');
   

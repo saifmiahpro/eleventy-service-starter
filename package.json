@@ -9,12 +9,21 @@
     "build": "eleventy",
     "generate": "node tools/generate-from-config.js",
     "generate:cli": "node tools/generate.js",
+    "tally:pull": "node tools/tally-pull.mjs",
     "reset": "node tools/reset.js"
   },
-  "keywords": ["eleventy", "landing-page", "local-business", "emergency-services"],
+  "keywords": [
+    "eleventy",
+    "landing-page",
+    "local-business",
+    "emergency-services"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }

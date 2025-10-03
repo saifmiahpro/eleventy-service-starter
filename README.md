@@ -44,25 +44,117 @@ Your site will be available at `http://localhost:8080/`
 
 ## 🛠️ Tally Form Integration
 
-This system is designed to work seamlessly with Tally form exports:
+This system integrates directly with Tally forms via API for seamless client onboarding.
 
-1. **Create a Tally form** with fields matching the configuration schema
-2. **Export responses** as JSON or Markdown to `input/site-config.json`
-3. **Run generator** with `npm run generate`
-4. **Preview site** with `npm run dev`
+### 🔑 Setup
 
-### Configuration Schema
+1. **Create `.env.local`** (copy from `.env.example`):
+```bash
+TALLY_API_KEY=your_api_key_here
+TALLY_FORM_ID=your_form_id_here
+```
 
-The generator expects these fields from your Tally form:
+2. **Get your Tally credentials**:
+   - API Key: https://tally.so/settings/api
+   - Form ID: From your Tally form URL
 
-**Required:**
-- `business_name`, `business_type`, `city`, `phone`, `email`
+### 🚀 Usage
 
-**Optional:**
-- `address`, `service_areas`, `availability`, `response_time`
-- `accent_color`, `hero_title`, `hero_subtitle`, `description`
-- `enable_gallery`, `enable_reviews`, `enable_pricing`
-- `reviews[]`, `pricing[]` (arrays for structured data)
+#### Path A: Tally API Import (Recommended)
+
+```bash
+# Import submission by ID
+npm run tally:pull -- --id=SUBMISSION_ID
+
+# Import with image downloads (logo, hero)
+npm run tally:pull -- --id=SUBMISSION_ID --download
+
+# Generate site
+npm run generate
+
+# Preview
+npm run dev
+```
+
+#### Path B: Manual JSON
+
+1. Export Tally response or create `input/site-config.json` manually
+2. Run `npm run generate`
+3. Run `npm run dev`
+
+### 📋 Tally Form Field Mapping
+
+Create a Tally form with these fields (labels can vary, script will match):
+
+| Tally Field Label | Config Key | Type | Required |
+|------------------|------------|------|----------|
+| Nom de l'entreprise | `business_name` | Text | ✅ |
+| Type d'activité | `business_type` | Choice | ✅ |
+| Ville | `city` | Text | ✅ |
+| Téléphone | `phone` | Phone | ✅ |
+| Email | `email` | Email | ✅ |
+| Adresse | `address` | Text | - |
+| Zones d'intervention | `service_areas` | Text | - |
+| Disponibilité | `availability` | Choice | - |
+| Temps de réponse | `response_time` | Text | - |
+| Couleur | `accent_color` | Text | - |
+| Logo | `logo` | File Upload | - |
+| Image Hero | `image-hero` | File Upload | - |
+| Activer Galerie | `enable_gallery` | Yes/No | - |
+| Activer Avis | `enable_reviews` | Yes/No | - |
+| Activer Tarifs | `enable_pricing` | Yes/No | - |
+
+**Business Type Options**: `depanneur`, `serrurier`, `electricien`
+
+**For Reviews** (optional, repeat for 3 reviews):
+- `avis-1-nom`, `avis-1-texte`, `avis-1-note`
+- `avis-2-nom`, `avis-2-texte`, `avis-2-note`
+- `avis-3-nom`, `avis-3-texte`, `avis-3-note`
+
+**For Pricing** (optional, repeat for 5 items):
+- `tarif-1-service`, `tarif-1-prix`, `tarif-1-note`
+- `tarif-2-service`, `tarif-2-prix`, `tarif-2-note`
+- etc.
+
+### 🎨 Image Handling
+
+**With `--download` flag:**
+- Downloads logo and hero images locally
+- Saves to `assets/clients/<business-slug>-<id>/`
+- Updates config with local paths
+
+**Without `--download` flag:**
+- Uses remote Tally URLs directly
+- Faster import, but images hosted by Tally
+
+### 🔄 Reset to Default
+
+```bash
+npm run reset
+```
+
+This will:
+- ✅ Reset `src/_data/site.json` to default preset
+- ✅ Reset `input/site-config.json` to sample template
+- ✅ Preserve downloaded client assets in `assets/clients/`
+
+### 🐛 Troubleshooting
+
+**Error: TALLY_API_KEY required**
+- Create `.env.local` with your API credentials
+
+**Error: Submission not found**
+- Verify the submission ID is correct
+- Check that the form ID in `.env.local` matches
+
+**Error: Missing fields**
+- The generator uses sensible defaults for missing fields
+- Only `business_name`, `business_type`, `city`, `phone`, `email` are required
+
+**Images not showing**
+- If using `--download`, check `assets/clients/` folder
+- Ensure file extensions are supported (jpg, png, svg, webp)
+- Verify paths in `input/site-config.json`
 
 See `input/README.md` for complete field documentation.
 

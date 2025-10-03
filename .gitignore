@@ -15,6 +15,9 @@ dist/
 .env.test.local
 .env.production.local
 
+# Tally API keys
+.env.local
+
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -56,3 +59,8 @@ input/config.md
 # Keep sample files
 !input/site-config.sample.json
 !input/README.md
+
+# Client assets (downloaded from Tally)
+# Note: These are preserved during reset but can be cleaned manually
+assets/clients/
+!assets/clients/.gitkeep

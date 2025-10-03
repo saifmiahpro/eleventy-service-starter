@@ -33,7 +33,21 @@ npm run dev
 npm run generate:cli
 ```
 
-### Method 3: Reset to Default
+### Method 3: Generate 3 Commercial Offers
+
+```bash
+# From a single Tally submission, generate 3 pricing tiers
+npm run generate:offers
+```
+
+This creates:
+- **LITE** (299€) - Essential site with basic modules
+- **STANDARD** (499€) - Professional site with gallery, reviews, emergency banner
+- **PREMIUM** (799€) - Complete site with all features enabled
+
+Opens `offers/comparatif.html` to show client all 3 options!
+
+### Method 4: Reset to Default
 
 ```bash
 # Reset to clean default state

@@ -126,47 +126,52 @@ async function fetchTallySubmission(submissionId) {
     throw new Error('TALLY_API_KEY et TALLY_FORM_ID requis dans .env.local');
   }
   
-  const url = `https://api.tally.so/forms/${TALLY_FORM_ID}/responses`;
+  // Correct endpoint: directly fetch specific submission
+  const url = `https://api.tally.so/forms/${TALLY_FORM_ID}/submissions/${submissionId}`;
   
   console.log(`🔍 Recherche de la soumission ${submissionId}...`);
   
   try {
     const response = await fetch(url, {
       headers: {
-        'Authorization': `Bearer ${TALLY_API_KEY}`,
-        'Content-Type': 'application/json'
+        'Authorization': `Bearer ${TALLY_API_KEY}`
       }
     });
     
     if (!response.ok) {
-      throw new Error(`API Tally error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      throw new Error(`API Tally error: ${response.status} ${response.statusText} - ${errorText}`);
     }
     
     const data = await response.json();
     
-    // Find submission by ID
-    const submission = data.data?.find(s => s.submissionId === submissionId || s.responseId === submissionId);
-    
-    if (!submission) {
-      throw new Error(`Soumission ${submissionId} introuvable. Vérifiez l'ID.`);
-    }
-    
     console.log(`✅ Soumission trouvée !`);
-    return submission;
+    return data;
   } catch (error) {
     throw new Error(`Erreur API Tally: ${error.message}`);
   }
 }
 
 // Map Tally answers to flat object
-function flattenTallyAnswers(submission) {
+function flattenTallyAnswers(data) {
   const flat = {};
   
-  if (!submission.fields) return flat;
+  // Tally API returns { questions: [], submission: { responses: [] } }
+  if (!data.questions || !data.submission || !data.submission.responses) {
+    return flat;
+  }
   
-  for (const field of submission.fields) {
-    const key = slugify(field.label || field.key);
-    const value = field.value;
+  // Create a map of questionId -> question title
+  const questionMap = {};
+  for (const question of data.questions) {
+    questionMap[question.id] = question.title || question.id;
+  }
+  
+  // Map responses to flat object using question titles as keys
+  for (const response of data.submission.responses) {
+    const questionTitle = questionMap[response.questionId] || response.questionId;
+    const key = slugify(questionTitle);
+    const value = response.value;
     
     // Handle different field types
     if (Array.isArray(value)) {

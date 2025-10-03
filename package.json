@@ -9,6 +9,7 @@
     "build": "eleventy",
     "generate": "node tools/generate-from-config.js",
     "generate:cli": "node tools/generate.js",
+    "generate:offers": "node tools/generate-offers.mjs",
     "tally:pull": "node tools/tally-pull.mjs",
     "reset": "node tools/reset.js"
   },

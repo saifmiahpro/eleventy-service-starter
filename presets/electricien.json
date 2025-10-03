@@ -1,0 +1,28 @@
+{
+  "NICHE": "electricien",
+  "ACCENT": "#1e90ff",
+  "HERO_TITLE": "Électricien d'urgence à {{CITY}}",
+  "HERO_TEXT": "Dépannage, mise en sécurité, recherche de panne — 24/7.",
+  "ABOUT_SNIPPET": "Artisan électricien, interventions rapides et conformes aux normes.",
+  "ABOUT_EXTENDED": "Remise en service, remplacement de disjoncteurs, recherche de défauts et mise en sécurité. Conseils pour la mise aux normes et devis clairs.",
+  "SERVICES": [
+    { "title": "Dépannage électrique", "desc": "Pannes, courts-circuits, disjoncteurs qui sautent." },
+    { "title": "Mise aux normes", "desc": "Mises à jour partielles et tableaux électriques." },
+    { "title": "Urgences 24/7", "desc": "Intervention rapide selon disponibilité." }
+  ],
+  "FAQ": [
+    { "q": "Pouvez-vous intervenir le soir et le week-end ?", "a": "Oui, un forfait d'urgence s'applique en dehors des heures ouvrées." },
+    { "q": "Fournissez-vous une facture ?", "a": "Oui, facture envoyée par email après intervention." },
+    { "q": "Quels quartiers couvrez-vous ?", "a": "La ville et les alentours. Précisez votre adresse dans le formulaire." }
+  ],
+  "PRICING": [
+    { "label": "Recherche de panne", "price": "dès 89€", "note": "Selon complexité" },
+    { "label": "Remplacement disjoncteur", "price": "dès 119€", "note": "Selon modèle" }
+  ],
+  "GUARANTEES": [
+    "Devis clair",
+    "Interventions conformes",
+    "Conseils sécurité"
+  ],
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
+}

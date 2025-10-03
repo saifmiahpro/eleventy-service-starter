@@ -1,0 +1,28 @@
+{
+  "NICHE": "serrurier",
+  "ACCENT": "#f39c12",
+  "HERO_TITLE": "Serrurier 24/7 à {{CITY}}",
+  "HERO_TEXT": "Ouverture sans casse, intervention rapide, devis clair avant travaux.",
+  "ABOUT_SNIPPET": "Artisan serrurier disponible jour et nuit. Déplacement rapide, pièces garanties.",
+  "ABOUT_EXTENDED": "Nous intervenons sur portes claquées, clés perdues, cylindres bloqués et sécurisation après effraction. Matériel certifié, transparence des tarifs et conseils pour renforcer votre sécurité.",
+  "SERVICES": [
+    { "title": "Ouverture de porte", "desc": "Sans casse lorsque c'est possible, intervention rapide 24/7." },
+    { "title": "Remplacement de cylindre", "desc": "Cylindres et verrous certifiés, installation propre et durable." },
+    { "title": "Sécurisation après effraction", "desc": "Pose provisoire, remplacement et devis clair immédiatement." }
+  ],
+  "FAQ": [
+    { "q": "Dans combien de temps pouvez-vous intervenir ?", "a": "Généralement en 20 à 40 minutes selon la circulation et votre quartier." },
+    { "q": "Quels moyens de paiement acceptez-vous ?", "a": "Carte, espèces, virement. Facture envoyée par email sur demande." },
+    { "q": "Proposez-vous des tarifs de nuit ?", "a": "Oui, un forfait d'urgence s'applique la nuit, week-ends et jours fériés." }
+  ],
+  "PRICING": [
+    { "label": "Ouverture simple", "price": "dès 79€", "note": "Hors majoration nuit/jours fériés" },
+    { "label": "Remplacement cylindre", "price": "dès 129€", "note": "Selon modèle/longueur" }
+  ],
+  "GUARANTEES": [
+    "Devis annoncé avant intervention",
+    "Matériel certifié",
+    "Déplacement rapide"
+  ],
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
+}

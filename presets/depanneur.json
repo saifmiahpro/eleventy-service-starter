@@ -1,0 +1,28 @@
+{
+  "NICHE": "depanneur",
+  "ACCENT": "#e74c3c",
+  "HERO_TITLE": "Dépannage auto 24/7 à {{CITY}}",
+  "HERO_TEXT": "Remorquage, batterie, pneu — intervention rapide, devis clair au téléphone.",
+  "ABOUT_SNIPPET": "Dépannage et remorquage toutes marques. Sécurité et rapidité en priorité.",
+  "ABOUT_EXTENDED": "Pannes de batterie, crevaisons, erreurs de carburant et remorquage vers le garage de votre choix. Interventions sécurisées, prix annoncés avant départ et suivi jusqu'à la prise en charge.",
+  "SERVICES": [
+    { "title": "Dépannage sur place", "desc": "Batterie, crevaison, petite mécanique — pour repartir vite." },
+    { "title": "Remorquage", "desc": "Remorquage urbain ou longue distance vers l'adresse souhaitée." },
+    { "title": "Ouverture de véhicule", "desc": "Ouverture sans dégâts lorsque c'est possible." }
+  ],
+  "FAQ": [
+    { "q": "Intervenez-vous sur tous types de véhicules ?", "a": "Oui, tourisme, utilitaires et 2 roues selon disponibilité du matériel." },
+    { "q": "Quel est votre délai d'intervention ?", "a": "En moyenne 20 à 45 minutes selon la zone et la circulation." },
+    { "q": "Proposez-vous un devis à l'avance ?", "a": "Oui, nous donnons une estimation par téléphone avant départ." }
+  ],
+  "PRICING": [
+    { "label": "Dépannage sur place", "price": "dès 99€", "note": "Selon type de panne" },
+    { "label": "Remorquage urbain", "price": "dès 139€", "note": "Selon distance" }
+  ],
+  "GUARANTEES": [
+    "Tarifs communiqués avant intervention",
+    "Matériel adapté",
+    "Assistance sécurisée"
+  ],
+  "CERTS_LOGOS": ["/assets/placeholders/cert-iso.svg"]
+}

@@ -3,6 +3,8 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, readdirSync, statSync } from 'fs';
 import { join, dirname, extname } from 'path';
 import { fileURLToPath } from 'url';
+import { getPlaceholders } from '../src/_data/placeholders.js';
+import { applyPack } from './apply-pack.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -298,6 +300,76 @@ function generateSiteConfig(inputConfig) {
   return config;
 }
 
+function backfill(site) {
+  const ph = getPlaceholders(site.NICHE || "serrurier", site.CITY || "");
+  site.ACCENT      ||= ph.ACCENT;
+  site.HERO_TEXT  ||= ph.HERO_TEXT;
+  site.ABOUT_SNIPPET ||= ph.ABOUT_SNIPPET;
+
+  // TEXT_MODE
+  if ((site.TEXT_MODE || "simple") === "detail" && !site.ABOUT_EXTENDED) {
+    site.ABOUT_EXTENDED = {
+      title: 'À propos',
+      content: ph.ABOUT_EXTENDED,
+      highlights: []
+    };
+  }
+
+  // services
+  if (!Array.isArray(site.SERVICES) || site.SERVICES.length === 0) {
+    site.SERVICES = ph.SERVICES;
+  }
+
+  // FAQ (optionnelle)
+  if (!Array.isArray(site.FAQ) || site.FAQ.length === 0) {
+    site.FAQ = ph.FAQ;
+  }
+
+  // Pricing si activé
+  if (site.ENABLE_PRICING) {
+    const base = ph.PRICING || [];
+    site.PRICING = (site.PRICING || []).slice(0, site._CAPS?.prices || 99);
+    if (site.PRICING.length === 0) site.PRICING = base.slice(0, site._CAPS?.prices || 99);
+  } else {
+    site.PRICING = site.PRICING || [];
+  }
+
+  // Galerie si activée
+  if (site.ENABLE_GALLERY) {
+    site.GALLERY = (site.GALLERY || []).slice(0, site._CAPS?.photos || 99);
+  } else {
+    site.GALLERY = site.GALLERY || [];
+  }
+
+  // Avis si activés
+  if (site.ENABLE_REVIEWS) {
+    site.REVIEWS = (site.REVIEWS || []).slice(0, site._CAPS?.reviews || 99);
+  } else {
+    site.REVIEWS = site.REVIEWS || [];
+  }
+
+  // Garanties / Certifs
+  if (site.SHOW_GUARANTEES && (!site.GUARANTEES || site.GUARANTEES.length === 0)) {
+    site.GUARANTEES = ph.GUARANTEES;
+  }
+  if (site.ENABLE_CERTS && (!site.CERTIFICATIONS || site.CERTIFICATIONS.length === 0)) {
+    const certs = ph.CERTS_LOGOS.map(logo => ({ icon: '✓', name: 'Certifié', desc: 'Professionnel' }));
+    site.CERTIFICATIONS = certs;
+  }
+
+  // Images
+  if (!site.LOGO_URL) site.LOGO_URL = ph.LOGO_FALLBACK;
+  if (!site.HERO_BACKGROUND_IMAGE) site.HERO_BACKGROUND_IMAGE = ph.HERO_BG_URL;
+
+  return site;
+}
+
+function finalizeSite(site) {
+  applyPack(site);
+  backfill(site);
+  return site;
+}
+
 function main() {
   console.log('🚀 Génération du site depuis la configuration Tally\n');
   
@@ -335,7 +407,10 @@ function main() {
     console.log(`✅ Configuration parsée: ${inputConfig.business_name || 'Entreprise'}`);
     
     // Generate site config
-    const siteConfig = generateSiteConfig(inputConfig);
+    let siteConfig = generateSiteConfig(inputConfig);
+    
+    // Apply pack logic and backfill placeholders
+    siteConfig = finalizeSite(siteConfig);
     
     // Write site.json
     const siteJsonPath = join(projectRoot, 'src', '_data', 'site.json');

@@ -15,18 +15,53 @@ permalink: /offres/
     padding: 2rem 1rem;
   }
   
-  .logo-section {
-    text-align: center;
-    margin-bottom: 0.5rem;
+  .navbar {
+    background: rgba(26,26,26,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2a2a2a;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   
-  .logo-section img {
-    max-width: 100px;
-    height: auto;
+  .navbar-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+    width: auto;
     background: white;
-    padding: 0.75rem;
+    padding: 0.5rem;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .navbar-tagline {
+    display: none;
+    color: #E8B4B8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  @media (min-width: 640px) {
+    .navbar-tagline {
+      display: block;
+    }
   }
   
   .hero-offers {
@@ -259,30 +294,29 @@ permalink: /offres/
   
   @media (min-width: 768px) {
     .offers-page { padding: 3rem 2rem; }
-    .logo-section { margin-bottom: 1rem; }
-    .logo-section img { 
-      max-width: 120px;
-      padding: 1rem;
-    }
+    .navbar-logo img { height: 45px; }
     .hero-offers h1 { font-size: 2.75rem; }
   }
   
   @media (min-width: 1024px) {
     .offers-page { padding: 4rem 2rem; }
-    .logo-section img { 
-      max-width: 140px;
-      padding: 1.25rem;
-    }
+    .navbar-logo img { height: 50px; }
+    .navbar-tagline { font-size: 1rem; }
     .hero-offers h1 { font-size: 3.5rem; }
     .offers-container { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
 
-<div class="offers-page">
-  <div class="logo-section">
-    <img src="/assets/images/tekna-studio-logo.png" alt="tekNa Studio">
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-logo">
+      <img src="/assets/images/tekna-studio-logo.png" alt="tekNa Studio">
+    </div>
+    <div class="navbar-tagline">Sites vitrines qui convertissent</div>
   </div>
-  
+</nav>
+
+<div class="offers-page">
   <div class="hero-offers">
     <h1>Choisissez votre offre</h1>
     <p class="subtitle">Des sites qui convertissent, livrés en 7 jours</p>

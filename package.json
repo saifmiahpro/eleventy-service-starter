@@ -11,7 +11,8 @@
     "generate:cli": "node tools/generate.js",
     "generate:offers": "node tools/generate-offers.mjs",
     "tally:pull": "node tools/tally-pull.mjs",
-    "reset": "node tools/reset.js"
+    "reset": "node tools/reset.js",
+    "choices": "node tools/get-choices.mjs"
   },
   "keywords": [
     "eleventy",

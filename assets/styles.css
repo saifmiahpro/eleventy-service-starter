@@ -1393,9 +1393,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   background: linear-gradient(to right, transparent, var(--accent-color)05);
 }
 
-.faq-item.active .faq-icon {
-  transform: rotate(45deg);
-}
+/* FAQ icon: JavaScript changes + to − when active (no CSS rotation needed) */
 
 .faq-q-text {
   flex: 1;

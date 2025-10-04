@@ -1479,9 +1479,13 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   }
   
   .faq-icon {
-    font-size: 1.75rem;
-    font-weight: 500;
-    min-width: 30px;
+    font-size: 1.75rem !important;
+    font-weight: 500 !important;
+    min-width: 30px !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--accent-color, #3498db) !important;
   }
   
   .faq-answer p {
@@ -2505,6 +2509,26 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
     margin: 0 auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+  
+  /* Force tous les containers de sections à 95% */
+  .section--faq .container,
+  .section--atouts .container,
+  .section--stats .container,
+  .section--zones .container,
+  .section--certifications .container {
+    max-width: 95% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Grids inside containers need padding */
+  .faq-list,
+  .atouts-grid,
+  .stats-grid,
+  .zones-grid,
+  .certifications-grid {
+    padding: 0 !important;
   }
   
   /* Permettre au container de déborder pour les carousels */

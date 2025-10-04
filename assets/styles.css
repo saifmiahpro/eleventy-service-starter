@@ -1201,6 +1201,20 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
 .section--reviews {
   padding: 4rem 0;
   background: white;
+  overflow: hidden;
+}
+
+/* Remove container padding for carousel effect */
+.section--reviews .container {
+  max-width: 100% !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.section--reviews .section__header {
+  padding: 0 1rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto 2rem auto !important;
 }
 
 .reviews-carousel {
@@ -1356,16 +1370,18 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   padding: 1.5rem 2rem;
   background: white;
   border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
   text-align: left;
+  cursor: pointer;
+  
+  /* Flexbox pour icon + texte */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #333;
+  color: #2d2d2d !important;
   transition: all 0.3s ease;
-  gap: 2rem;
 }
 
 .faq-question:hover {
@@ -1381,6 +1397,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   flex: 1;
   line-height: 1.5;
   padding-right: 1rem;
+  color: #2d2d2d !important;
 }
 
 .faq-icon {
@@ -1414,7 +1431,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
 .faq-answer p {
   margin: 0;
   padding: 1rem 2rem 2rem;
-  color: #555;
+  color: #555 !important;
   line-height: 1.7;
   font-size: 0.98rem;
 }
@@ -1689,6 +1706,19 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   overflow: hidden;
+}
+
+/* Remove container padding for carousel effect */
+.section--gallery .container {
+  max-width: 100% !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.section--gallery .section__header {
+  padding: 0 1rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto 2rem auto !important;
 }
 
 .gallery-carousel {

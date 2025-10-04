@@ -2486,8 +2486,14 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   }
   
   .section {
-    padding: 0 !important;
+    padding: 2rem 0 !important;
     overflow: hidden !important;
+  }
+  
+  /* Containers with breathing room but not too much */
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   
   /* Permettre au container de déborder pour les carousels */

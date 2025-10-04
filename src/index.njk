@@ -20,6 +20,7 @@ permalink: /
     padding: 2rem 1rem;
   }
   
+  /* NAVBAR - Exact copy from offers pages */
   .navbar {
     background: rgba(15,15,15,0.95);
     backdrop-filter: blur(10px);
@@ -212,13 +213,15 @@ permalink: /
     font-size: 1.5rem;
   }
   
-  /* Navbar responsive - same as offers pages */
+  /* Navbar responsive - EXACT copy from offers pages */
   @media (min-width: 768px) {
+    .trades-page { padding: 3rem 2rem; }
     .navbar-brand { font-size: 1.75rem; }
     .navbar-tagline { font-size: 0.8rem; }
   }
   
   @media (min-width: 1024px) {
+    .trades-page { padding: 4rem 2rem; }
     .navbar-brand { font-size: 2rem; }
     .navbar-tagline { font-size: 0.9rem; }
   }
@@ -265,12 +268,12 @@ permalink: /
   }
 </style>
 
-<div class="navbar">
+<nav class="navbar">
   <div class="navbar-content">
     <div class="navbar-brand">.tekNa</div>
     <div class="navbar-tagline">Sites vitrines qui convertissent</div>
   </div>
-</div>
+</nav>
 
 <div class="trades-page">
   <div class="hero-trades">

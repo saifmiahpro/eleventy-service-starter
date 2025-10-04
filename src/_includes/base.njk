@@ -3,8 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.BUSINESS_NAME }} | {{ site.CITY }}</title>
-  <meta name="description" content="{{ site.ABOUT_SNIPPET }}">
+  <title>{% if title %}{{ title }}{% else %}{{ site.BUSINESS_NAME }} | {{ site.CITY }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.ABOUT_SNIPPET }}{% endif %}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.BUSINESS_NAME }} | {{ site.CITY }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.ABOUT_SNIPPET }}{% endif %}">
+  <meta property="og:site_name" content="tekNa Studio">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.BUSINESS_NAME }} | {{ site.CITY }}{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.ABOUT_SNIPPET }}{% endif %}">
+  
   <link rel="stylesheet" href="/assets/styles.css?v=202501042300">
   <style>:root { --accent: {{ site.ACCENT }}; }</style>
 </head>

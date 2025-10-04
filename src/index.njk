@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Choisissez votre métier - Démos Sites Web
+title: tekNa - Sites Web Professionnels
 permalink: /
 ---
 
@@ -10,113 +10,273 @@ permalink: /
 
 <style>
   body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    background: #0F0F0F;
+  }
+  
+  .trades-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .navbar {
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-content {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
-
-  .nav-container {
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .nav-title {
-    font-size: 3rem;
+  
+  .navbar-brand {
+    color: #F99395;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
     font-weight: 900;
-    color: white;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    letter-spacing: -0.02em;
   }
-
-  .nav-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.9);
+  
+  .navbar-tagline {
+    color: #999;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+  
+  .hero-trades {
+    text-align: center;
     margin-bottom: 3rem;
-    font-weight: 400;
   }
-
-  .trade-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .trade-card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255,255,255,0.2);
-    border-radius: 24px;
-    padding: 3rem 2rem;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-
-  .trade-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  }
-
-  .trade-icon {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-
-  .trade-name {
+  
+  .hero-trades h1 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
   }
-
-  .trade-desc {
+  
+  .hero-trades .subtitle {
     font-size: 1rem;
-    color: rgba(255,255,255,0.8);
+    color: #999;
+    font-weight: 400;
   }
-
+  
+  .trades-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .trade-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .trade-box:hover {
+    border-color: #F99395;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 147, 149, 0.1);
+  }
+  
+  .trade-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .trade-title-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .trade-icon {
+    font-size: 3rem;
+  }
+  
+  .trade-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  
+  .trade-arrow {
+    font-size: 1.5rem;
+    color: #F99395;
+  }
+  
+  .trade-desc {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .trade-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2a2a2a;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #F99395;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+  }
+  
   @media (max-width: 768px) {
-    .trade-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    .navbar-tagline {
+      display: none;
     }
-
-    .nav-title {
-      font-size: 2rem;
+    
+    .hero-trades h1 {
+      font-size: 1.5rem;
+    }
+    
+    .trade-title {
+      font-size: 1.25rem;
+    }
+    
+    .trade-stats {
+      gap: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 1.25rem;
     }
   }
 </style>
 
-<div class="nav-container">
-  <h1 class="nav-title">🚀 Démonstrations Sites Web</h1>
-  <p class="nav-subtitle">Choisissez le métier pour voir les démos</p>
+<div class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-brand">tekNa</div>
+    <div class="navbar-tagline">Sites web professionnels</div>
+  </div>
+</div>
 
-  <div class="trade-grid">
-    <a href="/depanneur/" class="trade-card">
-      <span class="trade-icon">🚛</span>
-      <div class="trade-name">Dépanneur</div>
-      <div class="trade-desc">Dépannage & Remorquage</div>
+<div class="trades-page">
+  <div class="hero-trades">
+    <h1>Choisissez votre métier</h1>
+    <p class="subtitle">Découvrez nos solutions adaptées à votre activité</p>
+  </div>
+
+  <div class="trades-container">
+    <a href="/depanneur/" class="trade-box">
+      <div class="trade-header">
+        <div class="trade-title-section">
+          <span class="trade-icon">🚛</span>
+          <h2 class="trade-title">Dépanneur</h2>
+        </div>
+        <span class="trade-arrow">→</span>
+      </div>
+      <p class="trade-desc">
+        Sites web optimisés pour dépanneurs et services de remorquage. Design d'urgence avec appel direct, géolocalisation et disponibilité 24/7.
+      </p>
+      <div class="trade-stats">
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Formules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">250€</div>
+          <div class="stat-label">À partir de</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Urgence</div>
+        </div>
+      </div>
     </a>
 
-    <a href="/electricien/" class="trade-card">
-      <span class="trade-icon">⚡</span>
-      <div class="trade-name">Électricien</div>
-      <div class="trade-desc">Installations & Dépannage</div>
+    <a href="/electricien/" class="trade-box">
+      <div class="trade-header">
+        <div class="trade-title-section">
+          <span class="trade-icon">⚡</span>
+          <h2 class="trade-title">Électricien</h2>
+        </div>
+        <span class="trade-arrow">→</span>
+      </div>
+      <p class="trade-desc">
+        Sites web pour électriciens professionnels. Présentation de services, galerie de réalisations, certifications et zones d'intervention.
+      </p>
+      <div class="trade-stats">
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Formules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">250€</div>
+          <div class="stat-label">À partir de</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Certifié</div>
+          <div class="stat-label">Pro</div>
+        </div>
+      </div>
     </a>
 
-    <a href="/serrurier/" class="trade-card">
-      <span class="trade-icon">🔐</span>
-      <div class="trade-name">Serrurier</div>
-      <div class="trade-desc">Ouverture de porte & Serrurerie</div>
+    <a href="/serrurier/" class="trade-box">
+      <div class="trade-header">
+        <div class="trade-title-section">
+          <span class="trade-icon">🔐</span>
+          <h2 class="trade-title">Serrurier</h2>
+        </div>
+        <span class="trade-arrow">→</span>
+      </div>
+      <p class="trade-desc">
+        Sites web spécialisés pour serruriers. Intervention rapide, tarifs transparents, ouverture de porte sans casse, changement de serrure.
+      </p>
+      <div class="trade-stats">
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Formules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">250€</div>
+          <div class="stat-label">À partir de</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">20min</div>
+          <div class="stat-label">Intervention</div>
+        </div>
+      </div>
     </a>
   </div>
 </div>

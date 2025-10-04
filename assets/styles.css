@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+/* GLOBAL LINK RESET - Désactive le bleu par défaut */
+a, a:link, a:visited, a:hover, a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Exception pour les liens avec classe spécifique */
+a[href^="tel:"], a[href^="mailto:"] {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 :root {
   /* Warm color palette 2025 */
   --color-text: #2d2d2d;

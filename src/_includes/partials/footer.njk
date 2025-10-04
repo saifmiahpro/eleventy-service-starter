@@ -1,0 +1,105 @@
+{# 
+  FOOTER PROFESSIONNEL
+  ====================
+  Logo, Contact, Google Maps, Liens légaux
+#}
+
+{% set currentTrade = identity.TRADE or site.trade or "depanneur" %}
+{% set tradeData = trades[currentTrade] %}
+{% set accentColor = identity.ACCENT_COLOR or tradeData.ACCENT %}
+
+<footer class="footer" style="--accent-color: {{ accentColor }};">
+  <div class="container">
+    
+    {# TOP SECTION : BRANDING + CTA #}
+    <div class="footer-top">
+      <div class="footer-brand-section">
+        {% set hasRealLogo = identity.LOGO_URL and not identity.LOGO_URL.includes('/assets/images/logo.png') %}
+        {% if hasRealLogo %}
+          <img src="{{ identity.LOGO_URL }}" alt="{{ identity.BUSINESS_NAME }}" class="footer-logo">
+        {% else %}
+          <h3 class="footer-logo-text">{{ identity.BUSINESS_NAME }}</h3>
+        {% endif %}
+        <p class="footer-tagline">{{ tradeData.ABOUT_SNIPPET }}</p>
+      </div>
+      
+      {# CTA GOOGLE MAPS - Standard & Premium uniquement #}
+      {% if currentPack != "lite" %}
+      <a href="https://www.google.com/maps/search/?api=1&query={{ identity.ADDRESS | urlencode }}" 
+         target="_blank" 
+         rel="noopener"
+         class="footer-maps-cta">
+        <span class="maps-cta-icon">🗺️</span>
+        <div class="maps-cta-content">
+          <span class="maps-cta-title">Nous localiser</span>
+          <span class="maps-cta-subtitle">{{ identity.CITY }}</span>
+        </div>
+      </a>
+      {% endif %}
+    </div>
+
+    {# DIVIDER #}
+    <div class="footer-divider"></div>
+
+    {# GRID SECTION : CONTACT + HORAIRES #}
+    <div class="footer-grid">
+      
+      {# CONTACT #}
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-info-list">
+          <li>
+            <a href="tel:{{ identity.PHONE_TEL }}" class="footer-info-link">
+              <span class="info-icon">📞</span>
+              <span class="info-text">{{ identity.PHONE_PRETTY }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:{{ identity.EMAIL }}" class="footer-info-link">
+              <span class="info-icon">📧</span>
+              <span class="info-text">{{ identity.EMAIL }}</span>
+            </a>
+          </li>
+          <li class="footer-info-item">
+            <span class="info-icon">📍</span>
+            <span class="info-text">{{ identity.ADDRESS }}</span>
+          </li>
+        </ul>
+      </div>
+
+      {# HORAIRES #}
+      <div class="footer-col">
+        <h4 class="footer-col-title">Horaires</h4>
+        {% if identity.IS_24_7 %}
+        <div class="footer-hours-box">
+          <div class="hours-badge">URGENCE 24/7</div>
+          <p class="hours-info">Disponible jour et nuit<br>Week-ends et jours fériés</p>
+          <p class="hours-response">⏱️ Intervention sous {{ identity.RESPONSE_TIME }}</p>
+        </div>
+        {% else %}
+        <div class="footer-hours-box">
+          <p class="hours-schedule">
+            <strong>Lundi - Vendredi</strong><br>8h00 - 19h00
+          </p>
+          <p class="hours-schedule">
+            <strong>Weekend</strong><br>9h00 - 18h00
+          </p>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+    {# BOTTOM BAR #}
+    <div class="footer-bottom-bar">
+      <p class="footer-legal">
+        © 2025 {{ identity.BUSINESS_NAME }} · 
+        <a href="/mentions-legales">Mentions légales</a>
+      </p>
+      <p class="footer-credits">
+        Made with ❤️ by <a href="https://tekna.studio" target="_blank" rel="noopener">tekNa Studio</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

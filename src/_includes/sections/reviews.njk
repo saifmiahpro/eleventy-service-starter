@@ -1,0 +1,61 @@
+{# 
+  SECTION AVIS CLIENTS
+  ======================
+  Affiche les témoignages clients
+  Style : Carousel horizontal comme services
+#}
+
+{% macro Reviews(identity, defaults) %}
+  {% set reviewsList = defaults.reviews %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if reviewsList and reviewsList.length > 0 %}
+    <section id="reviews" class="section section--reviews">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Avis de nos clients</h2>
+          <p class="section__subtitle">Ils nous ont fait confiance</p>
+        </header>
+
+        <div class="reviews-carousel">
+          <div class="reviews-track">
+            {# Première série #}
+            {% for review in reviewsList %}
+              <article class="review-card">
+                <div class="review-rating">
+                  {% for i in range(0, review.rating) %}⭐{% endfor %}
+                </div>
+                <p class="review-text">"{{ review.text }}"</p>
+                <div class="review-footer">
+                  <div class="review-author">
+                    <strong>{{ review.name }}</strong>
+                    {% if review.location %}<span class="review-location">📍 {{ review.location }}</span>{% endif %}
+                  </div>
+                  {% if review.service %}<div class="review-service" style="color: {{ accentColor }};">{{ review.service }}</div>{% endif %}
+                  {% if review.date %}<div class="review-date">{{ review.date }}</div>{% endif %}
+                </div>
+              </article>
+            {% endfor %}
+            {# Duplication pour effet infini #}
+            {% for review in reviewsList %}
+              <article class="review-card">
+                <div class="review-rating">
+                  {% for i in range(0, review.rating) %}⭐{% endfor %}
+                </div>
+                <p class="review-text">"{{ review.text }}"</p>
+                <div class="review-footer">
+                  <div class="review-author">
+                    <strong>{{ review.name }}</strong>
+                    {% if review.location %}<span class="review-location">📍 {{ review.location }}</span>{% endif %}
+                  </div>
+                  {% if review.service %}<div class="review-service" style="color: {{ accentColor }};">{{ review.service }}</div>{% endif %}
+                  {% if review.date %}<div class="review-date">{{ review.date }}</div>{% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

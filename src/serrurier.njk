@@ -1,0 +1,381 @@
+---
+layout: base.njk
+title: Sites Web Serrurier - Choisissez votre formule
+permalink: /serrurier/
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background: #0F0F0F;
+  }
+  
+  .offers-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .navbar {
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .navbar-brand {
+    color: #F99395;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  
+  .navbar-tagline {
+    color: #999;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+  
+  .hero-offers {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-offers .icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-offers h1 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+  
+  .hero-offers .subtitle {
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+  }
+  
+  .offers-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .offer-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: all 0.2s ease;
+  }
+  
+  .offer-box:hover {
+    border-color: #F99395;
+    box-shadow: 0 8px 24px rgba(249,147,149,0.2);
+    transform: translateY(-2px);
+  }
+  
+  .offer-box.featured {
+    border: 2px solid #F99395;
+    background: #1a1a1a;
+    box-shadow: 
+      0 20px 60px rgba(249,147,149,0.25),
+      0 0 0 1px #F99395,
+      inset 0 0 30px rgba(249,147,149,0.05);
+    transform: scale(1.02);
+  }
+  
+  .offer-box.featured:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 
+      0 30px 80px rgba(249,147,149,0.35),
+      0 0 0 1px #F99395,
+      inset 0 0 40px rgba(249,147,149,0.08);
+  }
+  
+  .offer-badge {
+    background: #2a2a2a;
+    color: #F99395;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    border: 1px solid #F99395;
+  }
+  
+  .offer-box.featured .offer-badge {
+    background: #F99395;
+    color: #000;
+    font-weight: 800;
+    border: none;
+  }
+  
+  .offer-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  
+  .offer-price {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: #FFFFFF;
+  }
+  
+  .offer-box.featured .offer-title {
+    color: #F99395;
+    font-weight: 800;
+  }
+  
+  .offer-box.featured .offer-price {
+    font-size: 4.5rem;
+    background: linear-gradient(135deg, #F99395 0%, #F5A4A6 50%, #F99395 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  
+  .offer-box.featured .offer-price-period {
+    color: #F99395;
+    font-weight: 600;
+  }
+  
+  .offer-price-period {
+    font-size: 1.25rem;
+    color: #999;
+    font-weight: 600;
+  }
+  
+  .offer-desc {
+    color: #999;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .offer-box.featured .offer-desc {
+    color: #bbb;
+    font-weight: 400;
+  }
+  
+  .offer-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  .offer-features li {
+    padding: 0.625rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #CCCCCC;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .offer-features li:last-child {
+    border-bottom: none;
+  }
+  
+  .offer-features li::before {
+    content: '✓';
+    color: #F99395;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .offer-features li.disabled {
+    color: #666;
+    opacity: 0.5;
+  }
+  
+  .offer-features li.disabled::before {
+    content: '×';
+    color: #666;
+  }
+  
+  .offer-cta {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #F99395 0%, #F5A4A6 100%);
+    color: white;
+    text-align: center;
+    padding: 1.125rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 20px rgba(249,147,149,0.35);
+    border: none;
+  }
+  
+  .offer-cta:hover {
+    background: linear-gradient(135deg, #F5A4A6 0%, #FAB4B6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(249,147,149,0.5);
+  }
+  
+  .offer-box.featured .offer-cta {
+    background: linear-gradient(135deg, #FAB4B6 0%, #FFC4C6 100%);
+    font-weight: 800;
+  }
+  
+  .offer-box.featured .offer-cta:hover {
+    background: linear-gradient(135deg, #FFC4C6 0%, #FFD4D6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(249,147,149,0.6);
+  }
+  
+  @media (min-width: 768px) {
+    .offers-page { padding: 3rem 2rem; }
+    .navbar-brand { font-size: 1.75rem; }
+    .navbar-tagline { font-size: 0.8rem; }
+    .hero-offers h1 { font-size: 2.75rem; }
+  }
+  
+  @media (min-width: 1024px) {
+    .offers-page { padding: 4rem 2rem; }
+    .navbar-brand { font-size: 2rem; }
+    .navbar-tagline { font-size: 0.9rem; }
+    .hero-offers h1 { font-size: 3.5rem; }
+    .offers-container { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-brand">.tekNa</div>
+    <div class="navbar-tagline">Sites vitrines qui convertissent</div>
+  </div>
+</nav>
+
+<div class="offers-page">
+  <div class="hero-offers">
+    <div class="icon">🔑</div>
+    <h1>Sites Web Serrurier</h1>
+    <p class="subtitle">3 formules adaptées à votre activité</p>
+  </div>
+  
+  <div class="offers-container">
+    {# LITE #}
+    <div class="offer-box">
+      <h3 class="offer-title">Lite</h3>
+      
+      <div class="offer-price">
+        250<span class="offer-price-period">€</span>
+      </div>
+      
+      <p class="offer-desc">L'essentiel pour démarrer votre présence en ligne</p>
+      
+      <ul class="offer-features">
+        <li>Héros avec appel à l'action</li>
+        <li>Section Services (grid simple)</li>
+        <li>Section Atouts</li>
+        <li>Section Statistiques</li>
+        <li>Certifications</li>
+        <li>Footer avec contact</li>
+        <li class="disabled">Galerie photos</li>
+        <li class="disabled">Avis clients</li>
+        <li class="disabled">FAQ</li>
+        <li class="disabled">Zones d'intervention</li>
+      </ul>
+      
+      <a href="/demos/serrurier/lite/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
+
+    {# STANDARD #}
+    <div class="offer-box featured">
+      <div class="offer-badge">Recommandé</div>
+      
+      <h3 class="offer-title">Standard</h3>
+      
+      <div class="offer-price">
+        350<span class="offer-price-period">€</span>
+      </div>
+      
+      <p class="offer-desc">La solution complète pour professionnels</p>
+      
+      <ul class="offer-features">
+        <li>Tout Lite +</li>
+        <li>Services en carousel</li>
+        <li>Galerie photos (grid)</li>
+        <li>Avis clients (carousel)</li>
+        <li>FAQ</li>
+        <li>Zones d'intervention</li>
+        <li class="disabled">Pricing</li>
+      </ul>
+      
+      <a href="/demos/serrurier/standard/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
+
+    {# PREMIUM #}
+    <div class="offer-box">
+      <h3 class="offer-title">Premium</h3>
+      
+      <div class="offer-price">
+        400<span class="offer-price-period">€</span>
+      </div>
+      
+      <p class="offer-desc">L'excellence pour vous démarquer</p>
+      
+      <ul class="offer-features">
+        <li>Tout Standard +</li>
+        <li>Galerie en carousel</li>
+        <li>Section Pricing (tarifs)</li>
+        <li>Carousel momentum</li>
+      </ul>
+      
+      <a href="/demos/serrurier/premium/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+{
+  "PACK": "standard",
+  "BUSINESS_NAME": "Dépannage Express Paris",
+  "CITY": "Paris",
+  "PHONE_TEL": "+33142000000",
+  "PHONE_PRETTY": "01 42 00 00 00",
+  "EMAIL": "contact@depannage-paris.fr",
+  "ADDRESS": "Paris, Île-de-France",
+  "AREAS": [
+    "Paris",
+    "Boulogne-Billancourt",
+    "Neuilly-sur-Seine",
+    "Levallois-Perret",
+    "Issy-les-Moulineaux"
+  ],
+  "RESPONSE_TIME": "30-45 minutes",
+  "HERO_SUBTITLE": "Intervention en 30-45 minutes",
+  "ABOUT_SNIPPET": "Service professionnel à Paris. Intervention rapide et tarifs transparents.",
+  "CTA_PRIMARY_TEXT": "Appeler maintenant",
+  "CTA_SECONDARY_TEXT": "Devis gratuit",
+  "URGENCY_TEXT": "🚨 PANNE AUTO ? ON ARRIVE EN 30 MIN !",
+  "TRUST_BADGES": [
+    "Intervention 24/7",
+    "Devis gratuit",
+    "Matériel professionnel"
+  ],
+  "REVIEWS": [
+    {
+      "name": "Marie D.",
+      "rating": 5,
+      "text": "Intervention rapide et efficace. Prix très correct.",
+      "city": "Paris 15e"
+    },
+    {
+      "name": "Thomas L.",
+      "rating": 5,
+      "text": "Dépanné en 30 minutes un dimanche soir. Service au top !",
+      "city": "Boulogne"
+    },
+    {
+      "name": "Sophie M.",
+      "rating": 5,
+      "text": "Professionnel et sympathique. Je recommande !",
+      "city": "Neuilly"
+    }
+  ],
+  "GALLERY": [
+    {
+      "url": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800",
+      "alt": "Dépannage automobile"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800",
+      "alt": "Remorquage"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
+      "alt": "Service 24/7"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800",
+      "alt": "Équipe professionnelle"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800",
+      "alt": "Véhicule dépannage"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800",
+      "alt": "Intervention rapide"
+    }
+  ],
+  "LOGO_URL": null,
+  "HERO_BACKGROUND_IMAGE": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=80",
+  "IS_24_7": true,
+  "ENABLE_EMERGENCY_BANNER": true,
+  "trade": "depanneur",
+  "variants": {
+    "services": "carousel",
+    "gallery": "grid"
+  }
+}

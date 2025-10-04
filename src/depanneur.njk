@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Choisissez votre offre
-permalink: /offres/
+title: Sites Web Dépanneur - Choisissez votre formule
+permalink: /depanneur/
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +59,11 @@ permalink: /offres/
   .hero-offers {
     text-align: center;
     margin-bottom: 3rem;
+  }
+  
+  .hero-offers .icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
   }
   
   .hero-offers h1 {
@@ -223,13 +228,13 @@ permalink: /offres/
   }
   
   .offer-features li.disabled {
-    color: #999;
+    color: #666;
     opacity: 0.5;
   }
   
   .offer-features li.disabled::before {
     content: '×';
-    color: #ddd;
+    color: #666;
   }
   
   .offer-cta {
@@ -290,42 +295,87 @@ permalink: /offres/
 
 <div class="offers-page">
   <div class="hero-offers">
-    <h1>Choisissez votre offre</h1>
-    <p class="subtitle">Des sites qui convertissent, livrés en 7 jours</p>
+    <div class="icon">🚛</div>
+    <h1>Sites Web Dépanneur</h1>
+    <p class="subtitle">3 formules adaptées à votre activité</p>
   </div>
   
   <div class="offers-container">
-    {% for key, offer in offers %}
-    <div class="offer-box {% if offer.featured %}featured{% endif %}">
-      {% if offer.featured %}
-      <div class="offer-badge">Recommandé</div>
-      {% endif %}
-      
-      <h3 class="offer-title">{{ offer.name }}</h3>
+    {# LITE #}
+    <div class="offer-box">
+      <h3 class="offer-title">Lite</h3>
       
       <div class="offer-price">
-        {{ offer.price }}<span class="offer-price-period">€</span>
+        250<span class="offer-price-period">€</span>
       </div>
       
-      <p class="offer-desc">{{ offer.description }}</p>
+      <p class="offer-desc">L'essentiel pour démarrer votre présence en ligne</p>
       
       <ul class="offer-features">
-        {% for feature in offer.features %}
-        <li {% if not feature.included %}class="disabled"{% endif %}>
-          {{ feature.name }}
-        </li>
-        {% endfor %}
+        <li>Héros avec appel à l'action</li>
+        <li>Section Services (grid simple)</li>
+        <li>Section Atouts</li>
+        <li>Section Statistiques</li>
+        <li>Certifications</li>
+        <li>Footer avec contact</li>
+        <li class="disabled">Galerie photos</li>
+        <li class="disabled">Avis clients</li>
+        <li class="disabled">FAQ</li>
+        <li class="disabled">Zones d'intervention</li>
       </ul>
       
+      <a href="/demos/depanneur/lite/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
+
+    {# STANDARD #}
+    <div class="offer-box featured">
+      <div class="offer-badge">Recommandé</div>
       
-      <div class="cta-buttons">
-        <a href="/offers/previews/{{ offer.id }}/" class="offer-cta offer-cta-preview" target="_blank">
-          👁️ Voir le site
-        </a>
-        <a href="/choix/?pack={{ offer.id }}&client={{ site.BUSINESS_NAME or "Client" }}" class="offer-cta offer-cta-choice" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); margin-top: 0.5rem; border: 1px solid #F99395;">
-          ✓ Choisir cette offre
-        </a>
-      </div>    </div>
-    {% endfor %}
+      <h3 class="offer-title">Standard</h3>
+      
+      <div class="offer-price">
+        350<span class="offer-price-period">€</span>
+      </div>
+      
+      <p class="offer-desc">La solution complète pour professionnels</p>
+      
+      <ul class="offer-features">
+        <li>Tout Lite +</li>
+        <li>Services en carousel</li>
+        <li>Galerie photos (grid)</li>
+        <li>Avis clients (carousel)</li>
+        <li>FAQ</li>
+        <li>Zones d'intervention</li>
+        <li class="disabled">Pricing</li>
+      </ul>
+      
+      <a href="/demos/depanneur/standard/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
+
+    {# PREMIUM #}
+    <div class="offer-box">
+      <h3 class="offer-title">Premium</h3>
+      
+      <div class="offer-price">
+        400<span class="offer-price-period">€</span>
+      </div>
+      
+      <p class="offer-desc">L'excellence pour vous démarquer</p>
+      
+      <ul class="offer-features">
+        <li>Tout Standard +</li>
+        <li>Galerie en carousel</li>
+        <li>Section Pricing (tarifs)</li>
+        <li>Carousel momentum</li>
+      </ul>
+      
+      <a href="/demos/depanneur/premium/" class="offer-cta" target="_blank">
+        Voir le site démo
+      </a>
+    </div>
   </div>
 </div>

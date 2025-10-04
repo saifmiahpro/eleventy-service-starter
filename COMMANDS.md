@@ -13,36 +13,27 @@ npm run dev
 ## 🎨 **Personnalisation**
 
 ### **Changer de métier**
-```bash
 node scripts/set-trade.mjs depanneur    # 🚛 Dépannage auto
 node scripts/set-trade.mjs serrurier    # 🔐 Serrurerie  
 node scripts/set-trade.mjs electricien  # ⚡ Électricité
-```
 
-### **Modifier les couleurs**
+### 🎨 Personnalisation des couleurs
+
 ```bash
-# Par nom (comme réponses Tally)
+# Changer la couleur d'accent
 node scripts/set-color-name.mjs rouge
 node scripts/set-color-name.mjs bleu
 node scripts/set-color-name.mjs vert
 node scripts/set-color-name.mjs jaune
-
-# Par code hex
-node scripts/set-color.mjs #e74c3c
 ```
 
-### **Personnaliser les textes**
-```bash
-node scripts/set-text.mjs HERO_TEXT "🔧 Mon Titre Personnalisé"
-node scripts/set-text.mjs BUSINESS_NAME "MonEntreprise Pro"
-node scripts/set-text.mjs URGENCY_TEXT "🚨 URGENCE 24/7"
-```
+## 🔧 Layouts des sections
 
-### **Changer les variantes d'affichage**
 ```bash
-node scripts/set-variant.mjs services grid      # Services en grille
-node scripts/set-variant.mjs services carousel  # Services en carrousel
-node scripts/set-variant.mjs services list      # Services en liste
+# Changer le layout de la section Services
+node scripts/set-services-layout.mjs grid      # Grille de cartes (défaut)
+node scripts/set-services-layout.mjs carousel  # Défilement horizontal
+node scripts/set-services-layout.mjs list      # Liste verticale
 ```
 
 ## 🎯 **Système Intelligent**

@@ -37,12 +37,10 @@
       {# EN-TÊTE DE SECTION #}
       <header class="section__header">
         <h2 class="section__title">
-          🔧 Nos Services
+          Nos Services
         </h2>
         <p class="section__subtitle">
-          {# Personnalisation avec nom d'entreprise et ville si disponibles #}
-          {{ identity.BUSINESS_NAME or identity.brandName or "Votre expert" }} — 
-          {{ identity.CITY or identity.city or "Votre ville" }}
+          {{ identity.BUSINESS_NAME or "Votre expert" }} à {{ identity.CITY or "votre service" }}
         </p>
       </header>
 
@@ -79,10 +77,29 @@
         Utilise scroll-snap CSS (pas de JS nécessaire)
       #}
       {% elif variant == "carousel" %}
-        <div class="services-carousel" tabindex="0">
+        <div class="services-carousel">
           <div class="carousel-track">
+            {# Première série de cartes #}
             {% for service in servicesList %}
-              <article class="service-card service-card--carousel" data-service="{{ loop.index }}">
+              <article class="service-card service-card--carousel">
+                <div class="service-icon">
+                  {% if "ouverture" in service.title | lower %}🔓
+                  {% elif "dépannage" in service.title | lower or "batterie" in service.title | lower %}🔋
+                  {% elif "remorquage" in service.title | lower %}🚛
+                  {% elif "électrique" in service.title | lower %}⚡
+                  {% elif "serrure" in service.title | lower %}🔐
+                  {% else %}🛠️{% endif %}
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.desc }}</p>
+                {% if service.price %}
+                  <div class="service-price">{{ service.price }}</div>
+                {% endif %}
+              </article>
+            {% endfor %}
+            {# Duplication pour effet infini #}
+            {% for service in servicesList %}
+              <article class="service-card service-card--carousel">
                 <div class="service-icon">
                   {% if "ouverture" in service.title | lower %}🔓
                   {% elif "dépannage" in service.title | lower or "batterie" in service.title | lower %}🔋
@@ -99,9 +116,8 @@
               </article>
             {% endfor %}
           </div>
-          {# Indication visuelle pour le scroll #}
-          <div class="carousel-hint">← Glissez pour voir plus →</div>
         </div>
+
 
       {# 
         VARIANTE LIST (Liste simple)
@@ -129,21 +145,32 @@
         Évite les erreurs si on passe une variante non supportée
       #}
       {% else %}
-        {# Récursion avec variante par défaut #}
-        {{ Services(identity, defaults, "grid", servicesList) }}
+        {# Affichage grid par défaut sans récursion #}
+        <div class="services-grid">
+          {% for service in servicesList %}
+            <article class="service-card" data-service="{{ loop.index }}">
+              <div class="service-icon">
+                {% if "ouverture" in service.title | lower %}🔓
+                {% elif "dépannage" in service.title | lower or "batterie" in service.title | lower %}🔋
+                {% elif "remorquage" in service.title | lower %}🚛
+                {% elif "électrique" in service.title | lower or "électricien" in service.title | lower %}⚡
+                {% elif "serrure" in service.title | lower or "cylindre" in service.title | lower %}🔐
+                {% else %}🛠️{% endif %}
+              </div>
+              <h3 class="service-title">{{ service.title }}</h3>
+              <p class="service-description">{{ service.desc }}</p>
+              {% if service.price %}
+                <div class="service-price">{{ service.price }}</div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
       {% endif %}
 
       {# 
-        CALL-TO-ACTION (optionnel)
-        Bouton d'action si numéro de téléphone disponible
+        PAS DE CTA - évite le doublon avec le héros
+        Le bouton d'appel est déjà dans le héros
       #}
-      {% if identity.PHONE or identity.phone %}
-        <div class="services-cta">
-          <a href="tel:{{ identity.PHONE or identity.phone }}" class="btn btn--primary">
-            📞 Appelez maintenant : {{ identity.PHONE or identity.phone }}
-          </a>
-        </div>
-      {% endif %}
     </section>
   {% endif %}
 {% endmacro %}

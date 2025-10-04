@@ -20,6 +20,13 @@
 {% set urgencyText = identity.URGENCY_TEXT or tradeData.URGENCY_TEXT %}
 {% set accentColor = identity.ACCENT_COLOR or tradeData.ACCENT %}
 
+{# Image de héros : identity ou par métier #}
+{% if identity.HERO_BACKGROUND_IMAGE %}
+  {% set heroBackgroundImage = identity.HERO_BACKGROUND_IMAGE %}
+{% else %}
+  {% set heroBackgroundImage = tradeData.HERO_IMAGE %}
+{% endif %}
+
 {# Appliquer la couleur d'accent du métier #}
 <style>
 :root {
@@ -29,23 +36,110 @@
 </style>
 
 {% if identity.ENABLE_EMERGENCY_BANNER %}
-<div class="emergency-banner" style="background: {{ accentColor }}; border-bottom: 3px solid {{ accentColor }}cc;">
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__inner">
-      <span class="emergency-text">{{ urgencyText }}</span>
-      <span class="response-time">Intervention en {{ identity.RESPONSE_TIME }}</span>
-      <!-- Duplicated content for mobile scrolling -->
-      <span class="emergency-text mobile-only">{{ urgencyText }}</span>
-      <span class="response-time mobile-only">Intervention en {{ identity.RESPONSE_TIME }}</span>
-      <span class="emergency-text mobile-only">{{ urgencyText }}</span>
-      <span class="response-time mobile-only">Intervention en {{ identity.RESPONSE_TIME }}</span>
-    </div>
+{# BANDEAU UNIFIÉ - MÊME ANIMATION PARTOUT #}
+<div class="unified-emergency-banner" style="background: {{ accentColor }}; color: white; padding: 0.5rem 0; text-align: center; font-weight: bold; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid {{ accentColor }}cc;">
+  <div class="slogan-rotator">
+    {% set slogans = tradeData.URGENCY_SLOGANS or [urgencyText, "Intervention rapide 24h/24", "Service professionnel garanti"] %}
+    {% for slogan in slogans %}
+      <span class="rotating-slogan" data-index="{{ loop.index0 }}">{{ slogan }}</span>
+    {% endfor %}
   </div>
 </div>
+
+<style>
+/* ANIMATION UNIQUE POUR TOUS LES ÉCRANS */
+.slogan-rotator {
+  position: relative;
+  height: 1.5em;
+  overflow: hidden;
+}
+
+.rotating-slogan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  animation: fadeInOut 9s infinite;
+}
+
+.rotating-slogan[data-index="0"] { 
+  animation-delay: 0s; 
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.rotating-slogan[data-index="1"] { animation-delay: 3s; }
+.rotating-slogan[data-index="2"] { animation-delay: 6s; }
+
+@keyframes fadeInOut {
+  0%, 30% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+/* TRUST BADGES STYLÉS */
+.trust-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+.trust-badge:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.badge-icon {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* BOUTON SECONDAIRE GLASSMORPHISM */
+.cta-secondary:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), {{ accentColor }}30) !important;
+  border: 1px solid {{ accentColor }}60 !important;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE - MÊME ANIMATION, JUSTE TAILLE ADAPTÉE */
+@media (max-width: 768px) {
+  .unified-emergency-banner {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+  
+  .slogan-rotator {
+    height: 1.3em;
+  }
+  
+  .trust-badges {
+    gap: 0.3rem;
+  }
+  
+  .trust-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+</style>
 {% endif %}
 
-<header class="hero{% if identity.HERO_BACKGROUND_IMAGE %} has-bg-image{% endif %}" 
-        style="{% if identity.HERO_BACKGROUND_IMAGE %}--hero-bg-image: url('{{ identity.HERO_BACKGROUND_IMAGE }}');{% endif %} --accent-color: {{ accentColor }};">
+<header class="hero{% if heroBackgroundImage %} has-bg-image{% endif %}" 
+        style="{% if heroBackgroundImage %}--hero-bg-image: url('{{ heroBackgroundImage }}');{% endif %} --accent-color: {{ accentColor }};">
   <div class="container">
     <div class="hero-logo">
       {% set hasRealLogo = identity.LOGO_URL and not identity.LOGO_URL.includes('/assets/images/logo.png') %}
@@ -63,15 +157,15 @@
     <div class="cta-row">
       {% set tel = identity.PHONE_TEL or identity.CTA_PRIMARY_TEL %}
       {% if tel %}
-      <a class="cta-primary pulse" href="tel:{{ tel }}" style="background: {{ accentColor }}; box-shadow: 0 4px 15px {{ accentColor }}40;">
+      <a class="cta-primary" href="tel:{{ tel }}" style="background: {{ accentColor }}cc; backdrop-filter: blur(10px);">
         <span class="cta-icon">📞</span>
         <span class="cta-text">
-          <span class="cta-label">{{ identity.CTA_PRIMARY_TEXT }}</span>
           <span class="cta-phone">{{ identity.PHONE_PRETTY or tel }}</span>
+          <span class="cta-label">{{ identity.CTA_PRIMARY_TEXT }}</span>
         </span>
       </a>
       {% endif %}
-      <a class="cta-secondary" href="mailto:{{ identity.EMAIL }}" style="border-color: {{ accentColor }}; color: {{ accentColor }};">
+      <a class="cta-secondary" href="mailto:{{ identity.EMAIL }}" style="background: rgba(255, 255, 255, 0.15); border: 2px solid {{ accentColor }}88; backdrop-filter: blur(10px);">
         ✉️ {{ identity.CTA_SECONDARY_TEXT }}
       </a>
     </div>
@@ -79,13 +173,18 @@
     {% if identity.TRUST_BADGES %}
     <div class="trust-badges">
       {% for badge in identity.TRUST_BADGES %}
-      <span class="trust-badge" style="border-left-color: {{ accentColor }};">✓ {{ badge }}</span>
+      <span class="trust-badge" style="background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.3); color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+        <span class="badge-icon" style="color: {{ accentColor }};">✓</span>
+        {{ badge }}
+      </span>
       {% endfor %}
     </div>
     {% endif %}
     
     {% if identity.IS_24_7 %}
-    <p class="availability" style="color: {{ accentColor }};">🕐 Disponible 24/7 - {{ identity.RESPONSE_TIME }}</p>
+    <p class="availability" style="background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.3); color: white; padding: 0.4rem 1rem; border-radius: 20px; display: inline-block; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+      🕐 Disponible 24/7 - {{ identity.RESPONSE_TIME }}
+    </p>
     {% endif %}
     
   </div>

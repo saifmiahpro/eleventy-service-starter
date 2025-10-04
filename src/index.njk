@@ -1,24 +1,123 @@
 ---
 layout: base.njk
-title: "{{ site.BUSINESS_NAME }} – {{ site.CITY }}"
+title: Choisissez votre métier - Démos Sites Web
+permalink: /
 ---
 
-{# Core sections - always included #}
-{% include "partials/hero.njk" %}
-{% include "partials/services.njk" %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-{# Premium modules - conditionally included #}
-{% if site.ENABLE_ABOUT_EXTENDED %}{% include "modules/module-about-extended.njk" %}{% endif %}
-{% if site.ENABLE_TRUST_SECTION %}{% include "modules/module-trust.njk" %}{% endif %}
-{% if site.ENABLE_CERTIFICATIONS %}{% include "modules/module-certifications.njk" %}{% endif %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-{% include "partials/zones.njk" %}
+  .nav-container {
+    text-align: center;
+    padding: 2rem;
+  }
 
-{# Standard optional modules #}
-{% if site.ENABLE_GALLERY %}{% include "modules/module-gallery.njk" %}{% endif %}
-{% if site.ENABLE_REVIEWS %}{% include "modules/module-reviews.njk" %}{% endif %}
-{% if site.ENABLE_PRICING %}{% include "modules/module-pricing.njk" %}{% endif %}
+  .nav-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
 
-{# Core sections continued #}
-{% include "partials/faq.njk" %}
-{% include "partials/contact.njk" %}
+  .nav-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .trade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .trade-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .trade-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .trade-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .trade-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .trade-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  @media (max-width: 768px) {
+    .trade-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .nav-title {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<div class="nav-container">
+  <h1 class="nav-title">🚀 Démonstrations Sites Web</h1>
+  <p class="nav-subtitle">Choisissez le métier pour voir les démos</p>
+
+  <div class="trade-grid">
+    <a href="/depanneur/" class="trade-card">
+      <span class="trade-icon">🚛</span>
+      <div class="trade-name">Dépanneur</div>
+      <div class="trade-desc">Dépannage & Remorquage</div>
+    </a>
+
+    <a href="/electricien/" class="trade-card">
+      <span class="trade-icon">⚡</span>
+      <div class="trade-name">Électricien</div>
+      <div class="trade-desc">Installations & Dépannage</div>
+    </a>
+
+    <a href="/serrurier/" class="trade-card">
+      <span class="trade-icon">🔐</span>
+      <div class="trade-name">Serrurier</div>
+      <div class="trade-desc">Ouverture de porte & Serrurerie</div>
+    </a>
+  </div>
+</div>
+

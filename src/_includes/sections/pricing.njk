@@ -1,0 +1,41 @@
+{# 
+  SECTION TARIFS
+  ================
+  Grille tarifaire transparente
+  Style : Cards avec prix mis en avant
+#}
+
+{% macro Pricing(identity, defaults) %}
+  {% set pricingList = defaults.pricing %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if pricingList and pricingList.length > 0 %}
+    <section id="tarifs" class="section section--pricing">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Nos tarifs</h2>
+          <p class="section__subtitle">Prix transparents, sans surprise</p>
+        </header>
+
+        <div class="pricing-grid" data-count="{{ pricingList.length }}">
+          {% for item in pricingList %}
+            <article class="pricing-card">
+              <h3 class="pricing-label">{{ item.label }}</h3>
+              <div class="pricing-price" style="color: {{ accentColor }};">{{ item.price }}</div>
+              {% if item.note %}
+                <p class="pricing-note">{{ item.note }}</p>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+
+        <div class="pricing-cta">
+          <p>💡 <strong>Devis gratuit par téléphone</strong> - Le prix exact vous est communiqué avant notre départ</p>
+          <a href="tel:{{ identity.PHONE_TEL or identity.CTA_PRIMARY_TEL }}" class="pricing-cta-button" style="background: {{ accentColor }};">
+            Appeler pour un devis
+          </a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

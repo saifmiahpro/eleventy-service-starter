@@ -1,0 +1,26 @@
+{# 
+  SECTION STATS / CHIFFRES CLÉS
+  ================================
+  Affiche les chiffres clés du service
+  Style : Cards avec accent color gradient
+#}
+
+{% macro Stats(identity, defaults) %}
+  {% set statsList = defaults.stats %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if statsList and statsList.length > 0 %}
+    <section id="stats" class="section section--stats" style="background: linear-gradient(135deg, {{ accentColor }}10, {{ accentColor }}05);">
+      <div class="container">
+        <div class="stats-grid">
+          {% for stat in statsList %}
+            <article class="stat-card">
+              <div class="stat-number" style="color: {{ accentColor }};">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

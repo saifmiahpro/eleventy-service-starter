@@ -1,0 +1,34 @@
+{# 
+  SECTION ZONES D'INTERVENTION
+  ===============================
+  Affiche les villes/zones couvertes
+  Style : Badges simples en grille
+#}
+
+{% macro Zones(identity, defaults) %}
+  {% set zonesData = defaults.zones %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if zonesData and zonesData.villes and zonesData.villes.length > 0 %}
+    <section id="zones" class="section section--zones">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Zones d'intervention</h2>
+          <p class="section__subtitle">Nous intervenons rapidement dans toute la région</p>
+        </header>
+
+        <div class="zones-grid">
+          {% for ville in zonesData.villes %}
+            <span class="zone-badge" style="border-color: {{ accentColor }}40; color: {{ accentColor }};">
+              📍 {{ ville }}
+            </span>
+          {% endfor %}
+        </div>
+
+        <div class="zones-cta">
+          <p>Votre ville n'est pas listée ? <strong>Contactez-nous</strong>, nous intervenons aussi dans les communes voisines !</p>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

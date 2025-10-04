@@ -1,0 +1,82 @@
+{
+  "PACK": "standard",
+  "BUSINESS_NAME": "Électricien Paris 24/7",
+  "CITY": "Paris",
+  "PHONE_TEL": "+33142000000",
+  "PHONE_PRETTY": "01 42 00 00 00",
+  "EMAIL": "contact@electricien-paris.fr",
+  "ADDRESS": "Paris, Île-de-France",
+  "AREAS": [
+    "Paris",
+    "Boulogne-Billancourt",
+    "Neuilly-sur-Seine",
+    "Levallois-Perret",
+    "Issy-les-Moulineaux"
+  ],
+  "RESPONSE_TIME": "1-2 heures",
+  "HERO_SUBTITLE": "Intervention en 1-2 heures",
+  "ABOUT_SNIPPET": "Électricien professionnel à Paris. Dépannage rapide et mise aux normes.",
+  "CTA_PRIMARY_TEXT": "Appeler maintenant",
+  "CTA_SECONDARY_TEXT": "Devis gratuit",
+  "URGENCY_TEXT": "⚡ PANNE ÉLECTRIQUE ? ON ARRIVE EN 1H !",
+  "TRUST_BADGES": [
+    "Certifié RGE",
+    "Devis gratuit",
+    "Garantie 2 ans"
+  ],
+  "REVIEWS": [
+    {
+      "name": "Jean P.",
+      "rating": 5,
+      "text": "Dépannage électrique rapide et propre. Professionnel compétent.",
+      "city": "Paris 16e"
+    },
+    {
+      "name": "Claire B.",
+      "rating": 5,
+      "text": "Intervention dans l'heure, problème résolu. Excellent service !",
+      "city": "Levallois"
+    },
+    {
+      "name": "Marc D.",
+      "rating": 5,
+      "text": "Travail soigné, prix correct. Je recommande vivement.",
+      "city": "Neuilly"
+    }
+  ],
+  "GALLERY": [
+    {
+      "url": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800",
+      "alt": "Installation électrique"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800",
+      "alt": "Tableau électrique"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1621905252472-74d7c832e78e?w=800",
+      "alt": "Dépannage électrique"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800",
+      "alt": "Électricien pro"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1607400201893-b0c4cea4c32e?w=800",
+      "alt": "Travaux électriques"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800",
+      "alt": "Installation moderne"
+    }
+  ],
+  "LOGO_URL": null,
+  "HERO_BACKGROUND_IMAGE": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1920&q=80",
+  "IS_24_7": true,
+  "ENABLE_EMERGENCY_BANNER": true,
+  "trade": "electricien",
+  "variants": {
+    "services": "carousel",
+    "gallery": "grid"
+  }
+}

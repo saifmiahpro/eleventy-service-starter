@@ -1,0 +1,31 @@
+{# 
+  SECTION ATOUTS
+  ================
+  Affiche les points forts du service
+  Style : Cards glassmorphism comme les trust badges
+#}
+
+{% macro Atouts(identity, defaults) %}
+  {% set atoutsList = defaults.atouts %}
+  
+  {% if atoutsList and atoutsList.length > 0 %}
+    <section id="atouts" class="section section--atouts">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Pourquoi nous choisir ?</h2>
+          <p class="section__subtitle">Les garanties de votre professionnel à {{ identity.CITY or "votre service" }}</p>
+        </header>
+
+        <div class="atouts-grid">
+          {% for atout in atoutsList %}
+            <article class="atout-card">
+              <div class="atout-icon">{{ atout.icon }}</div>
+              <h3 class="atout-title">{{ atout.title }}</h3>
+              <p class="atout-desc">{{ atout.desc }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

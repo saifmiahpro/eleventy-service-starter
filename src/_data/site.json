@@ -1,89 +1,82 @@
 {
-  "PACK": "lite",
-  "MODULES": [],
-  "NICHE": "depanneur",
-  "ACCENT": "Jaune",
-  "HERO_TEXT": "Service depanneur 24/7 à Amiens",
-  "SERVICES": [
-    {
-      "title": "Batterie à plat",
-      "desc": "Booster ou remplacement sur place selon modèle. Intervention rapide."
-    },
-    {
-      "title": "Remorquage",
-      "desc": "Vers garage ou domicile, véhicule sécurisé. Plateau disponible."
-    },
-    {
-      "title": "Crevaison",
-      "desc": "Roue de secours posée, réparation si possible sur place."
-    },
-    {
-      "title": "Panne moteur",
-      "desc": "Diagnostic rapide et remorquage vers garage agréé."
-    }
-  ],
-  "FAQ": [
-    {
-      "q": "Délais d'intervention ?",
-      "a": "En général 30–45 minutes selon votre secteur, 24h/24 et 7j/7."
-    },
-    {
-      "q": "Moyens de paiement",
-      "a": "Carte bancaire, espèces, chèque acceptés. Facture fournie."
-    },
-    {
-      "q": "Types de véhicules",
-      "a": "Voitures, motos, utilitaires légers. Plateau pour gros véhicules."
-    },
-    {
-      "q": "Zone d'intervention",
-      "a": "{{CITY}} et agglomération, voir liste des communes."
-    }
-  ],
-  "IS_24_7": true,
-  "ENABLE_REVIEWS": false,
-  "ENABLE_GALLERY": false,
-  "ENABLE_PRICING": false,
-  "PRICING": [],
-  "BUSINESS_NAME": "Le roi du dépannage ",
-  "CITY": "Amiens",
-  "PHONE_TEL": "+33343164648",
-  "PHONE_PRETTY": "03 43 16 46 48",
-  "EMAIL": "jejejejfjjf@jdisks.fr",
-  "ADDRESS": "Amiens, France",
+  "PACK": "premium",
+  "BUSINESS_NAME": "Serrurier Paris Urgence",
+  "CITY": "Paris",
+  "PHONE_TEL": "+33142000000",
+  "PHONE_PRETTY": "01 42 00 00 00",
+  "EMAIL": "contact@serrurier-paris.fr",
+  "ADDRESS": "Paris, Île-de-France",
   "AREAS": [
-    "Amiens"
+    "Paris",
+    "Boulogne-Billancourt",
+    "Neuilly-sur-Seine",
+    "Levallois-Perret",
+    "Issy-les-Moulineaux"
   ],
-  "RESPONSE_TIME": "30-45 minutes",
-  "HERO_SUBTITLE": "Intervention en 30-45 minutes",
-  "ABOUT_SNIPPET": "Service professionnel à Amiens. Intervention rapide et tarifs transparents.",
+  "RESPONSE_TIME": "20-30 minutes",
+  "HERO_SUBTITLE": "Intervention en 20-30 minutes",
+  "ABOUT_SNIPPET": "Serrurier professionnel à Paris. Ouverture de porte et dépannage serrurerie.",
   "CTA_PRIMARY_TEXT": "Appeler maintenant",
   "CTA_SECONDARY_TEXT": "Devis gratuit",
-  "URGENCY_TEXT": "🚨 Intervention rapide 24/7",
+  "URGENCY_TEXT": "🔑 PORTE CLAQUÉE ? ON ARRIVE EN 20 MIN !",
   "TRUST_BADGES": [
-    "Professionnel agréé",
+    "Sans casse",
     "Devis gratuit",
-    "Paiement CB"
+    "Prix fixes"
   ],
-  "REVIEWS": [],
-  "GALLERY": [],
-  "LOGO_URL": "/assets/images/logo.png",
-  "HERO_BACKGROUND_IMAGE": "/assets/images/hero/Remorquage Automobile.jpg",
+  "REVIEWS": [
+    {
+      "name": "Anne L.",
+      "rating": 5,
+      "text": "Porte ouverte en 10 minutes sans dégâts. Service impeccable !",
+      "city": "Paris 11e"
+    },
+    {
+      "name": "Pierre M.",
+      "rating": 5,
+      "text": "Intervention rapide un samedi soir. Prix annoncé respecté.",
+      "city": "Boulogne"
+    },
+    {
+      "name": "Lucie R.",
+      "rating": 5,
+      "text": "Très professionnel et sympathique. Je recommande !",
+      "city": "Levallois"
+    }
+  ],
+  "GALLERY": [
+    {
+      "url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      "alt": "Serrurerie"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1582719201952-b1c7c0f2c0c3?w=800",
+      "alt": "Ouverture porte"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=800",
+      "alt": "Installation serrure"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800",
+      "alt": "Serrure sécurisée"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800",
+      "alt": "Serrurier professionnel"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1614607242094-b1b2369e5c0a?w=800",
+      "alt": "Dépannage serrurerie"
+    }
+  ],
+  "LOGO_URL": null,
+  "HERO_BACKGROUND_IMAGE": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
+  "IS_24_7": true,
   "ENABLE_EMERGENCY_BANNER": true,
-  "ENABLE_SECTION_DESCRIPTIONS": false,
-  "ENABLE_ABOUT_EXTENDED": false,
-  "ENABLE_TRUST_SECTION": false,
-  "ENABLE_CERTIFICATIONS": false,
-  "CURRENCY": "€",
-  "MAPS_URL": "https://maps.google.com/?q=Le%20roi%20du%20d%C3%A9pannage%20 Amiens%2C%20France",
-  "TEXT_MODE": "simple",
-  "BANNER_ENABLED": false,
-  "SHOW_GUARANTEES": false,
-  "ENABLE_CERTS": false,
-  "_CAPS": {
-    "photos": 0,
-    "reviews": 0,
-    "prices": 0
-  },
-  "CERTIFICATIONS": []
+  "trade": "serrurier",
+  "variants": {
+    "services": "carousel",
+    "gallery": "grid"
+  }
 }

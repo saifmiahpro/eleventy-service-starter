@@ -1,0 +1,76 @@
+{
+  "lite": {
+    "name": "Lite",
+    "price": 250,
+    "sections": {
+      "hero": true,
+      "services": true,
+      "gallery": false,
+      "reviews": false,
+      "faq": false,
+      "zones": false,
+      "about": true,
+      "contact": true,
+      "blog": false
+    },
+    "variants": {
+      "services": "grid"
+    },
+    "limits": {
+      "services_max": 4,
+      "gallery_max": 0,
+      "reviews_max": 0,
+      "faq_max": 0
+    }
+  },
+  "standard": {
+    "name": "Standard",
+    "price": 350,
+    "sections": {
+      "hero": true,
+      "services": true,
+      "gallery": true,
+      "reviews": true,
+      "faq": true,
+      "zones": true,
+      "about": true,
+      "contact": true,
+      "blog": false
+    },
+    "variants": {
+      "services": "carousel",
+      "gallery": "grid"
+    },
+    "limits": {
+      "services_max": 8,
+      "gallery_max": 6,
+      "reviews_max": 6,
+      "faq_max": 6
+    }
+  },
+  "premium": {
+    "name": "Premium",
+    "price": 400,
+    "sections": {
+      "hero": true,
+      "services": true,
+      "gallery": true,
+      "reviews": true,
+      "faq": true,
+      "zones": true,
+      "about": true,
+      "contact": true,
+      "blog": true
+    },
+    "variants": {
+      "services": "carousel",
+      "gallery": "carousel"
+    },
+    "limits": {
+      "services_max": 12,
+      "gallery_max": 12,
+      "reviews_max": 12,
+      "faq_max": 10
+    }
+  }
+}

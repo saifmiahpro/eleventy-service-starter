@@ -1,14 +1,118 @@
 {
   "depanneur": {
-    "HERO_TITLE": "🚛 Dépannage auto 24/7 à {{CITY}}",
-    "ABOUT_SNIPPET": "Dépannage et remorquage toutes marques. Sécurité et rapidité en priorité.",
-    "URGENCY_TEXT": "🚨 DÉPANNAGE AUTO D'URGENCE",
+    "trade": "depanneur",
+    "HERO_TITLE": "🚗 Dépanneur 24/7 à {{CITY}}",
+    "ABOUT_SNIPPET": "Dépannage auto rapide, remorquage toute distance. Déplacement gratuit.",
+    "URGENCY_TEXT": "🚨 DÉPANNAGE D'URGENCE",
+    "URGENCY_SLOGANS": [
+      "🚨 DÉPANNAGE 24H/24 - INTERVENTION RAPIDE",
+      "⚡ PANNE AUTO ? ON ARRIVE EN 30 MIN !",
+      "🚛 BATTERIE, CREVAISON, REMORQUAGE - SERVICE EXPRESS"
+    ],
     "ACCENT": "#e74c3c",
+    "atouts": [
+      {
+        "icon": "⚡",
+        "title": "Intervention 24/7",
+        "desc": "Disponible jour et nuit, week-ends et jours fériés"
+      },
+      {
+        "icon": "🚀",
+        "title": "Arrivée rapide",
+        "desc": "Sur place en 20-45 minutes selon votre zone"
+      },
+      {
+        "icon": "💯",
+        "title": "Tarif transparent",
+        "desc": "Devis clair avant intervention, sans surprise"
+      },
+      {
+        "icon": "🛡️",
+        "title": "Professionnel agréé",
+        "desc": "Techniciens qualifiés et équipement professionnel"
+      }
+    ],
+    "stats": [
+      {
+        "number": "500+",
+        "label": "Véhicules dépannés"
+      },
+      {
+        "number": "24/7",
+        "label": "Disponibilité"
+      },
+      {
+        "number": "25 min",
+        "label": "Temps moyen d'arrivée"
+      }
+    ],
+    "zones": {
+      "title": "Zones d'intervention - Dépannage auto",
+      "villes": [
+        "Paris",
+        "Boulogne-Billancourt",
+        "Issy-les-Moulineaux",
+        "Vanves",
+        "Malakoff",
+        "Montrouge",
+        "Gentilly",
+        "Kremlin-Bicêtre",
+        "Ivry-sur-Seine",
+        "Charenton-le-Pont",
+        "Saint-Mandé",
+        "Vincennes",
+        "Montreuil",
+        "Bagnolet",
+        "Pantin",
+        "Aubervilliers",
+        "Saint-Denis",
+        "Clichy",
+        "Levallois-Perret",
+        "Neuilly-sur-Seine"
+      ]
+    },
+    "certifications": [
+      {
+        "icon": "🚛",
+        "name": "Véhicule équipé",
+        "desc": "Matériel professionnel à bord"
+      },
+      {
+        "icon": "🛡️",
+        "name": "Assurance complète",
+        "desc": "RC Pro + Protection"
+      },
+      {
+        "icon": "💳",
+        "name": "Paiement CB accepté",
+        "desc": "Cartes bancaires et espèces"
+      }
+    ],
     "services": [
-      { "title": "Dépannage sur place", "desc": "Batterie, crevaison, petite mécanique — pour repartir vite." },
-      { "title": "Remorquage", "desc": "Remorquage urbain ou longue distance vers l'adresse souhaitée." },
-      { "title": "Ouverture de véhicule", "desc": "Ouverture sans dégâts lorsque c'est possible." },
-      { "title": "Assistance 24/7", "desc": "Intervention d'urgence jour et nuit selon disponibilité." }
+      {
+        "title": "Dépannage batterie",
+        "desc": "Batterie à plat, démarrage impossible ? Booster ou remplacement sur place selon le modèle."
+      },
+      {
+        "title": "Remorquage véhicule",
+        "desc": "Remorquage sécurisé vers garage ou domicile. Plateau disponible pour tous types de véhicules."
+      },
+      {
+        "title": "Crevaison pneu",
+        "desc": "Roue de secours posée rapidement. Réparation sur place si possible selon l'état du pneu."
+      },
+      {
+        "title": "Ouverture véhicule",
+        "desc": "Clés oubliées à l'intérieur ? Ouverture sans dégâts dans la plupart des cas."
+      },
+      {
+        "title": "Panne moteur",
+        "desc": "Diagnostic rapide sur place. Réparation immédiate ou remorquage vers garage agréé."
+      },
+      {
+        "title": "Assistance carburant",
+        "desc": "Panne sèche ou mauvais carburant ? Livraison d'essence ou vidange du réservoir."
+      }
     ],
     "reviews": [
       {
@@ -54,68 +158,197 @@
     ],
     "gallery": [
       {
-        "url": "/assets/placeholders/depanneur-1.jpg",
+        "url": "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&h=400&fit=crop&q=80",
         "title": "Dépannage batterie",
         "caption": "Remplacement de batterie sur véhicule en panne - Intervention rapide",
         "category": "Dépannage"
       },
       {
-        "url": "/assets/placeholders/depanneur-2.jpg", 
+        "url": "https://images.unsplash.com/photo-1632823469621-d4b6b8f57c8b?w=600&h=400&fit=crop&q=80",
         "title": "Remorquage sécurisé",
         "caption": "Remorquage d'un véhicule accidenté vers le garage - Matériel professionnel",
         "category": "Remorquage"
       },
       {
-        "url": "/assets/placeholders/depanneur-3.jpg",
+        "url": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=400&fit=crop&q=80",
         "title": "Changement de pneu",
         "caption": "Réparation de crevaison sur autoroute - Service 24h/24",
         "category": "Réparation"
       },
       {
-        "url": "/assets/placeholders/depanneur-4.jpg",
-        "title": "Ouverture de véhicule", 
+        "url": "https://images.unsplash.com/photo-1516398246742-e04fe6ce6ca9?w=600&h=400&fit=crop&q=80",
+        "title": "Ouverture de véhicule",
         "caption": "Ouverture sans dégât après oubli des clés - Technique professionnelle",
         "category": "Ouverture"
       },
       {
-        "url": "/assets/placeholders/depanneur-5.jpg",
+        "url": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop&q=80",
         "title": "Dépannage d'urgence",
         "caption": "Intervention d'urgence un dimanche - Disponibilité 7j/7",
         "category": "Urgence"
       },
       {
-        "url": "/assets/placeholders/depanneur-6.jpg",
+        "url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&h=400&fit=crop&q=80",
         "title": "Matériel professionnel",
         "caption": "Notre équipement de pointe pour tous types d'interventions",
         "category": "Équipement"
       }
     ],
     "pricing": [
-      { "label": "Dépannage sur place", "price": "dès 99€", "note": "Selon type de panne" },
-      { "label": "Remorquage urbain", "price": "dès 139€", "note": "Selon distance" },
-      { "label": "Ouverture véhicule", "price": "dès 89€", "note": "Sans dégât garanti" }
-    ],
-    "certifications": [
-      { "icon": "✓", "name": "Professionnel Agréé", "desc": "Certification officielle" },
-      { "icon": "🛡️", "name": "Assurance Pro", "desc": "Couverture complète" },
-      { "icon": "⭐", "name": "Qualité Garantie", "desc": "Service de qualité" }
+      {
+        "label": "Dépannage sur place",
+        "price": "dès 99€",
+        "note": "Selon type de panne"
+      },
+      {
+        "label": "Remorquage urbain",
+        "price": "dès 139€",
+        "note": "Selon distance"
+      },
+      {
+        "label": "Ouverture véhicule",
+        "price": "dès 89€",
+        "note": "Sans dégât garanti"
+      }
     ],
     "faq": [
-      { "q": "Intervenez-vous sur tous types de véhicules ?", "a": "Oui, tourisme, utilitaires et 2 roues selon disponibilité du matériel." },
-      { "q": "Quel est votre délai d'intervention ?", "a": "En moyenne 20 à 45 minutes selon la zone et la circulation." },
-      { "q": "Proposez-vous un devis à l'avance ?", "a": "Oui, nous donnons une estimation par téléphone avant départ." }
-    ]
+      {
+        "q": "Combien coûte un dépannage auto ?",
+        "a": "Le tarif dépend du type de panne. Un dépannage batterie coûte environ 80-100€, un remorquage à partir de 120€. Nous vous donnons un tarif précis par téléphone avant intervention."
+      },
+      {
+        "q": "Dans quel délai pouvez-vous intervenir ?",
+        "a": "Nous intervenons généralement en 20 à 45 minutes selon votre localisation et la circulation. Pour les urgences (panne sur autoroute, situation dangereuse), nous priorisons l'intervention."
+      },
+      {
+        "q": "Êtes-vous disponibles la nuit et le week-end ?",
+        "a": "Oui, notre service de dépannage est disponible 24h/24, 7j/7, y compris la nuit, les week-ends et jours fériés. Un supplément urgence peut s'appliquer en dehors des horaires ouvrés."
+      },
+      {
+        "q": "Intervenez-vous sur tous types de véhicules ?",
+        "a": "Nous dépannons tous types de véhicules : voitures, utilitaires, motos et scooters. Précisez votre modèle lors de l'appel pour que nous apportions le matériel adapté."
+      },
+      {
+        "q": "Quels moyens de paiement acceptez-vous ?",
+        "a": "Nous acceptons les paiements par carte bancaire, espèces et virement. Une facture vous est systématiquement fournie après l'intervention."
+      }
+    ],
+    "HERO_IMAGE": "https://images.unsplash.com/photo-1611083203153-1f0f49fcf093?w=1920&h=600&fit=crop&q=85"
   },
   "serrurier": {
+    "trade": "serrurier",
     "HERO_TITLE": "🔐 Serrurier 24/7 à {{CITY}}",
     "ABOUT_SNIPPET": "Artisan serrurier disponible jour et nuit. Déplacement rapide, pièces garanties.",
     "URGENCY_TEXT": "🚨 SERRURIER D'URGENCE",
+    "URGENCY_SLOGANS": [
+      "🚨 PORTE BLOQUÉE ? INTERVENTION 24H/24",
+      "🔐 OUVERTURE SANS CASSE - ARTISAN EXPERT",
+      "🚪 SERRURE CASSÉE ? RÉPARATION IMMÉDIATE"
+    ],
     "ACCENT": "#2c3e50",
+    "atouts": [
+      {
+        "icon": "🔓",
+        "title": "Ouverture sans casse",
+        "desc": "90% des interventions sans dégâts sur la porte"
+      },
+      {
+        "icon": "🚪",
+        "title": "24h/24 7j/7",
+        "desc": "Serrurier disponible nuit, week-end et jours fériés"
+      },
+      {
+        "icon": "🎯",
+        "title": "Devis avant travaux",
+        "desc": "Prix annoncé par téléphone, aucune surprise"
+      },
+      {
+        "icon": "🛡️",
+        "title": "Pièces garanties",
+        "desc": "Serrures certifiées A2P avec garantie constructeur"
+      }
+    ],
+    "stats": [
+      {
+        "number": "800+",
+        "label": "Portes ouvertes"
+      },
+      {
+        "number": "90%",
+        "label": "Sans casse"
+      },
+      {
+        "number": "30 min",
+        "label": "Délai d'intervention"
+      }
+    ],
+    "zones": {
+      "title": "Zones d'intervention - Serrurier",
+      "villes": [
+        "Paris",
+        "Boulogne-Billancourt",
+        "Issy-les-Moulineaux",
+        "Vanves",
+        "Malakoff",
+        "Montrouge",
+        "Gentilly",
+        "Kremlin-Bicêtre",
+        "Ivry-sur-Seine",
+        "Charenton-le-Pont",
+        "Saint-Mandé",
+        "Vincennes",
+        "Montreuil",
+        "Bagnolet",
+        "Pantin",
+        "Aubervilliers",
+        "Saint-Denis",
+        "Clichy",
+        "Levallois-Perret",
+        "Neuilly-sur-Seine"
+      ]
+    },
+    "certifications": [
+      {
+        "icon": "🔓",
+        "name": "Ouverture sans casse",
+        "desc": "Intervention soignée et rapide"
+      },
+      {
+        "icon": "🛡️",
+        "name": "Professionnel assuré",
+        "desc": "RC Pro pour votre sécurité"
+      },
+      {
+        "icon": "💳",
+        "name": "Paiement facilité",
+        "desc": "CB, espèces, virement"
+      }
+    ],
     "services": [
-      { "title": "Ouverture de porte", "desc": "Sans casse lorsque c'est possible, intervention rapide 24/7." },
-      { "title": "Remplacement de cylindre", "desc": "Cylindres et verrous certifiés, installation propre et durable." },
-      { "title": "Sécurisation après effraction", "desc": "Pose provisoire, remplacement et devis clair immédiatement." },
-      { "title": "Blindage de porte", "desc": "Installation et conseil pour sécurité renforcée." }
+      {
+        "title": "Ouverture de porte",
+        "desc": "Porte claquée ou serrure bloquée ? Ouverture sans casse dans 90% des cas. Intervention 24/7."
+      },
+      {
+        "title": "Changement serrure",
+        "desc": "Remplacement de cylindres et verrous. Serrures certifiées A2P, installation propre et garantie."
+      },
+      {
+        "title": "Réparation urgente",
+        "desc": "Serrure cassée ou clé coincée ? Réparation immédiate ou remplacement selon l'état."
+      },
+      {
+        "title": "Blindage sécurité",
+        "desc": "Renforcement de porte existante. Pivot anti-arrachement, cornières et barre de seuil."
+      },
+      {
+        "title": "Dépannage effraction",
+        "desc": "Sécurisation d'urgence après cambriolage. Pose provisoire et devis de remise en état."
+      },
+      {
+        "title": "Installation neuve",
+        "desc": "Pose de nouvelles serrures sur porte neuve. Conseil personnalisé selon vos besoins sécurité."
+      }
     ],
     "reviews": [
       {
@@ -161,68 +394,207 @@
     ],
     "gallery": [
       {
-        "url": "/assets/placeholders/serrurier-1.jpg",
+        "url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80",
         "title": "Ouverture de porte",
         "caption": "Ouverture sans dégât d'une porte claquée - Technique professionnelle",
         "category": "Ouverture"
       },
       {
-        "url": "/assets/placeholders/serrurier-2.jpg", 
+        "url": "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&h=400&fit=crop&q=80",
         "title": "Installation serrure",
         "caption": "Pose d'une serrure 3 points certifiée - Sécurité renforcée",
         "category": "Installation"
       },
       {
-        "url": "/assets/placeholders/serrurier-3.jpg",
+        "url": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=400&fit=crop&q=80",
         "title": "Remplacement cylindre",
         "caption": "Changement de cylindre européen - Matériel certifié",
         "category": "Remplacement"
       },
       {
-        "url": "/assets/placeholders/serrurier-4.jpg",
-        "title": "Sécurisation urgente", 
+        "url": "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&h=400&fit=crop&q=80",
+        "title": "Sécurisation urgente",
         "caption": "Sécurisation provisoire après effraction - Intervention rapide",
         "category": "Sécurisation"
       },
       {
-        "url": "/assets/placeholders/serrurier-5.jpg",
+        "url": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop&q=80",
         "title": "Outils professionnels",
         "caption": "Notre équipement spécialisé pour tous types de serrures",
         "category": "Équipement"
       },
       {
-        "url": "/assets/placeholders/serrurier-6.jpg",
+        "url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&h=400&fit=crop&q=80",
         "title": "Blindage de porte",
         "caption": "Installation de blindage pour sécurité maximale",
         "category": "Blindage"
       }
     ],
     "pricing": [
-      { "label": "Ouverture simple", "price": "dès 79€", "note": "Hors majoration nuit/jours fériés" },
-      { "label": "Remplacement cylindre", "price": "dès 129€", "note": "Selon modèle/longueur" },
-      { "label": "Serrure 3 points", "price": "dès 299€", "note": "Installation comprise" }
-    ],
-    "certifications": [
-      { "icon": "🔐", "name": "Serrurier Agréé", "desc": "Certification professionnelle" },
-      { "icon": "🛡️", "name": "Assurance RC Pro", "desc": "Couverture complète" },
-      { "icon": "⚡", "name": "Intervention 24/7", "desc": "Disponibilité permanente" }
+      {
+        "label": "Ouverture simple",
+        "price": "dès 79€",
+        "note": "Hors majoration nuit/jours fériés"
+      },
+      {
+        "label": "Remplacement cylindre",
+        "price": "dès 129€",
+        "note": "Selon modèle/longueur"
+      },
+      {
+        "label": "Serrure 3 points",
+        "price": "dès 299€",
+        "note": "Installation comprise"
+      },
+      {
+        "label": "Serrure 5 points",
+        "price": "dès 450€",
+        "note": "Haute sécurité"
+      },
+      {
+        "label": "Blindage de porte",
+        "price": "dès 800€",
+        "note": "Selon surface"
+      }
     ],
     "faq": [
-      { "q": "Dans combien de temps pouvez-vous intervenir ?", "a": "Généralement en 20 à 40 minutes selon la circulation et votre quartier." },
-      { "q": "Quels moyens de paiement acceptez-vous ?", "a": "Carte, espèces, virement. Facture envoyée par email sur demande." },
-      { "q": "Proposez-vous des tarifs de nuit ?", "a": "Oui, un forfait d'urgence s'applique la nuit, week-ends et jours fériés." }
-    ]
+      {
+        "q": "Pouvez-vous ouvrir ma porte sans la casser ?",
+        "a": "Dans 90% des cas, nous ouvrons sans dégât grâce à des techniques professionnelles. Seules les portes blindées ou les serrures très anciennes nécessitent parfois un perçage."
+      },
+      {
+        "q": "Combien coûte une ouverture de porte en urgence ?",
+        "a": "Une ouverture simple coûte entre 70€ et 150€ selon le type de serrure et l'heure (majoration de nuit/jour férié). Le tarif vous est annoncé par téléphone avant notre départ."
+      },
+      {
+        "q": "Êtes-vous disponible la nuit et le dimanche ?",
+        "a": "Oui, nous intervenons 24h/24, 7j/7 pour toutes les urgences serrurerie : porte claquée, clés perdues, effraction. Un forfait d'urgence s'applique en dehors des horaires ouvrés."
+      },
+      {
+        "q": "Les serrures que vous installez sont-elles garanties ?",
+        "a": "Toutes nos serrures sont certifiées (A2P pour les serrures de sécurité) et bénéficient d'une garantie constructeur. Nos installations sont garanties selon les normes en vigueur."
+      },
+      {
+        "q": "Puis-je obtenir un devis avant intervention ?",
+        "a": "Absolument. Nous vous communiquons un tarif précis par téléphone avant de nous déplacer. Aucune surprise sur la facture finale, tout est transparent."
+      }
+    ],
+    "HERO_IMAGE": "https://plus.unsplash.com/premium_photo-1661292167106-2224b6d0cefc?w=1920&h=600&fit=crop&q=85"
   },
   "electricien": {
+    "trade": "electricien",
     "HERO_TITLE": "⚡ Électricien d'urgence à {{CITY}}",
     "ABOUT_SNIPPET": "Artisan électricien, interventions rapides et conformes aux normes.",
     "URGENCY_TEXT": "🚨 ÉLECTRICIEN D'URGENCE",
+    "URGENCY_SLOGANS": [
+      "⚡ PANNE ÉLECTRIQUE ? INTERVENTION 24H/24",
+      "🔌 PLUS DE COURANT ? DÉPANNAGE RAPIDE",
+      "💡 COURT-CIRCUIT, DISJONCTEUR - ON RÉPARE !"
+    ],
     "ACCENT": "#3498db",
+    "atouts": [
+      {
+        "icon": "⚡",
+        "title": "Intervention rapide",
+        "desc": "Dépannage électrique en moins d'une heure"
+      },
+      {
+        "icon": "✅",
+        "title": "Normes respectées",
+        "desc": "Installation conforme NF C 15-100 et Consuel"
+      },
+      {
+        "icon": "🔧",
+        "title": "Équipement complet",
+        "desc": "Matériel professionnel pour tous types de pannes"
+      },
+      {
+        "icon": "💼",
+        "title": "Artisan certifié",
+        "desc": "Électricien qualifié avec assurance décennale"
+      }
+    ],
+    "stats": [
+      {
+        "number": "600+",
+        "label": "Clients satisfaits"
+      },
+      {
+        "number": "100%",
+        "label": "Aux normes"
+      },
+      {
+        "number": "45 min",
+        "label": "Temps d'intervention"
+      }
+    ],
+    "zones": {
+      "title": "Zones d'intervention - Électricien",
+      "villes": [
+        "Paris",
+        "Boulogne-Billancourt",
+        "Issy-les-Moulineaux",
+        "Vanves",
+        "Malakoff",
+        "Montrouge",
+        "Gentilly",
+        "Kremlin-Bicêtre",
+        "Ivry-sur-Seine",
+        "Charenton-le-Pont",
+        "Saint-Mandé",
+        "Vincennes",
+        "Montreuil",
+        "Bagnolet",
+        "Pantin",
+        "Aubervilliers",
+        "Saint-Denis",
+        "Clichy",
+        "Levallois-Perret",
+        "Neuilly-sur-Seine"
+      ]
+    },
+    "certifications": [
+      {
+        "icon": "✅",
+        "name": "Installations aux normes",
+        "desc": "Conformité NF C 15-100"
+      },
+      {
+        "icon": "🛡️",
+        "name": "Professionnel assuré",
+        "desc": "Assurance pour vos travaux"
+      },
+      {
+        "icon": "💳",
+        "name": "Paiement facilité",
+        "desc": "CB, espèces, virement"
+      }
+    ],
     "services": [
-      { "title": "Dépannage électrique", "desc": "Pannes, courts-circuits, disjoncteurs qui sautent." },
-      { "title": "Mise aux normes", "desc": "Mises à jour partielles et tableaux électriques." },
-      { "title": "Installation prises", "desc": "Pose de prises et éclairage aux normes." },
-      { "title": "Urgences 24/7", "desc": "Intervention rapide selon disponibilité." }
+      {
+        "title": "Dépannage électrique",
+        "desc": "Panne de courant, disjoncteurs qui sautent ? Diagnostic rapide et réparation sur place."
+      },
+      {
+        "title": "Remise aux normes",
+        "desc": "Mise à jour de votre installation électrique. Tableaux électriques et circuits sécurisés."
+      },
+      {
+        "title": "Installation prises",
+        "desc": "Pose de nouvelles prises et points lumineux. Installation conforme aux normes en vigueur."
+      },
+      {
+        "title": "Réparation urgente",
+        "desc": "Court-circuit, câbles endommagés ? Intervention rapide pour sécuriser votre installation."
+      },
+      {
+        "title": "Éclairage intérieur",
+        "desc": "Installation de luminaires, spots et éclairage décoratif. Conseil en éclairage LED."
+      },
+      {
+        "title": "Domotique simple",
+        "desc": "Installation d'interrupteurs connectés, prises programmables et éclairage intelligent."
+      }
     ],
     "reviews": [
       {
@@ -268,56 +640,100 @@
     ],
     "gallery": [
       {
-        "url": "/assets/placeholders/electricien-1.jpg",
+        "url": "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&h=400&fit=crop&q=80",
         "title": "Tableau électrique",
         "caption": "Mise aux normes d'un tableau électrique - Installation conforme",
         "category": "Mise aux normes"
       },
       {
-        "url": "/assets/placeholders/electricien-2.jpg", 
+        "url": "https://images.unsplash.com/photo-1632823469621-d4b6b8f57c8b?w=600&h=400&fit=crop&q=80",
         "title": "Dépannage urgence",
         "caption": "Réparation d'une panne électrique en urgence - Intervention rapide",
         "category": "Dépannage"
       },
       {
-        "url": "/assets/placeholders/electricien-3.jpg",
+        "url": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=400&fit=crop&q=80",
         "title": "Installation prises",
         "caption": "Pose de prises électriques aux normes - Travail soigné",
         "category": "Installation"
       },
       {
-        "url": "/assets/placeholders/electricien-4.jpg",
-        "title": "Recherche de panne", 
+        "url": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop&q=80",
+        "title": "Recherche de panne",
         "caption": "Diagnostic électrique avec matériel professionnel",
         "category": "Diagnostic"
       },
       {
-        "url": "/assets/placeholders/electricien-5.jpg",
+        "url": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop&q=80",
         "title": "Éclairage LED",
         "caption": "Installation d'éclairage LED économique et moderne",
         "category": "Éclairage"
       },
       {
-        "url": "/assets/placeholders/electricien-6.jpg",
+        "url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&h=400&fit=crop&q=80",
         "title": "Matériel professionnel",
         "caption": "Équipement de mesure et outils spécialisés",
         "category": "Équipement"
       }
     ],
     "pricing": [
-      { "label": "Recherche de panne", "price": "dès 89€", "note": "Selon complexité" },
-      { "label": "Remplacement disjoncteur", "price": "dès 119€", "note": "Selon modèle" },
-      { "label": "Installation prise", "price": "dès 49€", "note": "Matériel fourni" }
-    ],
-    "certifications": [
-      { "icon": "⚡", "name": "Électricien Agréé", "desc": "Habilitation électrique" },
-      { "icon": "🛡️", "name": "Assurance RC Pro", "desc": "Couverture complète" },
-      { "icon": "📋", "name": "Conformité NF", "desc": "Installations aux normes" }
+      {
+        "label": "Recherche de panne",
+        "price": "dès 89€",
+        "note": "Diagnostic complet"
+      },
+      {
+        "label": "Remplacement disjoncteur",
+        "price": "dès 119€",
+        "note": "Selon modèle"
+      },
+      {
+        "label": "Installation prise",
+        "price": "dès 49€",
+        "note": "Matériel fourni"
+      },
+      {
+        "label": "Tableau électrique",
+        "price": "dès 450€",
+        "note": "Installation complète"
+      },
+      {
+        "label": "Mise aux normes",
+        "price": "sur devis",
+        "note": "Après diagnostic"
+      },
+      {
+        "label": "Installation luminaire",
+        "price": "dès 79€",
+        "note": "Pose comprise"
+      }
     ],
     "faq": [
-      { "q": "Pouvez-vous intervenir le soir et le week-end ?", "a": "Oui, un forfait d'urgence s'applique en dehors des heures ouvrées." },
-      { "q": "Fournissez-vous une facture ?", "a": "Oui, facture envoyée par email après intervention." },
-      { "q": "Quels quartiers couvrez-vous ?", "a": "La ville et les alentours. Précisez votre adresse dans le formulaire." }
-    ]
+      {
+        "q": "Vos installations électriques sont-elles aux normes ?",
+        "a": "Oui, toutes nos installations respectent la norme NF C 15-100 en vigueur. Nous délivrons une attestation de conformité et pouvons vous accompagner pour le certificat Consuel si nécessaire."
+      },
+      {
+        "q": "Combien coûte un dépannage électrique ?",
+        "a": "Le tarif varie selon la panne : diagnostic de 80 à 120€, remplacement disjoncteur à partir de 100€, installation de prises dès 50€. Nous établissons un devis clair avant toute intervention."
+      },
+      {
+        "q": "Intervenez-vous en urgence pour une panne de courant ?",
+        "a": "Oui, nous intervenons rapidement pour les pannes électriques. Délai moyen de 1 à 2 heures selon disponibilité. Pour les urgences (odeur de brûlé, étincelles), nous priorisons l'intervention."
+      },
+      {
+        "q": "Faut-il refaire toute l'installation pour être aux normes ?",
+        "a": "Pas nécessairement. Nous réalisons un diagnostic et vous proposons une mise aux normes partielle ou complète selon l'état de votre installation et votre budget."
+      },
+      {
+        "q": "Avez-vous une assurance décennale ?",
+        "a": "Oui, nous sommes couverts par une assurance décennale obligatoire qui garantit nos travaux pendant 10 ans. Une attestation vous est fournie sur demande."
+      },
+      {
+        "q": "Puis-je bénéficier d'aides pour mes travaux électriques ?",
+        "a": "Certains travaux de rénovation énergétique peuvent être éligibles à MaPrimeRénov' ou des aides locales. Nous vous renseignons sur les dispositifs existants."
+      }
+    ],
+    "HERO_IMAGE": "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=1920&h=600&fit=crop&q=85"
   }
 }

@@ -70,3 +70,12 @@ offers/*.json
 offers/previews/
 !offers/comparatif.html
 !offers/navigation.html
+
+# Backups
+.backups/
+presets_backup/
+tools_backup/
+
+# Temporary files
+0
+choices.json

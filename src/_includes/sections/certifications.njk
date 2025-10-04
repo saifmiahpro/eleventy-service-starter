@@ -1,0 +1,36 @@
+{# 
+  SECTION CERTIFICATIONS
+  ========================
+  Affiche les certifications et agréments
+  Style : Cards avec badges de confiance
+#}
+
+{% macro Certifications(identity, defaults) %}
+  {% set certifsList = defaults.certifications %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if certifsList and certifsList.length > 0 %}
+    <section id="certifications" class="section section--certifications">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Garanties & Certifications</h2>
+          <p class="section__subtitle">Des garanties professionnelles pour votre tranquillité</p>
+        </header>
+
+        <div class="certifications-grid">
+          {% for certif in certifsList %}
+            <article class="certification-card">
+              {% if certif.icon %}
+                <div class="certification-icon">{{ certif.icon }}</div>
+              {% else %}
+                <div class="certification-badge" style="background: {{ accentColor }};">✓</div>
+              {% endif %}
+              <h3 class="certification-name">{{ certif.name }}</h3>
+              <p class="certification-desc">{{ certif.desc }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}

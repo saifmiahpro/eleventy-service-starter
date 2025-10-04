@@ -1,0 +1,82 @@
+{# 
+  SECTION FAQ
+  =============
+  Questions/Réponses fréquentes
+  Style : Accordion simple avec JS
+#}
+
+{% macro FAQ(identity, defaults) %}
+  {% set faqList = defaults.faq %}
+  {% set accentColor = identity.ACCENT_COLOR or defaults.ACCENT %}
+  
+  {% if faqList and faqList.length > 0 %}
+    <section id="faq" class="section section--faq">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Questions fréquentes</h2>
+          <p class="section__subtitle">Tout ce que vous devez savoir sur nos services</p>
+        </header>
+
+        <div class="faq-list" style="--accent-color: {{ accentColor }};">
+          {% for item in faqList %}
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-q-text">{{ item.q }}</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>{{ item.a }}</p>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+
+        <div class="faq-cta">
+          <p>Vous avez une autre question ? <a href="tel:{{ identity.PHONE_TEL or identity.CTA_PRIMARY_TEL }}" style="color: {{ accentColor }};">Appelez-nous au {{ identity.PHONE_PRETTY or identity.PHONE_TEL }}</a></p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    (function() {
+      function toggleFaq(button) {
+        const item = button.closest('.faq-item');
+        if (!item) return;
+        
+        const answer = item.querySelector('.faq-answer');
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = item.classList.contains('active');
+        
+        // Fermer tous les autres d'abord
+        document.querySelectorAll('.faq-item.active').forEach(el => {
+          if (el !== item) {
+            el.classList.remove('active');
+            const elAnswer = el.querySelector('.faq-answer');
+            const elIcon = el.querySelector('.faq-icon');
+            if (elAnswer) elAnswer.style.maxHeight = '0';
+            if (elIcon) elIcon.textContent = '+';
+          }
+        });
+        
+        // Toggle celui-ci
+        if (isOpen) {
+          item.classList.remove('active');
+          answer.style.maxHeight = '0';
+          icon.textContent = '+';
+        } else {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.textContent = '−';
+        }
+      }
+      
+      // Attacher les événements
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+          toggleFaq(this);
+        });
+      });
+    })();
+    </script>
+  {% endif %}
+{% endmacro %}

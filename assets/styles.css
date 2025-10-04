@@ -2391,6 +2391,22 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   }
   
   /* Carousels full width sur mobile */
+  .services-carousel,
+  .reviews-carousel,
+  .gallery-carousel {
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+  }
+  
+  .services-carousel::before,
+  .services-carousel::after,
+  .reviews-carousel::before,
+  .reviews-carousel::after,
+  .gallery-carousel::before,
+  .gallery-carousel::after {
+    display: none !important;
+  }
+  
   .service-card--carousel,
   .review-card,
   .gallery-item {
@@ -2401,6 +2417,23 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   
   .section {
     padding: 40px 0;
+  }
+  
+  /* Permettre au container de déborder pour les carousels */
+  .section--services .container,
+  .section--reviews .container,
+  .section--gallery .container {
+    max-width: 100vw !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* Mais garder le padding pour les headers */
+  .section--services .section__header,
+  .section--reviews .section__header,
+  .section--gallery .section__header {
+    padding: 0 1rem !important;
+    margin-bottom: 1.5rem !important;
   }
   
   .cta-primary {

@@ -10,12 +10,16 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.BUSINESS_NAME }} | {{ site.CITY }}{% endif %}">
   <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.ABOUT_SNIPPET }}{% endif %}">
+  <meta property="og:image" content="https://{{ site.domain or 'votre-site.netlify.app' }}/assets/images/tekna-studio-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="tekNa Studio">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.BUSINESS_NAME }} | {{ site.CITY }}{% endif %}">
   <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.ABOUT_SNIPPET }}{% endif %}">
+  <meta name="twitter:image" content="https://{{ site.domain or 'votre-site.netlify.app' }}/assets/images/tekna-studio-logo.png">
   
   <link rel="stylesheet" href="/assets/styles.css?v=202501042345">
   <style>:root { --accent: {{ site.ACCENT }}; }</style>

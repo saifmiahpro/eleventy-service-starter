@@ -2491,12 +2491,14 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   }
   
   .section {
-    padding: 2rem 0 !important;
+    padding: 2.5rem 0 !important;
     overflow: hidden !important;
   }
   
-  /* Containers with breathing room but not too much */
+  /* Containers prennent 90% de la largeur (5% padding de chaque côté) */
   .container {
+    max-width: 90% !important;
+    margin: 0 auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }

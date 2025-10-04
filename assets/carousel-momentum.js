@@ -135,7 +135,12 @@
     }
     
     function getClientX(e) {
-      return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      if (e.type.includes('mouse')) {
+        return e.clientX;
+      }
+      // Pour touch, utiliser touches ou changedTouches
+      return (e.touches && e.touches[0]) ? e.touches[0].clientX : 
+             (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : 0;
     }
     
     // Mouse events
@@ -143,10 +148,11 @@
     document.addEventListener('mousemove', handleMove);
     document.addEventListener('mouseup', handleEnd);
     
-    // Touch events
+    // Touch events - avec passive: false pour preventDefault
     track.addEventListener('touchstart', handleStart, { passive: false });
-    track.addEventListener('touchmove', handleMove, { passive: false });
-    track.addEventListener('touchend', handleEnd, { passive: true });
+    document.addEventListener('touchmove', handleMove, { passive: false });
+    document.addEventListener('touchend', handleEnd);
+    document.addEventListener('touchcancel', handleEnd);
     
     // Prevent text selection
     track.addEventListener('selectstart', (e) => e.preventDefault());

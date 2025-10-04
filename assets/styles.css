@@ -1393,6 +1393,10 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   background: linear-gradient(to right, transparent, var(--accent-color)05);
 }
 
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
 .faq-q-text {
   flex: 1;
   line-height: 1.5;
@@ -1401,14 +1405,14 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
 }
 
 .faq-icon {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: var(--accent-color, #3498db);
-  transition: color 0.2s ease;
-  min-width: 30px;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--accent-color, #3498db) !important;
+  transition: all 0.3s ease;
+  min-width: 35px;
   text-align: center;
   flex-shrink: 0;
-  line-height: 0.8;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1471,8 +1475,9 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   }
   
   .faq-icon {
-    font-size: 1.5rem;
-    min-width: 25px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    min-width: 30px;
   }
   
   .faq-answer p {

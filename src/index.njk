@@ -68,15 +68,27 @@ permalink: /
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.03em;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     margin-bottom: 1rem;
   }
   
   .hero-trades .price {
     font-size: 3rem;
     font-weight: 900;
-    color: #F99395;
+    color: #F99395 !important;
     margin-bottom: 1.5rem;
+  }
+  
+  /* Force hero text white */
+  .hero-trades,
+  .hero-trades h1,
+  .hero-trades h1 * {
+    color: #FFFFFF !important;
+  }
+  
+  .hero-trades .price,
+  .hero-trades .price * {
+    color: #F99395 !important;
   }
   
   .hero-usps {
@@ -88,14 +100,26 @@ permalink: /
   }
   
   .usp {
-    color: #999;
+    color: #FFFFFF !important;
     font-size: 0.9rem;
     font-weight: 500;
   }
   
   .usp-icon {
-    color: #F99395;
+    color: #F99395 !important;
     margin-right: 0.5rem;
+  }
+  
+  /* Force USPs white */
+  .hero-usps,
+  .hero-usps *,
+  .hero-usps .usp,
+  .hero-usps .usp * {
+    color: #FFFFFF !important;
+  }
+  
+  .hero-usps .usp-icon {
+    color: #F99395 !important;
   }
   
   .trades-container {
@@ -146,7 +170,7 @@ permalink: /
   .trade-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     margin: 0;
   }
   
@@ -156,19 +180,36 @@ permalink: /
   }
   
   .trade-info-item {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-size: 0.85rem;
     font-weight: 500;
   }
   
   .trade-info-highlight {
-    color: #F99395;
+    color: #F99395 !important;
     font-weight: 700;
+  }
+  
+  /* FORCE WHITE TEXT EVERYWHERE ON CARDS */
+  .trades-page .trade-box,
+  .trades-page .trade-box *,
+  .trades-page .trade-content,
+  .trades-page .trade-content *,
+  .trades-page .trade-details,
+  .trades-page .trade-details *,
+  .trades-page h2,
+  .trades-page h2 * {
+    color: #FFFFFF !important;
+  }
+  
+  /* Only highlights in pink */
+  .trades-page .trade-info-highlight,
+  .trades-page .trade-arrow {
+    color: #F99395 !important;
   }
   
   .trade-arrow {
     font-size: 1.5rem;
-    color: #F99395;
   }
   
   @media (max-width: 768px) {

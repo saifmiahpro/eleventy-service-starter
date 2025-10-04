@@ -285,7 +285,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
 }
 
 .cta-primary {
-  color: white;
+  color: white !important;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 50px;
@@ -321,12 +321,14 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.01em;
+  color: white !important;
 }
 
 .cta-label {
   font-size: 0.7rem;
   font-weight: 600;
   opacity: 0.9;
+  color: white !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -341,7 +343,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
 }
 
 .cta-secondary {
-  color: white;
+  color: white !important;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 50px;
@@ -384,6 +386,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white !important;
 }
 
 .availability {
@@ -395,6 +398,7 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   padding: 0.5rem 1rem;
   border-radius: 25px;
   display: inline-block;
+  color: white !important;
 }
 
 /* Sections */
@@ -2390,9 +2394,9 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   .service-card--carousel,
   .review-card,
   .gallery-item {
-    width: 95vw !important;
-    min-width: 95vw !important;
-    max-width: 95vw !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
   }
   
   .section {

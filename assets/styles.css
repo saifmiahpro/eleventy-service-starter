@@ -2390,8 +2390,9 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   .service-card--carousel,
   .review-card,
   .gallery-item {
-    min-width: 90vw !important;
-    max-width: 90vw !important;
+    width: 95vw !important;
+    min-width: 95vw !important;
+    max-width: 95vw !important;
   }
   
   .section {

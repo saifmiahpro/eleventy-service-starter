@@ -105,7 +105,14 @@
       e.preventDefault();
       
       const clientX = getClientX(e);
-      const diff = clientX - startX;
+      let diff = clientX - startX;
+      
+      // Multiplier le swipe sur mobile pour défiler plus vite
+      const isTouchEvent = e.type.includes('touch');
+      if (isTouchEvent) {
+        diff *= 3; // 3x plus rapide sur mobile
+      }
+      
       currentX = prevX + diff;
       
       // Apply seamless loop during drag (BOTH directions)

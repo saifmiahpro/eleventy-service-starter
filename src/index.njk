@@ -1,6 +1,7 @@
 ---
 layout: base.njk
-title: tekNa - Sites Web Professionnels
+title: tekNa Studio - Sites Web Professionnels à partir de 250€
+description: Créez votre présence en ligne dès 250€. Sites web professionnels pour dépanneurs, électriciens et serruriers. Livraison rapide.
 permalink: /
 ---
 
@@ -58,16 +59,43 @@ permalink: /
   
   .hero-trades {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
   
   .hero-trades h1 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.03em;
     color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-trades .price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #F99395;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-usps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .usp {
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .usp-icon {
+    color: #F99395;
+    margin-right: 0.5rem;
   }
   
   .trades-container {
@@ -117,7 +145,16 @@ permalink: /
     }
     
     .hero-trades h1 {
-      font-size: 2rem;
+      font-size: 1.75rem;
+    }
+    
+    .hero-trades .price {
+      font-size: 2.5rem;
+    }
+    
+    .hero-usps {
+      gap: 1rem;
+      font-size: 0.85rem;
     }
     
     .trade-icon {
@@ -144,7 +181,13 @@ permalink: /
 
 <div class="trades-page">
   <div class="hero-trades">
-    <h1>Votre métier</h1>
+    <h1>Votre site web professionnel</h1>
+    <div class="price">À partir de 250€</div>
+    <div class="hero-usps">
+      <span class="usp"><span class="usp-icon">✓</span> Livraison rapide</span>
+      <span class="usp"><span class="usp-icon">✓</span> Design moderne</span>
+      <span class="usp"><span class="usp-icon">✓</span> Mobile-friendly</span>
+    </div>
   </div>
 
   <div class="trades-container">

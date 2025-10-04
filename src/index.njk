@@ -102,7 +102,7 @@ permalink: /
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
   }
   
@@ -110,31 +110,41 @@ permalink: /
     background: #1a1a1a;
     border: 2px solid #2a2a2a;
     border-radius: 16px;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     transition: all 0.3s ease;
     text-decoration: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    min-height: 200px;
+    justify-content: space-between;
+    gap: 1.5rem;
   }
   
   .trade-box:hover {
     border-color: #F99395;
-    transform: scale(1.02);
+    transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(249, 147, 149, 0.2);
     background: #222;
   }
   
+  .trade-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+  }
+  
   .trade-icon {
-    font-size: 5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
+  
+  .trade-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
   .trade-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: #FFFFFF;
     margin: 0;
@@ -143,7 +153,6 @@ permalink: /
   .trade-info {
     display: flex;
     gap: 1.5rem;
-    margin-top: 0.5rem;
   }
   
   .trade-info-item {
@@ -155,6 +164,11 @@ permalink: /
   .trade-info-highlight {
     color: #F99395;
     font-weight: 700;
+  }
+  
+  .trade-arrow {
+    font-size: 1.5rem;
+    color: #F99395;
   }
   
   @media (max-width: 768px) {
@@ -176,21 +190,29 @@ permalink: /
     }
     
     .trade-icon {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     
     .trade-title {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
     
     .trade-box {
-      padding: 2.5rem 2rem;
-      min-height: 180px;
+      padding: 2rem 1.5rem;
+    }
+    
+    .trade-content {
+      gap: 1rem;
     }
     
     .trade-info {
       gap: 1rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .trade-arrow {
+      font-size: 1.25rem;
     }
   }
 </style>
@@ -215,30 +237,45 @@ permalink: /
 
   <div class="trades-container">
     <a href="/depanneur/" class="trade-box">
-      <span class="trade-icon">🚛</span>
-      <h2 class="trade-title">Dépanneur</h2>
-      <div class="trade-info">
-        <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
-        <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+      <div class="trade-content">
+        <span class="trade-icon">🚛</span>
+        <div class="trade-details">
+          <h2 class="trade-title">Dépanneur</h2>
+          <div class="trade-info">
+            <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
+            <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+          </div>
+        </div>
       </div>
+      <span class="trade-arrow">→</span>
     </a>
 
     <a href="/electricien/" class="trade-box">
-      <span class="trade-icon">⚡</span>
-      <h2 class="trade-title">Électricien</h2>
-      <div class="trade-info">
-        <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
-        <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+      <div class="trade-content">
+        <span class="trade-icon">⚡</span>
+        <div class="trade-details">
+          <h2 class="trade-title">Électricien</h2>
+          <div class="trade-info">
+            <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
+            <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+          </div>
+        </div>
       </div>
+      <span class="trade-arrow">→</span>
     </a>
 
     <a href="/serrurier/" class="trade-box">
-      <span class="trade-icon">🔐</span>
-      <h2 class="trade-title">Serrurier</h2>
-      <div class="trade-info">
-        <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
-        <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+      <div class="trade-content">
+        <span class="trade-icon">🔐</span>
+        <div class="trade-details">
+          <h2 class="trade-title">Serrurier</h2>
+          <div class="trade-info">
+            <span class="trade-info-item">À partir de <span class="trade-info-highlight">250€</span></span>
+            <span class="trade-info-item"><span class="trade-info-highlight">3</span> offres</span>
+          </div>
+        </div>
       </div>
+      <span class="trade-arrow">→</span>
     </a>
   </div>
 </div>

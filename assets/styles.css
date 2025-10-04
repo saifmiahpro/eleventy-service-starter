@@ -6,7 +6,8 @@
 }
 
 /* GLOBAL LINK RESET - Désactive le bleu par défaut */
-a, a:link, a:visited, a:hover, a:active {
+a, a:link, a:visited, a:hover, a:active,
+a *, a:link *, a:visited *, a:hover *, a:active * {
   color: inherit !important;
   text-decoration: none !important;
 }
@@ -15,6 +16,14 @@ a, a:link, a:visited, a:hover, a:active {
 a[href^="tel:"], a[href^="mailto:"] {
   color: inherit !important;
   text-decoration: none !important;
+}
+
+/* Force white text in all CTAs and buttons */
+.cta-primary, .cta-primary *,
+.cta-secondary, .cta-secondary *,
+.cta-phone, .cta-label,
+.trust-badge, .availability {
+  color: white !important;
 }
 
 :root {

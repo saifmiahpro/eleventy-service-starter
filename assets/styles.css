@@ -1413,9 +1413,11 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   text-align: center;
   flex-shrink: 0;
   line-height: 1;
-  display: flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .faq-answer {
@@ -1451,10 +1453,12 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
   color: #666;
 }
 
-.faq-cta a {
+.faq-cta a,
+.faq-phone-link {
   font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  color: var(--accent-color, #3498db) !important;
 }
 
 .faq-cta a:hover {
@@ -2495,9 +2499,9 @@ button:not(.close-modal):not([onclick*="changeTrade"]):not([onclick*="changeColo
     overflow: hidden !important;
   }
   
-  /* Containers prennent 90% de la largeur (5% padding de chaque côté) */
+  /* Containers prennent 95% de la largeur (2.5% padding de chaque côté) */
   .container {
-    max-width: 90% !important;
+    max-width: 95% !important;
     margin: 0 auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
